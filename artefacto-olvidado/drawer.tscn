@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ys4uxa5wfwf"]
+
+[ext_resource type="Script" uid="uid://dbbaifw2q82w1" path="res://drawer.gd" id="1_71w65"]
+[ext_resource type="Texture2D" uid="uid://cgvwrjndd18v1" path="res://character_roundRed.png" id="1_qe6j5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71w65"]
+radius = 16.0
+height = 64.0
+
+[node name="Drawer" type="CharacterBody2D"]
+script = ExtResource("1_71w65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_71w65")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qe6j5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

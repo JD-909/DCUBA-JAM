@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://ckaat16obq4p4"]
 
-[ext_resource type="Texture2D" uid="uid://bbv2661k3tw5d" path="res://tile_diagonal.png" id="1_t5d6x"]
-[ext_resource type="Texture2D" uid="uid://5isv4yiov0tc" path="res://spritesheet_default.png" id="2_jqjfh"]
-[ext_resource type="PackedScene" uid="uid://d1ys4uxa5wfwf" path="res://drawer.tscn" id="3_jqjfh"]
+[ext_resource type="Texture2D" uid="uid://bbv2661k3tw5d" path="res://assets/tile_diagonal.png" id="1_t5d6x"]
+[ext_resource type="Texture2D" uid="uid://5isv4yiov0tc" path="res://assets/spritesheet_default.png" id="2_jqjfh"]
+[ext_resource type="PackedScene" uid="uid://d1ys4uxa5wfwf" path="res://scenes/drawer.tscn" id="3_jqjfh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cim0o"]
 texture = ExtResource("1_t5d6x")
@@ -167,8 +167,10 @@ tile_set = SubResource("TileSet_jqjfh")
 
 [node name="Foreground" type="TileMapLayer" parent="TileMap"]
 z_index = 1
-tile_map_data = PackedByteArray("AAAIAAkADAAGAAkAAAAJAAkADAAGAAkAAAAKAAkADAAGAAkAAAALAAkADAAGAAkAAAAMAAkADAAGAAkAAAANAAkADAAGAAkAAAAOAAkADAAGAAkAAAAPAAkADAAGAAkAAAAQAAkADAAGAAkAAAARAAkADAAGAAkAAAAIAAQADAAGAAkAAAAIAAUADAAGAAkAAAAIAAYADAAGAAkAAAAIAAcADAAGAAkAAAAIAAgADAAGAAkAAAAJAAQADAAGAAkAAAAKAAQADAAGAAkAAAALAAQADAAGAAkAAAAMAAQADAAGAAkAAAANAAQADAAGAAkAAAAOAAQADAAGAAkAAAAPAAQADAAGAAkAAAAQAAQADAAGAAkAAAARAAQADAAGAAkAAAARAAUADAAGAAkAAAARAAYADAAGAAkAAAARAAcADAAGAAkAAAARAAgADAAGAAkAAAA=")
+tile_map_data = PackedByteArray("AAAIAAkADAAGAAkAAAAJAAkADAAGAAkAAAAKAAkADAAGAAkAAAALAAkADAAGAAkAAAAMAAkADAAGAAkAAAANAAkADAAGAAkAAAAOAAkADAAGAAkAAAAPAAkADAAGAAkAAAAQAAkADAAGAAkAAAARAAkADAAGAAkAAAAIAAQADAAGAAkAAAAIAAUADAAGAAkAAAAIAAYADAAGAAkAAAAIAAcADAAGAAkAAAAIAAgADAAGAAkAAAAKAAQADAAGAAkAAAALAAQADAAGAAkAAAAMAAQADAAGAAkAAAANAAQADAAGAAkAAAAOAAQADAAGAAkAAAAPAAQADAAGAAkAAAAQAAQADAAGAAkAAAARAAQADAAGAAkAAAARAAUADAAGAAkAAAARAAYADAAGAAkAAAARAAcADAAGAAkAAAARAAgADAAGAAkAAAA=")
 tile_set = SubResource("TileSet_jqjfh")
 
 [node name="Drawer" parent="." instance=ExtResource("3_jqjfh")]
 position = Vector2(608, 544)
+
+[node name="DrawnLines" type="Node" parent="."]

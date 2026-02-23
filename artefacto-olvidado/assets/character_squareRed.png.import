@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w15w4jj63k5m"
-path="res://.godot/imported/spritesheet_retina.png-7178b9c4b1c9806fa1bb53d6d737b79c.ctex"
+uid="uid://b5467xjt08eeu"
+path="res://.godot/imported/character_squareRed.png-978d027b9b17a129c65af27c0c1e87fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spritesheet_retina.png"
-dest_files=["res://.godot/imported/spritesheet_retina.png-7178b9c4b1c9806fa1bb53d6d737b79c.ctex"]
+source_file="res://assets/character_squareRed.png"
+dest_files=["res://.godot/imported/character_squareRed.png-978d027b9b17a129c65af27c0c1e87fb.ctex"]
 
 [params]
 

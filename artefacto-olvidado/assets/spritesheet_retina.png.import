@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvdccdi1qfdkh"
-path="res://.godot/imported/item_pencil.png-e63c576683d00ab998aca1f9146a872d.ctex"
+uid="uid://w15w4jj63k5m"
+path="res://.godot/imported/spritesheet_retina.png-9375fc45d57c127e93f023ac4f88d399.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://item_pencil.png"
-dest_files=["res://.godot/imported/item_pencil.png-e63c576683d00ab998aca1f9146a872d.ctex"]
+source_file="res://assets/spritesheet_retina.png"
+dest_files=["res://.godot/imported/spritesheet_retina.png-9375fc45d57c127e93f023ac4f88d399.ctex"]
 
 [params]
 

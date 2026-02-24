@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71w65"]
 radius = 16.0
-height = 64.0
+height = 62.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxo8o"]
 radius = 16.0
@@ -35,14 +35,18 @@ texture = ExtResource("3_kj86r")
 [node name="LinePlacementSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.49803922)
 z_index = -1
-position = Vector2(59, 0)
+position = Vector2(60, 0)
 rotation = 1.5707964
 texture = ExtResource("4_lt7lr")
 
 [node name="DrawEraseArea" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrawEraseArea"]
 position = Vector2(24, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_cxo8o")
 debug_color = Color(0.6, 0.6, 0.6, 0.41960785)
+
+[connection signal="body_entered" from="DrawEraseArea" to="." method="_on_draw_erase_area_body_entered"]
+[connection signal="body_exited" from="DrawEraseArea" to="." method="_on_draw_erase_area_body_exited"]

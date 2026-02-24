@@ -7,6 +7,7 @@
 size = Vector2(64, 8)
 
 [node name="DrawnPlatform" type="StaticBody2D"]
+collision_layer = 3
 script = ExtResource("1_4e04t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

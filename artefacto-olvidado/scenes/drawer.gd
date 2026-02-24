@@ -5,7 +5,7 @@ const JUMP_FORCE = -500
 
 var direction : float
 var line_placement_offset = 60
-var draw_erase_target
+var draw_erase_target : DrawnBody
 
 @onready var drawer_sprite = $DrawerSprite
 @onready var pencil_sprite = $PencilSprite
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 	if is_on_floor():
 		
-		line_placement_sprite.visible = true
+		check_for_permanents()
 		
 		# Jump and drop
 		if Input.is_action_just_pressed("jump_key"):
@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 		@warning_ignore("integer_division")
 		line_placement_sprite.position = Vector2(0,line_placement_offset/2 + 5)
 		line_placement_sprite.rotation = 0
+		draw_erase_area.rotation = PI/2
 	elif drawer_sprite.flip_h:
 		line_placement_sprite.position = Vector2(-line_placement_offset,0)
 		line_placement_sprite.rotation = PI/2
@@ -82,15 +83,18 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func draw() -> void:
-	var drawn_line_instance = drawn_line.instantiate()
-	drawn_line_instance.global_position = line_placement_sprite.global_position
-	drawn_line_instance.rotation = line_placement_sprite.rotation
-	lines_node.add_child(drawn_line_instance)
+	if draw_erase_target != null and draw_erase_target.get_permanency():
+		draw_erase_target.be_drawn()
+	else:
+		var drawn_line_instance = drawn_line.instantiate()
+		drawn_line_instance.global_position = line_placement_sprite.global_position
+		drawn_line_instance.rotation = line_placement_sprite.rotation
+		lines_node.add_child(drawn_line_instance)
 
 func erase() -> void:
-	if draw_erase_target != null:
+	if draw_erase_target != null:                   # Si hay target, aplicale "borrar"
 		draw_erase_target.be_erased()
-		draw_erase_area_collision.disabled = true
+		draw_erase_area_collision.disabled = true  # Pasa a un siguiente target que este en rango
 		draw_erase_area_collision.disabled = false
 
 func _on_draw_erase_area_body_entered(body: Node2D) -> void:
@@ -100,8 +104,23 @@ func _on_draw_erase_area_body_entered(body: Node2D) -> void:
 	
 	draw_erase_target = body
 	draw_erase_target.target()
+	
+	check_for_permanents()
 
 func _on_draw_erase_area_body_exited(body: Node2D) -> void:
 	if body == draw_erase_target:
 		draw_erase_target.untarget()
 		draw_erase_target = null
+
+
+func check_for_permanents() -> void:
+	
+	if draw_erase_target != null:
+		
+		if draw_erase_target.get_permanency():
+			line_placement_sprite.visible = false
+		else:
+			line_placement_sprite.visible = true
+	else:
+		line_placement_sprite.visible = true
+		

@@ -1,14 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://k8jn5ilc2ckd"]
 
-[ext_resource type="Script" uid="uid://cmmcux7byaa2m" path="res://scenes/drawn_platform.gd" id="1_4e04t"]
+[ext_resource type="Script" uid="uid://c6dd04pj0qemp" path="res://scenes/drawn_platform.gd" id="1_4e04t"]
 [ext_resource type="Texture2D" uid="uid://dj6rxkv7acvlf" path="res://assets/effect_shotLarge.png" id="1_hddv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_act2s"]
 size = Vector2(64, 8)
 
 [node name="DrawnPlatform" type="StaticBody2D"]
+modulate = Color(0.50534403, 0.5053441, 0.50534403, 1)
 collision_layer = 3
 script = ExtResource("1_4e04t")
+metadata/_custom_type_script = "uid://cmmcux7byaa2m"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_act2s")

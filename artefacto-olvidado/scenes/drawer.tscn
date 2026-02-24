@@ -33,7 +33,7 @@ rotation = 1.5707964
 texture = ExtResource("3_kj86r")
 
 [node name="LinePlacementSprite" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.49803922)
+modulate = Color(0.5058824, 0.5058824, 0.5058824, 0.49803922)
 z_index = -1
 position = Vector2(60, 0)
 rotation = 1.5707964

@@ -1,14 +1,13 @@
-extends StaticBody2D
+extends DrawnBody
 
 func _ready() -> void:
+	is_permanent = false
+	
 	if rotation != 0:
 		$CollisionShape2D.one_way_collision = false
 
-func be_erased() -> void:
-	queue_free()
-
 func target() -> void:
-	$Sprite2D.modulate = Color(1.0, 0.588, 0.588, 1.0)
+	$Sprite2D.modulate = target_color
 
 func untarget() -> void:
-	$Sprite2D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	$Sprite2D.modulate = regular_color

@@ -14,6 +14,9 @@ var draw_erase_target : DrawnBody
 @onready var lines_node = $"../DrawnLines"
 @onready var draw_erase_area = $DrawEraseArea
 @onready var draw_erase_area_collision = $DrawEraseArea/CollisionShape2D
+@onready var draw_sound : AudioStreamPlayer2D = $DrawSound
+@onready var erase_sound : AudioStreamPlayer2D = $EraseSound
+@onready var jump_sound : AudioStreamPlayer2D = $JumpSound
 
 func _process(delta: float) -> void:
 	
@@ -29,6 +32,7 @@ func _process(delta: float) -> void:
 			if Input.is_action_pressed("down_key"):
 				position.y += 1
 			else:
+				jump_sound.play()
 				velocity.y = JUMP_FORCE
 		
 		# Draw and erase
@@ -83,6 +87,9 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func draw() -> void:
+	
+	draw_sound.play()
+	
 	if draw_erase_target != null and draw_erase_target.get_permanency():
 		draw_erase_target.be_drawn()
 	else:
@@ -93,6 +100,9 @@ func draw() -> void:
 
 func erase() -> void:
 	if draw_erase_target != null:                   # Si hay target, aplicale "borrar"
+		
+		erase_sound.play( )
+		
 		draw_erase_target.be_erased()
 		draw_erase_area_collision.disabled = true   # Pasa a un siguiente target que este en rango
 		draw_erase_area_collision.disabled = false

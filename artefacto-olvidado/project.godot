@@ -56,8 +56,8 @@ down_key={
 [layer_names]
 
 2d_physics/layer_1="UntouchableLayer"
-2d_physics/layer_2="ErasableLayer"
-2d_physics/layer_3="DrawableLayer"
+2d_physics/layer_2="PencilLayer"
+2d_physics/layer_3="PlayerLayer"
 
 [rendering]
 

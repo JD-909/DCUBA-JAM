@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://ckaat16obq4p4"]
+[gd_scene load_steps=11 format=4 uid="uid://ckaat16obq4p4"]
 
 [ext_resource type="Texture2D" uid="uid://bbv2661k3tw5d" path="res://assets/tile_diagonal.png" id="1_t5d6x"]
 [ext_resource type="Texture2D" uid="uid://5isv4yiov0tc" path="res://assets/spritesheet_default.png" id="2_jqjfh"]
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="3_2vmhc"]
 [ext_resource type="PackedScene" uid="uid://d1ys4uxa5wfwf" path="res://scenes/drawer.tscn" id="3_jqjfh"]
+[ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="5_0bg5e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxo6y"]
 texture = ExtResource("2_jqjfh")
@@ -298,10 +299,15 @@ z_index = 1
 tile_map_data = PackedByteArray("AAAIAAkADAAEAAMAAAAJAAkADAAEAAMAAAAKAAkADAAEAAMAAAALAAkADAAEAAMAAAAMAAkADAAEAAMAAAANAAkADAAEAAMAAAAOAAkADAAEAAMAAAAPAAkADAAEAAMAAAAQAAkADAAEAAMAAAARAAkADAAEAAMAAAAIAAQADAAEAAMAAAAIAAUADAAEAAMAAAAIAAYADAAEAAMAAAAIAAcADAAEAAMAAAAIAAgADAAEAAMAAAAKAAQADAAEAAMAAAALAAQADAAEAAMAAAAMAAQADAAEAAMAAAANAAQADAAEAAMAAAAOAAQADAAEAAMAAAAPAAQADAAEAAMAAAAQAAQADAAEAAMAAAARAAQADAAEAAMAAAARAAUADAAEAAMAAAARAAYADAAEAAMAAAARAAcADAAEAAMAAAARAAgADAAEAAMAAAAQAAcADAAEAAMAAAAPAAcADAAEAAMAAAA=")
 tile_set = SubResource("TileSet_jqjfh")
 
-[node name="ExitDoor" parent="TileMap" instance=ExtResource("3_2vmhc")]
-position = Vector2(1056, 416)
-
 [node name="Drawer" parent="." instance=ExtResource("3_jqjfh")]
 position = Vector2(608, 544)
 
 [node name="DrawnLines" type="Node" parent="."]
+
+[node name="PermanentDrawnBodies" type="Node" parent="."]
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" instance=ExtResource("3_2vmhc")]
+position = Vector2(1056, 416)
+
+[node name="SingleSpike" parent="PermanentDrawnBodies" instance=ExtResource("5_0bg5e")]
+position = Vector2(800, 544)

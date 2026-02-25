@@ -94,7 +94,7 @@ func draw() -> void:
 func erase() -> void:
 	if draw_erase_target != null:                   # Si hay target, aplicale "borrar"
 		draw_erase_target.be_erased()
-		draw_erase_area_collision.disabled = true  # Pasa a un siguiente target que este en rango
+		draw_erase_area_collision.disabled = true   # Pasa a un siguiente target que este en rango
 		draw_erase_area_collision.disabled = false
 
 func _on_draw_erase_area_body_entered(body: Node2D) -> void:
@@ -124,3 +124,6 @@ func check_for_permanents() -> void:
 	else:
 		line_placement_sprite.visible = true
 		
+
+func die() -> void:
+	pass

@@ -4,7 +4,7 @@ extends StaticBody2D
 const target_color : Color = Color(1.0, 0.588, 0.588, 1.0)
 const regular_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
-var is_permanent
+@export var is_permanent : bool
 
 func be_drawn() -> void:
 	pass

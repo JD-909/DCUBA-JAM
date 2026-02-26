@@ -4,7 +4,8 @@ const SPEED = 300
 const JUMP_FORCE = -500
 
 var direction : float
-var line_placement_offset = 60
+var line_placement_offset = 59
+var line_placement_offset_down = 36
 var draw_erase_target : DrawnBody
 
 @onready var drawer_sprite = $DrawerSprite
@@ -29,11 +30,8 @@ func _process(delta: float) -> void:
 		
 		# Jump and drop
 		if Input.is_action_just_pressed("jump_key"):
-			if Input.is_action_pressed("down_key"):
-				position.y += 1
-			else:
-				jump_sound.play()
-				velocity.y = JUMP_FORCE
+			jump_sound.play()
+			velocity.y = JUMP_FORCE
 		
 		# Draw and erase
 		if Input.is_action_just_pressed("pencil_key"):
@@ -61,7 +59,7 @@ func _process(delta: float) -> void:
 		draw_erase_area.rotation = - PI/2
 	elif Input.is_action_pressed("down_key"):
 		@warning_ignore("integer_division")
-		line_placement_sprite.position = Vector2(0,line_placement_offset/2 + 5)
+		line_placement_sprite.position = Vector2(0,line_placement_offset_down)
 		line_placement_sprite.rotation = 0
 		draw_erase_area.rotation = PI/2
 	elif drawer_sprite.flip_h:
@@ -136,4 +134,4 @@ func check_for_permanents() -> void:
 		
 
 func die() -> void:
-	pass
+	$"..".restart_level()

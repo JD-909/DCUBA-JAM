@@ -8,9 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://cj2w27yje2yvj" path="res://assets/sonido_borrar.wav" id="6_gq12v"]
 [ext_resource type="AudioStream" uid="uid://bq5iscwdewt4m" path="res://assets/sonido_wah.wav" id="7_rokag"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71w65"]
-radius = 16.0
-height = 62.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq12v"]
+size = Vector2(32, 64)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxo8o"]
 radius = 16.0
@@ -25,7 +24,7 @@ script = ExtResource("1_71w65")
 position_smoothing_enabled = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_71w65")
+shape = SubResource("RectangleShape2D_gq12v")
 
 [node name="DrawerSprite" type="Sprite2D" parent="."]
 z_index = 1
@@ -54,6 +53,7 @@ debug_color = Color(0.6, 0.6, 0.6, 0.41960785)
 
 [node name="DrawSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_84mwe")
+volume_db = 15.0
 max_polyphony = 4
 
 [node name="EraseSound" type="AudioStreamPlayer2D" parent="."]
@@ -62,7 +62,6 @@ max_polyphony = 4
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_rokag")
-volume_db = -5.0
 
 [connection signal="body_entered" from="DrawEraseArea" to="." method="_on_draw_erase_area_body_entered"]
 [connection signal="body_exited" from="DrawEraseArea" to="." method="_on_draw_erase_area_body_exited"]

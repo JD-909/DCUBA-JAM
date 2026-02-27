@@ -2,4 +2,4 @@ extends Node2D
 
 func restart_level() -> void:
 	# Reload the level
-	pass
+	get_tree().call_deferred("reload_current_scene")

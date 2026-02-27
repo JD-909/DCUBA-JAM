@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bq5iscwdewt4m" path="res://assets/sonido_wah.wav" id="7_rokag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq12v"]
-size = Vector2(32, 64)
+size = Vector2(42, 62)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxo8o"]
 radius = 16.0
@@ -20,10 +20,8 @@ z_index = 2
 collision_layer = 5
 script = ExtResource("1_71w65")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-
 [node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gq12v")
 
 [node name="DrawerSprite" type="Sprite2D" parent="."]

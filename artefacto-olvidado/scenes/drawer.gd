@@ -4,7 +4,7 @@ const SPEED = 300
 const JUMP_FORCE = -500
 
 var direction : float
-var line_placement_offset = 59
+var line_placement_offset = 60
 var line_placement_offset_down = 36
 var draw_erase_target : DrawnBody
 

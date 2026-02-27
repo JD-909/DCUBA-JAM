@@ -16,7 +16,6 @@ metadata/_custom_type_script = "uid://de2yx75pg7o4r"
 shape = SubResource("RectangleShape2D_ti4c3")
 
 [node name="Sprites" type="Node2D" parent="."]
-position = Vector2(0, 4)
 
 [node name="DrawnSprite0" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("1_yk4m6")

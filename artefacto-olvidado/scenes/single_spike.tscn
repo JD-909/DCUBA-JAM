@@ -12,6 +12,7 @@ metadata/_custom_type_script = "uid://cmmcux7byaa2m"
 polygon = PackedVector2Array(-32, 32, 0, -32, 32, 32)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.972549, 1, 1, 1)
 position = Vector2(0, 1)
 texture = ExtResource("2_w3h64")
 hframes = 11
@@ -22,6 +23,6 @@ frame = 14
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -24, 32, 32, -32, 32)
+polygon = PackedVector2Array(0, -24, 24, 32, -24, 32)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

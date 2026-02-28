@@ -7,6 +7,7 @@ var direction : float
 var line_placement_offset = 60
 var line_placement_offset_down = 36
 var draw_erase_target : DrawnBody
+var door_to_enter : PermanentDrawnBody
 
 @onready var drawer_sprite = $DrawerSprite
 @onready var pencil_sprite = $PencilSprite
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 	# Gravity
 	velocity.y += get_gravity().y*delta
 	
+	
 	if is_on_floor():
 		
 		check_for_permanents()
@@ -38,6 +40,9 @@ func _process(delta: float) -> void:
 			draw()
 		if Input.is_action_just_pressed("eraser_key"):
 			erase()
+		
+		if Input.is_action_just_pressed("down_key") and door_to_enter != null:
+			door_to_enter.use_door()
 	else:
 		
 		line_placement_sprite.visible = false
@@ -135,3 +140,7 @@ func check_for_permanents() -> void:
 
 func die() -> void:
 	$"..".restart_level()
+
+func change_door(new_door : PermanentDrawnBody) -> void:
+	door_to_enter = new_door
+	print(door_to_enter)

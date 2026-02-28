@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1ualvue8g7f4"]
+[gd_scene load_steps=6 format=3 uid="uid://c1ualvue8g7f4"]
 
 [ext_resource type="Texture2D" uid="uid://jad33lpeto2q" path="res://assets/tile_blockDoor.png" id="1_7sac5"]
 [ext_resource type="Script" uid="uid://de2yx75pg7o4r" path="res://scenes/drawn_door.gd" id="1_lxrmt"]
 [ext_resource type="Texture2D" uid="uid://cw1afedmd8omp" path="res://assets/tile_block.png" id="1_yk4m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ti4c3"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxrmt"]
 size = Vector2(64, 64)
 
 [node name="ExitDoor" type="StaticBody2D"]
@@ -23,3 +26,14 @@ texture = ExtResource("1_yk4m6")
 [node name="DrawnSprite1" type="Sprite2D" parent="Sprites"]
 visible = false
 texture = ExtResource("1_7sac5")
+
+[node name="UseArea" type="Area2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UseArea"]
+shape = SubResource("RectangleShape2D_lxrmt")
+disabled = true
+
+[connection signal="body_entered" from="UseArea" to="." method="_on_use_area_body_entered"]
+[connection signal="body_exited" from="UseArea" to="." method="_on_use_area_body_exited"]

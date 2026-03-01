@@ -1,11 +1,20 @@
-[gd_scene load_steps=10 format=4 uid="uid://ckaat16obq4p4"]
+[gd_scene load_steps=13 format=4 uid="uid://ckaat16obq4p4"]
 
 [ext_resource type="Script" uid="uid://wpatswmta1uo" path="res://scenes/levels/level.gd" id="1_jr7pl"]
 [ext_resource type="Texture2D" uid="uid://dpuu6u7eknn7r" path="res://assets/paperGrid.jpeg" id="2_18ckx"]
+[ext_resource type="Texture2D" uid="uid://cmi1sngtismxf" path="res://assets/tile_bridge.png" id="3_18ckx"]
 [ext_resource type="Texture2D" uid="uid://bbv2661k3tw5d" path="res://assets/tile_diagonal.png" id="3_28ae7"]
 [ext_resource type="Texture2D" uid="uid://5isv4yiov0tc" path="res://assets/spritesheet_default.png" id="4_4g07q"]
 [ext_resource type="PackedScene" uid="uid://d1ys4uxa5wfwf" path="res://scenes/drawer.tscn" id="5_q0ote"]
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="6_41bnu"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="8_28ae7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28ae7"]
+texture = ExtResource("3_18ckx")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -9.031582, -32, -9.031582)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cim0o"]
 texture = ExtResource("3_28ae7")
@@ -141,6 +150,7 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/11 = SubResource("TileSetAtlasSource_cim0o")
 sources/12 = SubResource("TileSetAtlasSource_ok5di")
+sources/0 = SubResource("TileSetAtlasSource_28ae7")
 
 [node name="Demo_level" type="Node2D"]
 script = ExtResource("1_jr7pl")
@@ -202,6 +212,21 @@ position = Vector2(32, 864)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" instance=ExtResource("6_41bnu")]
 position = Vector2(1248, 864)
-is_permanent = null
 
 [node name="Spikes" type="Node" parent="."]
+
+[node name="Text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="BaseLabel" type="Label" parent="Text"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.21906793, 6.565035e-05, 0.80754524, 1)
+theme_override_fonts/font = ExtResource("8_28ae7")
+theme_override_font_sizes/font_size = 24
+
+[node name="Decoraciones" type="Node" parent="."]
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

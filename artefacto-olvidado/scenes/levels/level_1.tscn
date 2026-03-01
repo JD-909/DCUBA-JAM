@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=4 uid="uid://bhiis5xi4dfrb"]
+
+[ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_ksju7"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="2_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="3_6761a"]
+[ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="4_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="6_sk5k4"]
+[ext_resource type="Texture2D" uid="uid://cevabceocecil" path="res://assets/TaTeTi.png" id="7_oc4kc"]
+
+[node name="Demo_level" instance=ExtResource("1_ksju7")]
+
+[node name="TileMap" parent="." index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Control" parent="TileMap" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="PaperBackground" parent="TileMap/Control" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="PaperForeground" parent="TileMap/Control" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Tiles" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAAAAoACwAAAAAAAAABAAoACwAAAAAAAAACAAoACwAAAAAAAAADAAoACwAAAAAAAAAEAAoACwAAAAAAAAAFAAoACwAAAAAAAAAGAAoACwAAAAAAAAAHAAoACwAAAAAAAAAIAAoACwAAAAAAAAAJAAoACwAAAAAAAAAKAAoACwAAAAAAAAALAAoACwAAAAAAAAAMAAoACwAAAAAAAAANAAoACwAAAAAAAAAPAAoACwAAAAAAAAAQAAoACwAAAAAAAAATAAwAAAAAAAAAAAASAAwAAAAAAAAAAAASAAoAAAAAAAAAAAARAAoAAAAAAAAAAAAOAAoACwAAAAAAAAAKAA0ACwAAAAAAAAAKAAsACwAAAAAAAAAFAAUAAAAAAAAAAAAGAAUACwAAAAAAAAAHAAUACwAAAAAAAAAIAAUACwAAAAAAAAAJAAUACwAAAAAAAAAKAAUACwAAAAAAAAALAAUACwAAAAAAAAAMAAUACwAAAAAAAAANAAUACwAAAAAAAAAOAAUACwAAAAAAAAAPAAUACwAAAAAAAAAQAAUACwAAAAAAAAARAAUACwAAAAAAAAASAAUACwAAAAAAAAATAAUACwAAAAAAAAA=")
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(992, 288)
+take_me_to = &"res://scenes/levels/level_select_level.tscn"
+active_sprite = 0
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+visible = false
+
+[node name="DrawnBlock" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_nsrm0")]
+position = Vector2(1056, 864)
+active_sprite = 1
+
+[node name="DrawnBlock2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_nsrm0")]
+position = Vector2(1056, 800)
+active_sprite = 1
+
+[node name="DrawnBlock3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("2_nsrm0")]
+position = Vector2(1056, 736)
+active_sprite = 1
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="4" instance=ExtResource("6_sk5k4")]
+position = Vector2(1152, 216)
+
+[node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("3_6761a")]
+position = Vector2(928, 608)
+
+[node name="SingleSpike2" parent="Spikes" index="1" instance=ExtResource("3_6761a")]
+position = Vector2(864, 608)
+is_pen_drawn = true
+
+[node name="SingleSpike3" parent="Spikes" index="2" instance=ExtResource("4_sk5k4")]
+position = Vector2(992, 608)
+
+[node name="SingleSpike4" parent="Spikes" index="3" instance=ExtResource("4_sk5k4")]
+position = Vector2(800, 608)
+is_pen_drawn = true
+
+[node name="Label" type="Label" parent="Text" index="1"]
+layout_mode = 0
+offset_left = 48.000008
+offset_top = 512.00006
+offset_right = 346.0
+offset_bottom = 641.00006
+rotation = -0.12577239
+theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_6iamk")
+theme_override_font_sizes/font_size = 32
+text = "Imagino que lo notaste, pero 
+igual te digo: podes dibujar
+plataformas con la tecla [E]"
+
+[node name="Label2" type="Label" parent="Text" index="2"]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 784.0
+offset_right = 1088.0
+offset_bottom = 904.0
+theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_6iamk")
+theme_override_font_sizes/font_size = 32
+text = "Se
+borra"
+
+[node name="Label3" type="Label" parent="Text" index="3"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 784.0
+offset_right = 602.0
+offset_bottom = 913.0
+rotation = 0.13191622
+theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_6iamk")
+theme_override_font_sizes/font_size = 32
+text = "Lapicera, no se borra con goma"
+
+[node name="Label4" type="Label" parent="Text" index="4"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 784.0
+offset_right = 1026.0
+offset_bottom = 913.0
+rotation = -0.20018083
+theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_6iamk")
+theme_override_font_sizes/font_size = 32
+text = "Lapiz, con la tecla [Q]
+se puede borrar"
+
+[node name="Label5" type="Label" parent="Text" index="5"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 160.0
+offset_right = 1042.0
+offset_bottom = 289.0
+rotation = 0.13592112
+theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_6iamk")
+theme_override_font_sizes/font_size = 32
+text = "Cuando no hay salida,
+hacemos la salida"
+
+[node name="TaTeTi" type="Sprite2D" parent="Decoraciones" index="0"]
+position = Vector2(216.00012, 159.99997)
+rotation = -0.2847665
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_oc4kc")
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

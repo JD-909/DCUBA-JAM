@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgob6vq665bex"]
+
+[ext_resource type="Script" uid="uid://de2yx75pg7o4r" path="res://scenes/drawn_permanent.gd" id="1_h4q6l"]
+[ext_resource type="Texture2D" uid="uid://d2niwsg821r1l" path="res://assets/AcapellaCard.jpg" id="2_ggvpf"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="3_ggvpf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov54t"]
+size = Vector2(128, 192)
+
+[node name="DrawnBlock" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_h4q6l")
+metadata/_custom_type_script = "uid://de2yx75pg7o4r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ov54t")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="DrawnSprite0" type="Sprite2D" parent="Sprites"]
+
+[node name="DrawnSprite1" type="Sprite2D" parent="Sprites"]
+visible = false
+z_index = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ggvpf")
+
+[node name="Label" type="Label" parent="Sprites/DrawnSprite1"]
+offset_left = -640.0
+offset_top = -760.0
+offset_right = 720.0
+offset_bottom = -357.0
+rotation = -0.112394944
+theme_override_colors/font_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
+theme_override_fonts/font = ExtResource("3_ggvpf")
+theme_override_font_sizes/font_size = 160
+text = "¡UN SECRETO!
+Muy divertido hacer los
+ruiditos"

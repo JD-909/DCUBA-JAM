@@ -1,13 +1,13 @@
 extends DrawnBody
 
+@export var is_pen_drawn : bool = false
+
 func _ready() -> void:
-	is_permanent = false
-
-func target() -> void:
-	$Sprite2D.modulate = target_color
-
-func untarget() -> void:
-	$Sprite2D.modulate = regular_color
+	if is_pen_drawn:
+		is_permanent = true
+		$Sprite2D.modulate = Color8(183,183,255)
+	else:
+		is_permanent = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -7,7 +7,8 @@
 size = Vector2(64, 8)
 
 [node name="DrawnPlatform" type="StaticBody2D"]
-modulate = Color(0.50534403, 0.5053441, 0.50534403, 1)
+modulate = Color(0.5058824, 0.5058824, 0.5058824, 0.8627451)
+z_index = 1
 collision_layer = 3
 script = ExtResource("1_4e04t")
 metadata/_custom_type_script = "uid://cmmcux7byaa2m"

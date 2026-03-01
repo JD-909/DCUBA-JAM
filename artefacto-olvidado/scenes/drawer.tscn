@@ -16,7 +16,7 @@ radius = 16.0
 height = 80.0
 
 [node name="Drawer" type="CharacterBody2D"]
-z_index = 2
+z_index = 3
 collision_layer = 5
 script = ExtResource("1_71w65")
 

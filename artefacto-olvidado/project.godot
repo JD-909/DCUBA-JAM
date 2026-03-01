@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Artefacto Olvidado"
-run/main_scene="uid://ckaat16obq4p4"
+run/main_scene="uid://e7k65j061cnp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 

@@ -162,6 +162,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="PaperBackground" type="TextureRect" parent="TileMap/Control"]
 layout_mode = 1
@@ -178,6 +180,8 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
 texture = ExtResource("2_18ckx")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="PaperForeground" type="TextureRect" parent="TileMap/Control"]
 modulate = Color(1, 1, 1, 0.3372549)
@@ -196,6 +200,8 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
 texture = ExtResource("2_18ckx")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Tiles" type="TileMapLayer" parent="TileMap"]
 modulate = Color(0.71829075, 0.7167233, 0.99999994, 1)
@@ -212,6 +218,24 @@ position = Vector2(32, 864)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" instance=ExtResource("6_41bnu")]
 position = Vector2(1248, 864)
+
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/ExitDoor" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Sprites" parent="PermanentDrawnBodies/ExitDoor" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="DrawnSprite0" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="UseArea" parent="PermanentDrawnBodies/ExitDoor" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/ExitDoor/UseArea" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="Spikes" type="Node" parent="."]
 

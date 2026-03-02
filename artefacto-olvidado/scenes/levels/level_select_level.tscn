@@ -21,7 +21,7 @@ take_me_to = &"res://scenes/levels/level_1.tscn"
 
 [node name="DoorLevel2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_l0qd2")]
 position = Vector2(544, 672)
-take_me_to = &"res://scenes/levels/level_1.tscn"
+take_me_to = &"res://scenes/levels/level_2.tscn"
 
 [node name="FlechaDibu1" type="Sprite2D" parent="Decoraciones" index="0"]
 position = Vector2(1176, 720)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://ban8bej255k24"]
+[gd_scene load_steps=4 format=4 uid="uid://ban8bej255k24"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_pb7sa"]
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="2_l0qd2"]
+[ext_resource type="Texture2D" uid="uid://d2ghye6yyfv8n" path="res://assets/FlechaDibu1.png" id="3_kcyoc"]
 
 [node name="Level_select_level" instance=ExtResource("1_pb7sa")]
 
@@ -17,3 +18,25 @@ position = Vector2(32, 864)
 [node name="DoorLevel1" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_l0qd2")]
 position = Vector2(480, 864)
 take_me_to = &"res://scenes/levels/level_1.tscn"
+
+[node name="FlechaDibu1" type="Sprite2D" parent="Decoraciones" index="0"]
+position = Vector2(1176, 720)
+scale = Vector2(2, 2)
+texture = ExtResource("3_kcyoc")
+flip_h = true
+flip_v = true
+
+[node name="FlechaDibu2" type="Sprite2D" parent="Decoraciones" index="1"]
+position = Vector2(144, 464)
+scale = Vector2(2, 2)
+texture = ExtResource("3_kcyoc")
+flip_v = true
+
+[node name="FlechaDibu3" type="Sprite2D" parent="Decoraciones" index="2"]
+position = Vector2(1176, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("3_kcyoc")
+flip_h = true
+flip_v = true
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

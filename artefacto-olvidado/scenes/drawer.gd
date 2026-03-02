@@ -28,24 +28,22 @@ func _process(delta: float) -> void:
 	
 	if is_on_floor():
 		
-		check_for_permanents()
-		
 		# Jump and drop
 		if Input.is_action_just_pressed("jump_key"):
 			jump_sound.play()
 			velocity.y = JUMP_FORCE
-		
-		# Draw and erase
-		if Input.is_action_just_pressed("pencil_key"):
-			draw()
-		if Input.is_action_just_pressed("eraser_key"):
-			erase()
-		
-		if Input.is_action_just_pressed("down_key") and door_to_enter != null:
-			door_to_enter.use_door()
-	else:
-		
-		line_placement_sprite.visible = false
+	
+	# Check if any permanets are in range
+	check_for_permanents()
+	
+	# Draw and erase
+	if Input.is_action_just_pressed("pencil_key"):
+		draw()
+	if Input.is_action_just_pressed("eraser_key"):
+		erase()
+	
+	if Input.is_action_just_pressed("down_key") and door_to_enter != null:
+		door_to_enter.use_door()
 	
 	# Move handler
 	direction = Input.get_axis("left_key", "right_key")
@@ -67,6 +65,9 @@ func _process(delta: float) -> void:
 		line_placement_sprite.position = Vector2(0,line_placement_offset_down)
 		line_placement_sprite.rotation = 0
 		draw_erase_area.rotation = PI/2
+		pencil_sprite.flip_v = false
+		pencil_sprite.position = Vector2(0,8)
+		pencil_sprite.rotation = PI
 	elif drawer_sprite.flip_h:
 		line_placement_sprite.position = Vector2(-line_placement_offset,0)
 		line_placement_sprite.rotation = PI/2

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://07x6egnoq8en"]
+
+[ext_resource type="Script" uid="uid://c4yubxwstcxg2" path="res://scenes/bow.gd" id="1_prjx1"]
+[ext_resource type="Texture2D" uid="uid://b4s4pm33fckfh" path="res://assets/item_bow.png" id="2_rivji"]
+[ext_resource type="AudioStream" uid="uid://bq5iscwdewt4m" path="res://assets/sonido_wah.wav" id="3_rivji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atxj4"]
+size = Vector2(32, 80)
+
+[node name="Bow" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_prjx1")
+active_sprite = 1
+metadata/_custom_type_script = "uid://de2yx75pg7o4r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_atxj4")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="DrawnSprite0" type="Sprite2D" parent="Sprites"]
+
+[node name="DrawnSprite1" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_rivji")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rivji")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

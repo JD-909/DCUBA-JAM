@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwhd3ysi7t5ns"]
+
+[ext_resource type="Script" uid="uid://b044ifpn14sd8" path="res://arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://cymnfnkki3guh" path="res://assets/item_arrow.png" id="2_q8ifc"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ckq1"]
+a = Vector2(-24, 0)
+b = Vector2(16, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_23jat"]
+a = Vector2(24, 0)
+b = Vector2(16, 0)
+
+[node name="Arrow" type="CharacterBody2D"]
+script = ExtResource("1_23jat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_7ckq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q8ifc")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_23jat")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

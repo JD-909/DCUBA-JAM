@@ -143,4 +143,3 @@ func die() -> void:
 
 func change_door(new_door : PermanentDrawnBody) -> void:
 	door_to_enter = new_door
-	print(door_to_enter)

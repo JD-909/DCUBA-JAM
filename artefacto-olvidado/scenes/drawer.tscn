@@ -56,10 +56,12 @@ max_polyphony = 4
 
 [node name="EraseSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_gq12v")
+volume_db = 10.0
 max_polyphony = 4
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_rokag")
+volume_db = 5.0
 
 [connection signal="body_entered" from="DrawEraseArea" to="." method="_on_draw_erase_area_body_entered"]
 [connection signal="body_exited" from="DrawEraseArea" to="." method="_on_draw_erase_area_body_exited"]

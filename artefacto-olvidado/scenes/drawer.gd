@@ -12,7 +12,7 @@ var door_to_enter : PermanentDrawnBody
 @onready var drawer_sprite = $DrawerSprite
 @onready var pencil_sprite = $PencilSprite
 @onready var line_placement_sprite = $LinePlacementSprite
-@onready var drawn_line = load("res://scenes/drawn_platform.tscn")
+@onready var drawn_line : Resource = load("res://scenes/drawn_platform.tscn")
 @onready var lines_node = $"../DrawnLines"
 @onready var draw_erase_area = $DrawEraseArea
 @onready var draw_erase_area_collision = $DrawEraseArea/CollisionShape2D

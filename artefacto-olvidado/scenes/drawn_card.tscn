@@ -1,15 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgob6vq665bex"]
 
-[ext_resource type="Script" uid="uid://de2yx75pg7o4r" path="res://scenes/drawn_permanent.gd" id="1_h4q6l"]
+[ext_resource type="Script" uid="uid://bta2dh1rpqco3" path="res://scenes/drawn_card.gd" id="1_ggvpf"]
 [ext_resource type="Texture2D" uid="uid://d2niwsg821r1l" path="res://assets/AcapellaCard.jpg" id="2_ggvpf"]
 [ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="3_ggvpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov54t"]
 size = Vector2(128, 192)
 
-[node name="DrawnBlock" type="StaticBody2D"]
+[node name="DrawnCard" type="StaticBody2D"]
 collision_layer = 2
-script = ExtResource("1_h4q6l")
+script = ExtResource("1_ggvpf")
+is_permanent = true
 metadata/_custom_type_script = "uid://de2yx75pg7o4r"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

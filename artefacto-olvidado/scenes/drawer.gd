@@ -8,6 +8,7 @@ var line_placement_offset = 60
 var line_placement_offset_down = 36
 var draw_erase_target : DrawnBody
 var door_to_enter : PermanentDrawnBody
+var stop : bool = false
 
 @onready var drawer_sprite = $DrawerSprite
 @onready var pencil_sprite = $PencilSprite
@@ -16,79 +17,80 @@ var door_to_enter : PermanentDrawnBody
 @onready var lines_node = $"../DrawnLines"
 @onready var draw_erase_area = $DrawEraseArea
 @onready var draw_erase_area_collision = $DrawEraseArea/CollisionShape2D
+@onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var draw_sound : AudioStreamPlayer2D = $DrawSound
 @onready var erase_sound : AudioStreamPlayer2D = $EraseSound
 @onready var jump_sound : AudioStreamPlayer2D = $JumpSound
+@onready var death_sound : AudioStreamPlayer2D = $DeathSound
 
 func _process(delta: float) -> void:
 	
 	# Gravity
 	velocity.y += get_gravity().y*delta
 	
-	
-	if is_on_floor():
+	if not stop:
+		if is_on_floor():
+			
+			# Jump and drop
+			if Input.is_action_just_pressed("jump_key"):
+				jump_sound.play()
+				velocity.y = JUMP_FORCE
 		
-		# Jump and drop
-		if Input.is_action_just_pressed("jump_key"):
-			jump_sound.play()
-			velocity.y = JUMP_FORCE
-	
-	# Check if any permanets are in range
-	check_for_permanents()
-	
-	# Draw and erase
-	if Input.is_action_just_pressed("pencil_key"):
-		draw()
-	if Input.is_action_just_pressed("eraser_key"):
-		erase()
-	
-	if Input.is_action_just_pressed("down_key") and door_to_enter != null:
-		door_to_enter.use_door()
-	
-	# Move handler
-	direction = Input.get_axis("left_key", "right_key")
-	velocity.x = direction*SPEED
-	
-	# Sprite and area handling
-	if Input.is_action_pressed("up_key"):
-		# Line placement indicator
-		line_placement_sprite.position = Vector2(0,-line_placement_offset)
-		line_placement_sprite.rotation = 0
-		# Pencil sprite
-		pencil_sprite.flip_v = false
-		pencil_sprite.position = Vector2(0,-16)
-		pencil_sprite.rotation = 0
-		# Draw and erase area
-		draw_erase_area.rotation = - PI/2
-	elif Input.is_action_pressed("down_key"):
-		@warning_ignore("integer_division")
-		line_placement_sprite.position = Vector2(0,line_placement_offset_down)
-		line_placement_sprite.rotation = 0
-		draw_erase_area.rotation = PI/2
-		pencil_sprite.flip_v = false
-		pencil_sprite.position = Vector2(0,8)
-		pencil_sprite.rotation = PI
-	elif drawer_sprite.flip_h:
-		line_placement_sprite.position = Vector2(-line_placement_offset,0)
-		line_placement_sprite.rotation = PI/2
-		pencil_sprite.flip_v = true
-		pencil_sprite.position = Vector2(-16,0)
-		pencil_sprite.rotation = PI/2
-		draw_erase_area.rotation = PI
-	else:
-		line_placement_sprite.position = Vector2(line_placement_offset,0)
-		line_placement_sprite.rotation = PI/2
-		pencil_sprite.flip_v = false
-		pencil_sprite.position = Vector2(16,0)
-		pencil_sprite.rotation = PI/2
-		draw_erase_area.rotation = 0
-	
-	if direction == -1:
-		drawer_sprite.flip_h = true
-	elif direction == 1:
-		drawer_sprite.flip_h = false
-	
-	move_and_slide()
+		# Check if any permanets are in range
+		check_for_permanents()
+		
+		# Draw and erase
+		if Input.is_action_just_pressed("pencil_key"):
+			draw()
+		if Input.is_action_just_pressed("eraser_key"):
+			erase()
+		
+		if Input.is_action_just_pressed("down_key") and door_to_enter != null:
+			door_to_enter.use_door()
+			stop = true
+			
+		
+		# Move handler
+		direction = Input.get_axis("left_key", "right_key")
+		velocity.x = direction*SPEED
+		
+		# Sprite and area handling
+		if Input.is_action_pressed("up_key"):
+			# Line placement indicator
+			line_placement_sprite.position = Vector2(0,-line_placement_offset)
+			line_placement_sprite.rotation = 0
+			# Pencil sprite
+			pencil_sprite.flip_v = false
+			pencil_sprite.position = Vector2(0,-16)
+			pencil_sprite.rotation = 0
+			# Draw and erase area
+			draw_erase_area.rotation = - PI/2
+		elif Input.is_action_pressed("down_key") and is_on_floor():
+			@warning_ignore("integer_division")
+			line_placement_sprite.position = Vector2(0,line_placement_offset_down)
+			line_placement_sprite.rotation = 0
+			draw_erase_area.rotation = PI/2
+		elif drawer_sprite.flip_h:
+			line_placement_sprite.position = Vector2(-line_placement_offset,0)
+			line_placement_sprite.rotation = PI/2
+			pencil_sprite.flip_v = true
+			pencil_sprite.position = Vector2(-16,0)
+			pencil_sprite.rotation = PI/2
+			draw_erase_area.rotation = PI
+		else:
+			line_placement_sprite.position = Vector2(line_placement_offset,0)
+			line_placement_sprite.rotation = PI/2
+			pencil_sprite.flip_v = false
+			pencil_sprite.position = Vector2(16,0)
+			pencil_sprite.rotation = PI/2
+			draw_erase_area.rotation = 0
+		
+		if direction == -1:
+			drawer_sprite.flip_h = true
+		elif direction == 1:
+			drawer_sprite.flip_h = false
+		
+		move_and_slide()
 
 func draw() -> void:
 	
@@ -140,7 +142,14 @@ func check_for_permanents() -> void:
 		
 
 func die() -> void:
-	$"..".restart_level()
+	stop= true
+	death_sound.play()
+	animation.play("dissappear")
+
 
 func change_door(new_door : PermanentDrawnBody) -> void:
 	door_to_enter = new_door
+
+
+func _on_death_sound_finished() -> void:
+	$"..".restart_level()

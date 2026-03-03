@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwhd3ysi7t5ns"]
+[gd_scene load_steps=6 format=3 uid="uid://bwhd3ysi7t5ns"]
 
 [ext_resource type="Script" uid="uid://b044ifpn14sd8" path="res://scenes/arrow.gd" id="1_23jat"]
 [ext_resource type="Texture2D" uid="uid://cymnfnkki3guh" path="res://assets/item_arrow.png" id="2_q8ifc"]
+[ext_resource type="AudioStream" uid="uid://bg6hbj4ouekg4" path="res://assets/sonido_pega.wav" id="3_q8ifc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7ckq1"]
 a = Vector2(-24, 0)
@@ -12,6 +13,7 @@ a = Vector2(24, 0)
 b = Vector2(16, 0)
 
 [node name="Arrow" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_23jat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,4 +28,8 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("SegmentShape2D_23jat")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_q8ifc")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1ys4uxa5wfwf"]
+[gd_scene load_steps=16 format=3 uid="uid://d1ys4uxa5wfwf"]
 
 [ext_resource type="Script" uid="uid://dbbaifw2q82w1" path="res://scenes/drawer.gd" id="1_71w65"]
 [ext_resource type="Texture2D" uid="uid://cgvwrjndd18v1" path="res://assets/character_roundRed.png" id="1_qe6j5"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://cj2w27yje2yvj" path="res://assets/sonido_borrar.wav" id="6_gq12v"]
 [ext_resource type="AudioStream" uid="uid://bq5iscwdewt4m" path="res://assets/sonido_wah.wav" id="7_rokag"]
 [ext_resource type="AudioStream" uid="uid://bfo7g41ndc47t" path="res://assets/sonido_woo.wav" id="8_rokag"]
+[ext_resource type="AudioStream" uid="uid://c7seqk4rftwkp" path="res://assets/sonido_cling.wav" id="9_8wanr"]
+[ext_resource type="AudioStream" uid="uid://c0dto8vdu16ce" path="res://assets/sonido_llave_puerta.wav" id="10_x262c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq12v"]
 size = Vector2(42, 62)
@@ -15,6 +17,57 @@ size = Vector2(42, 62)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxo8o"]
 radius = 16.0
 height = 80.0
+
+[sub_resource type="Animation" id="Animation_8wanr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DrawerSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PencilSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LinePlacementSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.5058824, 0.5058824, 0.5058824, 0.49803922)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_4er40"]
 resource_name = "dissappear"
@@ -54,44 +107,17 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0.5058824, 0.5058824, 0.5058824, 0.49803922), Color(0.5058824, 0.5058824, 0.5058824, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_8wanr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DrawerSprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PencilSprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LinePlacementSprite:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.5058824, 0.5058824, 0.5058824, 0.49803922)]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x262c"]
@@ -150,6 +176,12 @@ volume_db = 5.0
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_rokag")
+
+[node name="KeySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8wanr")
+
+[node name="UnlockSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_x262c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

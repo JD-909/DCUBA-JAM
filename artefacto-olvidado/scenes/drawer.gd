@@ -6,6 +6,7 @@ const JUMP_FORCE = -500
 var direction : float
 var line_placement_offset = 60
 var line_placement_offset_down = 36
+var keys : int = 0
 var draw_erase_target : DrawnBody
 var door_to_enter : PermanentDrawnBody
 var stop : bool = false
@@ -22,6 +23,8 @@ var stop : bool = false
 @onready var erase_sound : AudioStreamPlayer2D = $EraseSound
 @onready var jump_sound : AudioStreamPlayer2D = $JumpSound
 @onready var death_sound : AudioStreamPlayer2D = $DeathSound
+@onready var key_sound : AudioStreamPlayer2D = $KeySound
+@onready var unlock_sound : AudioStreamPlayer2D = $UnlockSound
 
 func _process(delta: float) -> void:
 	
@@ -29,6 +32,10 @@ func _process(delta: float) -> void:
 	velocity.y += get_gravity().y*delta
 	
 	if not stop:
+		
+		if Input.is_action_just_pressed("restart_key"):
+			die()
+		
 		if is_on_floor():
 			
 			# Jump and drop
@@ -128,6 +135,17 @@ func _on_draw_erase_area_body_exited(body: Node2D) -> void:
 		draw_erase_target.untarget()
 		draw_erase_target = null
 
+func get_key() -> void:
+	key_sound.play()
+	keys += 1
+
+func check_for_key() -> bool:
+	if keys > 0:
+		keys -= 1
+		unlock_sound.play()
+		return true
+	else:
+		return false
 
 func check_for_permanents() -> void:
 	
@@ -141,15 +159,13 @@ func check_for_permanents() -> void:
 		line_placement_sprite.visible = true
 		
 
+func change_door(new_door : PermanentDrawnBody) -> void:
+	door_to_enter = new_door
+
 func die() -> void:
 	stop= true
 	death_sound.play()
 	animation.play("dissappear")
-
-
-func change_door(new_door : PermanentDrawnBody) -> void:
-	door_to_enter = new_door
-
 
 func _on_death_sound_finished() -> void:
 	$"..".restart_level()

@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=4 uid="uid://bdotujp6m75nb"]
+
+[ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_06474"]
+[ext_resource type="PackedScene" uid="uid://07x6egnoq8en" path="res://scenes/bow.tscn" id="2_vmkp1"]
+[ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_anwe6"]
+[ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="3_ogj6a"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="4_5vn0v"]
+[ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="4_anwe6"]
+[ext_resource type="Texture2D" uid="uid://cwifm3uqcaom8" path="res://assets/PlatinadoCard.jpg" id="5_ts8eg"]
+[ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="8_um320"]
+[ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="9_glw47"]
+
+[node name="Demo_level" instance=ExtResource("1_06474")]
+
+[node name="Tiles" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAQAAoACwAAAAAAAAAQAAMACwAAAAAAAAADAAMACwAAAAAAAAAHAAoACwAAAAAAAAAIAAoACwAAAAAAAAAJAAoACwAAAAAAAAAKAAoACwAAAAAAAAALAAoACwAAAAAAAAAMAAoACwAAAAAAAAANAAoACwAAAAAAAAAOAAoACwAAAAAAAAAPAAoACwAAAAAAAAAPAAMACwAAAAAAAAAOAAMACwAAAAAAAAANAAMACwAAAAAAAAAMAAMACwAAAAAAAAALAAMACwAAAAAAAAAKAAMACwAAAAAAAAAJAAMACwAAAAAAAAAIAAMACwAAAAAAAAAHAAMACwAAAAAAAAAGAAMACwAAAAAAAAAFAAMACwAAAAAAAAAEAAMACwAAAAAAAAADAAkACwAAAAAAAAADAAgACwAAAAAAAAADAAcACwAAAAAAAAADAAYACwAAAAAAAAADAAUACwAAAAAAAAADAAQACwAAAAAAAAAQAAQACwAAAAAAAAAQAAUACwAAAAAAAAAQAAYACwAAAAAAAAAQAAcACwAAAAAAAAAQAAgACwAAAAAAAAAQAAkACwAAAAAAAAAAAAMACwAAAAAAAAABAAMACwAAAAAAAAACAAMACwAAAAAAAAATAAsAAAAAAAAAAAASAAwAAAAAAAAAAAARAAkAAAAAAAAAAAATAAcAAAAAAAAAAAARAAUAAAAAAAAAAAATAAMAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAJAAkACwAAAAAAAAAJAAgACwAAAAAAAAA=")
+
+[node name="Drawer" parent="." index="2"]
+position = Vector2(328, 560)
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(992, 608)
+take_me_to = &"res://scenes/levels/level_select_level.tscn"
+active_sprite = 0
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+visible = false
+
+[node name="Bow" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_vmkp1")]
+position = Vector2(224, 160)
+
+[node name="Bow2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_vmkp1")]
+position = Vector2(1184, 864)
+rotation = -1.5707964
+direction = Vector2(0, -1)
+
+[node name="Bow3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("2_vmkp1")]
+position = Vector2(1120, 864)
+rotation = 3.1415927
+direction = Vector2(-1, 0)
+
+[node name="Bow4" parent="PermanentDrawnBodies" index="4" instance=ExtResource("2_vmkp1")]
+position = Vector2(984, 352)
+rotation = 3.1415927
+direction = Vector2(-1, 0)
+
+[node name="Bow5" parent="PermanentDrawnBodies" index="5" instance=ExtResource("2_vmkp1")]
+position = Vector2(992, 288)
+rotation = 3.1415927
+direction = Vector2(-1, 0)
+
+[node name="Bow6" parent="PermanentDrawnBodies" index="6" instance=ExtResource("2_vmkp1")]
+position = Vector2(864, 288)
+rotation = 1.5707964
+direction = Vector2(0, 1)
+
+[node name="Bow7" parent="PermanentDrawnBodies" index="7" instance=ExtResource("2_vmkp1")]
+position = Vector2(800, 352)
+rotation = 1.5707964
+direction = Vector2(0, 1)
+
+[node name="Bow8" parent="PermanentDrawnBodies" index="8" instance=ExtResource("2_vmkp1")]
+position = Vector2(728, 416)
+rotation = 1.5707964
+direction = Vector2(0, 1)
+
+[node name="DrawnBlock" parent="PermanentDrawnBodies" index="9" instance=ExtResource("3_anwe6")]
+position = Vector2(288, 672)
+
+[node name="DrawnBlock2" parent="PermanentDrawnBodies" index="10" instance=ExtResource("3_anwe6")]
+position = Vector2(416, 672)
+
+[node name="DrawnBlock3" parent="PermanentDrawnBodies" index="11" instance=ExtResource("3_anwe6")]
+position = Vector2(352, 672)
+
+[node name="DrawnBlock4" parent="PermanentDrawnBodies" index="12" instance=ExtResource("3_anwe6")]
+position = Vector2(224, 672)
+active_sprite = 0
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="13" instance=ExtResource("4_5vn0v")]
+position = Vector2(96, 504)
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+visible = true
+texture = ExtResource("5_ts8eg")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+offset_left = -680.0
+offset_top = -1240.0
+offset_right = 680.0
+offset_bottom = -634.0
+rotation = -0.0015365705
+text = "¡UN SECRETO!
+Este deberia ser
+el ultimo"
+horizontal_alignment = 1
+
+[node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("3_ogj6a")]
+position = Vector2(672, 160)
+
+[node name="SingleSpike4" parent="Spikes" index="1" instance=ExtResource("3_ogj6a")]
+position = Vector2(224, 864)
+is_pen_drawn = true
+
+[node name="SingleSpike2" parent="Spikes" index="2" instance=ExtResource("4_anwe6")]
+position = Vector2(480, 160)
+
+[node name="SingleSpike5" parent="Spikes" index="3" instance=ExtResource("4_anwe6")]
+position = Vector2(544, 544)
+rotation = -1.5707964
+is_pen_drawn = true
+
+[node name="SingleSpike6" parent="Spikes" index="4" instance=ExtResource("4_anwe6")]
+position = Vector2(544, 608)
+rotation = -1.5707964
+is_pen_drawn = true
+
+[node name="SingleSpike3" parent="Spikes" index="5" instance=ExtResource("4_anwe6")]
+position = Vector2(864, 160)
+
+[node name="KeyItem" parent="LocksAndKeys" index="0" instance=ExtResource("8_um320")]
+position = Vector2(320, 320)
+
+[node name="LockBlock" parent="LocksAndKeys" index="1" instance=ExtResource("9_glw47")]
+position = Vector2(992, 608)
+
+[editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=4 uid="uid://cryqpb5bgupno"]
+
+[ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_44gv1"]
+[ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="2_0ljxa"]
+[ext_resource type="PackedScene" uid="uid://07x6egnoq8en" path="res://scenes/bow.tscn" id="2_0qepi"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="3_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="4_fmg3e"]
+[ext_resource type="Texture2D" uid="uid://71c6kr6plqh" path="res://assets/BinarioCard.jpg" id="4_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="5_ftfob"]
+
+[node name="Demo_level" instance=ExtResource("1_44gv1")]
+
+[node name="Tiles" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAcACwAAAAAAAAABAAcACwAAAAAAAAACAAcACwAAAAAAAAADAAcACwAAAAAAAAAEAAcACwAAAAAAAAAEAAMACwAAAAAAAAADAAMACwAAAAAAAAACAAMACwAAAAAAAAAAAAMACwAAAAAAAAAHAAcACwAAAAAAAAAJAAcACwAAAAAAAAAHAAMACwAAAAAAAAAIAAMACwAAAAAAAAAIAAQACwAAAAAAAAAIAAUACwAAAAAAAAAKAAcACwAAAAAAAAALAAcACwAAAAAAAAAFAAMACwAAAAAAAAAGAAMACwAAAAAAAAAGAAcACwAAAAAAAAAFAAcACwAAAAAAAAAFAAIACwAAAAAAAAAFAAEACwAAAAAAAAAJAAMACwAAAAAAAAAKAAMACwAAAAAAAAAKAAIACwAAAAAAAAAMAAIACwAAAAAAAAAMAAMACwAAAAAAAAALAAMACwAAAAAAAAANAAMACwAAAAAAAAAOAAMACwAAAAAAAAAPAAMACwAAAAAAAAAQAAMACwAAAAAAAAARAAMACwAAAAAAAAASAAMACwAAAAAAAAATAAMACwAAAAAAAAAFAAkACwAAAAAAAAAFAAoACwAAAAAAAAAFAAsACwAAAAAAAAAFAAwACwAAAAAAAAAKAAkACwAAAAAAAAAKAAoACwAAAAAAAAAKAAsACwAAAAAAAAAKAAwACwAAAAAAAAAPAAkACwAAAAAAAAAPAAoACwAAAAAAAAAPAAsACwAAAAAAAAAPAAwACwAAAAAAAAAAAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAGAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAALAAwAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAAEAAkAAAAAAAAAAAA=")
+
+[node name="Drawer" parent="." index="2"]
+position = Vector2(72, 416)
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(1184, 160)
+take_me_to = &"res://scenes/levels/level_select_level.tscn"
+active_sprite = 0
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+visible = false
+
+[node name="Bow" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_0qepi")]
+position = Vector2(32, 864)
+
+[node name="Bow2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_0qepi")]
+position = Vector2(1256, 544)
+rotation = 3.1415927
+direction = Vector2(-1, 0)
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="3" instance=ExtResource("3_fkk1g")]
+position = Vector2(256, 704)
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+texture = ExtResource("4_ugcn1")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+offset_left = -1039.9999
+offset_top = -799.99994
+offset_right = 320.00012
+offset_bottom = 9.000061
+rotation = 0.121877685
+text = "¡UN SECRETO!
+Borrar y dibujar
+cuenta como
+binario, no?"
+
+[node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("2_0ljxa")]
+position = Vector2(544, 480)
+
+[node name="SingleSpike2" parent="Spikes" index="1" instance=ExtResource("2_0ljxa")]
+position = Vector2(416, 160)
+is_pen_drawn = true
+
+[node name="SingleSpike3" parent="Spikes" index="2" instance=ExtResource("2_0ljxa")]
+position = Vector2(736, 160)
+is_pen_drawn = true
+
+[node name="SingleSpike4" parent="Spikes" index="3" instance=ExtResource("2_0ljxa")]
+position = Vector2(736, 32)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="KeyItem" parent="LocksAndKeys" index="0" instance=ExtResource("4_fmg3e")]
+position = Vector2(1152, 664)
+
+[node name="KeyItem2" parent="LocksAndKeys" index="1" instance=ExtResource("4_fmg3e")]
+position = Vector2(736, 736)
+
+[node name="KeyItem3" parent="LocksAndKeys" index="2" instance=ExtResource("4_fmg3e")]
+position = Vector2(608, 736)
+
+[node name="KeyItem4" parent="LocksAndKeys" index="3" instance=ExtResource("4_fmg3e")]
+position = Vector2(288, 544)
+
+[node name="LockBlock" parent="LocksAndKeys" index="4" instance=ExtResource("5_ftfob")]
+position = Vector2(96, 224)
+
+[node name="LockBlock2" parent="LocksAndKeys" index="5" instance=ExtResource("5_ftfob")]
+position = Vector2(352, 32)
+
+[node name="LockBlock3" parent="LocksAndKeys" index="6" instance=ExtResource("5_ftfob")]
+position = Vector2(800, 96)
+
+[node name="LockBlock4" parent="LocksAndKeys" index="7" instance=ExtResource("5_ftfob")]
+position = Vector2(1184, 160)
+
+[editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

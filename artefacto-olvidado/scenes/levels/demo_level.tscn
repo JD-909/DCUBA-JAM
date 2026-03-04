@@ -223,10 +223,13 @@ position = Vector2(32, 864)
 [node name="ExitDoor" parent="PermanentDrawnBodies" instance=ExtResource("6_41bnu")]
 position = Vector2(1248, 864)
 
-[node name="CollisionShape2D" parent="PermanentDrawnBodies/ExitDoor" index="0"]
+[node name="ExitDoorSound" parent="PermanentDrawnBodies/ExitDoor" index="0"]
 metadata/_edit_lock_ = true
 
-[node name="Sprites" parent="PermanentDrawnBodies/ExitDoor" index="1"]
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/ExitDoor" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Sprites" parent="PermanentDrawnBodies/ExitDoor" index="2"]
 metadata/_edit_lock_ = true
 
 [node name="DrawnSprite0" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="0"]
@@ -235,13 +238,15 @@ metadata/_edit_lock_ = true
 [node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
 metadata/_edit_lock_ = true
 
-[node name="UseArea" parent="PermanentDrawnBodies/ExitDoor" index="2"]
+[node name="UseArea" parent="PermanentDrawnBodies/ExitDoor" index="3"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="PermanentDrawnBodies/ExitDoor/UseArea" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="Spikes" type="Node" parent="."]
+
+[node name="LocksAndKeys" type="Node" parent="."]
 
 [node name="Text" type="Control" parent="."]
 layout_mode = 3
@@ -251,7 +256,7 @@ anchors_preset = 0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.21906793, 6.565035e-05, 0.80754524, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_28ae7")
 theme_override_font_sizes/font_size = 32
 

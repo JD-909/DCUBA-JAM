@@ -10,7 +10,7 @@
 
 [node name="Demo_level" instance=ExtResource("1_ksju7")]
 
-[node name="TileMap" parent="." index="0"]
+[node name="TileMap" parent="." index="1"]
 metadata/_edit_lock_ = true
 
 [node name="Tiles" parent="TileMap" index="1"]
@@ -60,7 +60,7 @@ offset_top = 528.00006
 offset_right = 410.0
 offset_bottom = 657.00006
 rotation = -0.12577239
-theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6iamk")
 theme_override_font_sizes/font_size = 32
 text = "Podes dibujar plataformas
@@ -72,7 +72,7 @@ offset_left = 1032.0
 offset_top = 784.0
 offset_right = 1088.0
 offset_bottom = 904.0
-theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6iamk")
 theme_override_font_sizes/font_size = 32
 text = "Se
@@ -85,7 +85,7 @@ offset_top = 784.0
 offset_right = 602.0
 offset_bottom = 913.0
 rotation = 0.13191622
-theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6iamk")
 theme_override_font_sizes/font_size = 32
 text = "Lapicera, no se borra con goma"
@@ -97,7 +97,7 @@ offset_top = 784.0
 offset_right = 1026.0
 offset_bottom = 913.0
 rotation = -0.20018083
-theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6iamk")
 theme_override_font_sizes/font_size = 32
 text = "Lapiz, con la tecla [Q]
@@ -110,7 +110,7 @@ offset_top = 160.0
 offset_right = 1042.0
 offset_bottom = 289.0
 rotation = 0.13592112
-theme_override_colors/font_color = Color(0.21960784, 0, 0.80784315, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6iamk")
 theme_override_font_sizes/font_size = 32
 text = "Cuando no hay salida,

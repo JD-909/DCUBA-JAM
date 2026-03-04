@@ -9,6 +9,7 @@ size = Vector2(64, 64)
 [node name="DrawnBlock" type="StaticBody2D"]
 collision_layer = 3
 script = ExtResource("1_f2rxs")
+active_sprite = 1
 metadata/_custom_type_script = "uid://de2yx75pg7o4r"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

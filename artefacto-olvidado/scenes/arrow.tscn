@@ -8,9 +8,8 @@
 a = Vector2(-24, 0)
 b = Vector2(16, 0)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_23jat"]
-a = Vector2(24, 0)
-b = Vector2(16, 0)
+[sub_resource type="CircleShape2D" id="CircleShape2D_q8ifc"]
+radius = 8.0
 
 [node name="Arrow" type="CharacterBody2D"]
 collision_layer = 0
@@ -26,7 +25,8 @@ texture = ExtResource("2_q8ifc")
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("SegmentShape2D_23jat")
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_q8ifc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_q8ifc")

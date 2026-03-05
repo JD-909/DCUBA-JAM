@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cevabceocecil" path="res://assets/TaTeTi.png" id="7_oc4kc"]
 
 [node name="Demo_level" instance=ExtResource("1_ksju7")]
+level_ID = 1
 
 [node name="TileMap" parent="." index="1"]
 metadata/_edit_lock_ = true

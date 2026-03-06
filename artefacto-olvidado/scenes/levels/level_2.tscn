@@ -28,6 +28,9 @@ active_sprite = 0
 [node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
 visible = false
 
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/ExitDoor/UseArea" index="0"]
+disabled = true
+
 [node name="Bow" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_g2h2n")]
 position = Vector2(1248, 864)
 rotation = 3.1415927

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300
 const JUMP_FORCE = -500
+const character_frames : Array[int] = [64, 86, 53, 75, 64, 64]
 
 var direction : float
 var line_placement_offset = 60
@@ -12,6 +13,7 @@ var door_to_enter : PermanentDrawnBody
 var stop : bool = false
 
 @onready var drawer_sprite = $DrawerSprite
+@onready var neg_sprite = $NegomaSprite
 @onready var pencil_sprite = $PencilSprite
 @onready var line_placement_sprite = $LinePlacementSprite
 @onready var drawn_line : Resource = load("res://scenes/drawn_platform.tscn")
@@ -25,6 +27,13 @@ var stop : bool = false
 @onready var death_sound : AudioStreamPlayer2D = $DeathSound
 @onready var key_sound : AudioStreamPlayer2D = $KeySound
 @onready var unlock_sound : AudioStreamPlayer2D = $UnlockSound
+
+func _ready() -> void:
+	drawer_sprite.frame = character_frames[Global.current_character]
+	if Global.current_character == 4:
+		$HelmSprite.visible = true
+	elif Global.current_character == 5:
+		$NegomaSprite.visible = true 
 
 func _process(delta: float) -> void:
 	
@@ -94,8 +103,10 @@ func _process(delta: float) -> void:
 		
 		if direction == -1:
 			drawer_sprite.flip_h = true
+			neg_sprite.flip_h = true
 		elif direction == 1:
 			drawer_sprite.flip_h = false
+			neg_sprite.flip_h = false
 		
 		move_and_slide()
 

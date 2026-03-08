@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1k5wbtmwllm3"]
+
+[ext_resource type="Script" uid="uid://bj3tdgdp5gym2" path="res://drawer_spawn.gd" id="1_xu6wx"]
+
+[node name="DrawerSpawn" type="Node2D"]
+script = ExtResource("1_xu6wx")

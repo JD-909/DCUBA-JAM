@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cmi1sngtismxf" path="res://assets/tile_bridge.png" id="3_18ckx"]
 [ext_resource type="Texture2D" uid="uid://bbv2661k3tw5d" path="res://assets/tile_diagonal.png" id="3_28ae7"]
 [ext_resource type="Texture2D" uid="uid://5isv4yiov0tc" path="res://assets/spritesheet_default.png" id="4_4g07q"]
-[ext_resource type="PackedScene" uid="uid://d1ys4uxa5wfwf" path="res://scenes/drawer.tscn" id="5_q0ote"]
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="6_41bnu"]
+[ext_resource type="PackedScene" uid="uid://d1ys4uxa5wfwf" path="res://scenes/drawer.tscn" id="7_4g07q"]
 [ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="8_28ae7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28ae7"]
@@ -214,7 +214,7 @@ z_index = 1
 tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAA=")
 tile_set = SubResource("TileSet_jqjfh")
 
-[node name="Drawer" parent="." instance=ExtResource("5_q0ote")]
+[node name="Drawer" parent="." instance=ExtResource("7_4g07q")]
 position = Vector2(32, 864)
 
 [node name="DrawnLines" type="Node" parent="."]

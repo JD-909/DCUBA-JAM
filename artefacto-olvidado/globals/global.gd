@@ -29,36 +29,45 @@ var erasures : int = 0
 var current_permanents_amount : int = 0
 var secret_found : bool = false
 
+# Character
+var current_character : int = 0
+
 func visit(level_ID : int) -> void:
 	last_level_visited = level_ID
 	reset_drawings_and_erasures()
 	secret_found = false
 	if level_ID > 0:
 		current_permanents_amount = initial_permanents_in[level_ID-1]
-	print("visited :")
-	print(level_ID)
+	print("visited : " + str(level_ID))
+	print(level_done)
+	print(level_done_draw_limit)
+	print(level_done_erase_limit)
+	print(level_done_erase_all)
+	print(level_done_secret)
+
 
 func complete(level_ID : int) -> void:
-	var level = level_ID-1
-	
-	# Completed star
-	level_done[level] = true
-	
-	# Draw limit star
-	if drawings <= draw_limits[level]:
-		level_done_draw_limit[level] = true
-	
-	# Erase limit star
-	if erasures <= erase_limits[level]:
-		level_done_erase_limit[level] = true
-	
-	# Erase all star (<=1 because of the door)
-	if current_permanents_amount <= 1:
-		level_done_erase_all[level] = true
-	
-	# Secret star
-	if secret_found:
-		level_done_secret[level] = true
+	if level_ID > 0:
+		var level = level_ID-1
+		
+		# Completed star
+		level_done[level] = true
+		
+		# Draw limit star
+		if drawings <= draw_limits[level]:
+			level_done_draw_limit[level] = true
+		
+		# Erase limit star
+		if erasures <= erase_limits[level]:
+			level_done_erase_limit[level] = true
+		
+		# Erase all star (<=1 because of the door)
+		if current_permanents_amount <= 1:
+			level_done_erase_all[level] = true
+		
+		# Secret star
+		if secret_found:
+			level_done_secret[level] = true
 
 # Draw and erase limit handling
 func add_drawing() -> void:
@@ -81,3 +90,7 @@ func sub_permanent() -> void:
 # Secret handling
 func find_secret() -> void:
 	secret_found = true
+
+# Change character
+func change_character(ID : int) -> void:
+	current_character = ID

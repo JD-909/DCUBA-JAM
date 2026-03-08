@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cryqpb5bgupno"]
+[gd_scene load_steps=10 format=4 uid="uid://cryqpb5bgupno"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_44gv1"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="2_0ljxa"]
 [ext_resource type="PackedScene" uid="uid://07x6egnoq8en" path="res://scenes/bow.tscn" id="2_0qepi"]
+[ext_resource type="Script" uid="uid://si46xylmasfc" path="res://scenes/end_level_door.gd" id="2_pimnq"]
 [ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="3_fkk1g"]
 [ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="4_fmg3e"]
 [ext_resource type="Texture2D" uid="uid://71c6kr6plqh" path="res://assets/BinarioCard.jpg" id="4_ugcn1"]
@@ -20,7 +21,8 @@ position = Vector2(96, 416)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
 position = Vector2(1184, 160)
-take_me_to = &"res://scenes/levels/level_select_level.tscn"
+script = ExtResource("2_pimnq")
+take_me_to = &"res://menu/completed.tscn"
 active_sprite = 0
 
 [node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]

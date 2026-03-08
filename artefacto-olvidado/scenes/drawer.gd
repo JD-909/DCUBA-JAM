@@ -102,6 +102,7 @@ func _process(delta: float) -> void:
 func draw() -> void:
 	
 	draw_sound.play()
+	Global.add_drawing()
 	
 	if draw_erase_target != null and draw_erase_target.get_permanency():
 		draw_erase_target.be_drawn()
@@ -114,7 +115,8 @@ func draw() -> void:
 func erase() -> void:
 	if draw_erase_target != null:                   # Si hay target, aplicale "borrar"
 		
-		erase_sound.play( )
+		erase_sound.play()
+		Global.add_erasure()
 		
 		draw_erase_target.be_erased()
 		draw_erase_area_collision.disabled = true   # Pasa a un siguiente target que este en rango

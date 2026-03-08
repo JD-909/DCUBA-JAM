@@ -6,6 +6,7 @@
 [node name="SingleSpike" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource("1_gy0u5")
+is_permanent = true
 metadata/_custom_type_script = "uid://cmmcux7byaa2m"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://0qk7k6wy52pk"]
+[gd_scene load_steps=12 format=4 uid="uid://0qk7k6wy52pk"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_j2425"]
 [ext_resource type="PackedScene" uid="uid://07x6egnoq8en" path="res://scenes/bow.tscn" id="2_g2h2n"]
+[ext_resource type="Script" uid="uid://si46xylmasfc" path="res://scenes/end_level_door.gd" id="2_nt80m"]
 [ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="3_fiq81"]
 [ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="3_qpwj6"]
 [ext_resource type="Texture2D" uid="uid://d30330vw7b4tq" path="res://assets/AmargoCard.jpg" id="4_3p04p"]
@@ -22,7 +23,8 @@ position = Vector2(96, 672)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
 position = Vector2(736, 160)
-take_me_to = &"res://scenes/levels/level_select_level.tscn"
+script = ExtResource("2_nt80m")
+take_me_to = &"res://menu/completed.tscn"
 active_sprite = 0
 
 [node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]

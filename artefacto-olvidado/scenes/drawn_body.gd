@@ -7,9 +7,10 @@ const regular_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 @export var is_permanent : bool
 
 func be_drawn() -> void:
-	pass
+	Global.add_permanent()
 
 func be_erased() -> void:
+	Global.sub_permanent()
 	if not is_permanent:
 		queue_free()
 

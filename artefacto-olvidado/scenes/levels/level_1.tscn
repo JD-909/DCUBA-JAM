@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://bhiis5xi4dfrb"]
+[gd_scene load_steps=10 format=4 uid="uid://bhiis5xi4dfrb"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_ksju7"]
 [ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="2_6iamk"]
+[ext_resource type="Script" uid="uid://si46xylmasfc" path="res://scenes/end_level_door.gd" id="2_dga24"]
 [ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="2_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="3_6761a"]
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="4_s8va5"]
@@ -23,7 +24,8 @@ position = Vector2(96, 864)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
 position = Vector2(992, 288)
-take_me_to = &"res://scenes/levels/level_select_level.tscn"
+script = ExtResource("2_dga24")
+take_me_to = &"res://menu/completed.tscn"
 active_sprite = 0
 
 [node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]

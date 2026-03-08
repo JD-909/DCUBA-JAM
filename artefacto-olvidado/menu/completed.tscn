@@ -49,7 +49,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 47
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -129,7 +129,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -17
 theme_override_fonts/font = ExtResource("4_leys4")
 theme_override_font_sizes/font_size = 32
-text = "Limite dibujos"
+text = "Limite dibujos
+"
 horizontal_alignment = 1
 
 [node name="EraseLimitStar" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]
@@ -158,7 +159,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -17
 theme_override_fonts/font = ExtResource("4_leys4")
 theme_override_font_sizes/font_size = 32
-text = "Limite borradas"
+text = "Limite borradas
+"
 horizontal_alignment = 1
 
 [node name="EraseAllStar" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]
@@ -187,7 +189,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -17
 theme_override_fonts/font = ExtResource("4_leys4")
 theme_override_font_sizes/font_size = 32
-text = "Borra todo"
+text = "Borra todo
+("
 horizontal_alignment = 1
 
 [node name="SecretStar" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]

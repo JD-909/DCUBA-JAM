@@ -10,6 +10,5 @@ func _ready() -> void:
 	else:
 		is_permanent = false
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	body.die()

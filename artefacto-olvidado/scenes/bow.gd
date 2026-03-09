@@ -7,11 +7,9 @@ extends PermanentDrawnBody
 
 @export var direction : Vector2 = Vector2(1,0)
 
-func when_drawn() -> void:
-	timer.start()
 
 func when_erased() -> void:
-	timer.stop()
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	shoot()

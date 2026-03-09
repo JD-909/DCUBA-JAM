@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://nbarbdry7if6"]
+
+[ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="1_ggavu"]
+[ext_resource type="Script" uid="uid://q2e01cw2o2lg" path="res://scenes/character_selector.gd" id="2_5q65j"]
+[ext_resource type="Texture2D" uid="uid://cgvwrjndd18v1" path="res://assets/character_roundRed.png" id="3_lbydx"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="4_5q65j"]
+
+[node name="CharacterSelector" instance=ExtResource("1_ggavu")]
+script = ExtResource("2_5q65j")
+ID = 0
+
+[node name="CollisionShape2D" parent="." index="1"]
+disabled = true
+
+[node name="DrawnSprite0" parent="Sprites" index="0"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_lbydx")
+flip_h = true
+
+[node name="Label" type="Label" parent="Sprites/DrawnSprite0" index="0"]
+offset_left = -136.0
+offset_top = -144.0
+offset_right = 138.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5q65j")
+theme_override_font_sizes/font_size = 48
+text = "Si esto se lee, ocurrio
+un error, avisame"
+horizontal_alignment = 1
+
+[node name="DrawnSprite1" parent="Sprites" index="1"]
+texture = ExtResource("3_lbydx")
+flip_h = true
+
+[node name="Label" type="Label" parent="Sprites/DrawnSprite1" index="0"]
+offset_left = -128.0
+offset_top = -80.0
+offset_right = 128.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5q65j")
+theme_override_font_sizes/font_size = 48
+text = "La Goma Gomez"
+horizontal_alignment = 1

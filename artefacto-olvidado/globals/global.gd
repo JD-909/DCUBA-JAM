@@ -1,6 +1,6 @@
 extends Node
 
-const draw_limits : Array[int] = [2, 5, 5, 3]
+const draw_limits : Array[int] = [2, 5, 5, 4]
 const erase_limits : Array[int] = [1, 0, 1, 1]
 const initial_permanents_in : Array[int] = [
 	5,
@@ -90,6 +90,33 @@ func sub_permanent() -> void:
 # Secret handling
 func find_secret() -> void:
 	secret_found = true
+
+# Check unlocked characters
+func check_completion(ID : int) -> bool:
+	
+	var array_check : Array[bool]= []
+	
+	match ID:
+		1:
+			array_check = level_done
+		2:
+			array_check = level_done_draw_limit
+		3:
+			array_check = level_done_erase_limit
+		4:
+			array_check = level_done_erase_all
+		5:
+			array_check = level_done_secret
+		6:
+			if check_completion(1) and check_completion(2) and check_completion(3) and check_completion(4):
+				return true
+			else: return false
+	
+	for elem in array_check:
+		if not elem:
+			return false
+	
+	return true
 
 # Change character
 func change_character(ID : int) -> void:

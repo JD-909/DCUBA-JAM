@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bdotujp6m75nb"]
+[gd_scene load_steps=13 format=4 uid="uid://bdotujp6m75nb"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_06474"]
 [ext_resource type="Script" uid="uid://si46xylmasfc" path="res://scenes/end_level_door.gd" id="2_4wsov"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="6_glw47"]
 [ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="8_um320"]
 [ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="9_glw47"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="12_qvnao"]
 
 [node name="Demo_level" instance=ExtResource("1_06474")]
 level_ID = 4
@@ -130,6 +131,19 @@ position = Vector2(320, 320)
 
 [node name="LockBlock" parent="LocksAndKeys" index="1" instance=ExtResource("9_glw47")]
 position = Vector2(992, 608)
+
+[node name="BaseLabel2" type="Label" parent="Text" index="1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 680.0
+offset_right = 48.0
+offset_bottom = 721.0
+theme_override_colors/font_color = Color(0, 0, 0.7411765, 1)
+theme_override_fonts/font = ExtResource("12_qvnao")
+theme_override_font_sizes/font_size = 32
+text = "#1 Mama
+#2 Turing
+#3 Ritchie y Thompson"
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
 [editable path="PermanentDrawnBodies/DrawnCard"]

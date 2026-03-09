@@ -1,12 +1,12 @@
 extends VBoxContainer
 
 @onready var label : Label = $Label
-@onready var star_array : Array[CenterContainer] = [
-	$HBoxContainer/LevelComplete,
-	$HBoxContainer/LevelDrawLimit,
-	$HBoxContainer/LevelEraseLimit,
-	$HBoxContainer/LevelEraseAll,
-	$HBoxContainer/LevelSecretFound]
+@onready var star_array : Array[Sprite2D] = [
+	$HBoxContainer/LevelComplete/Sprite2D,
+	$HBoxContainer/LevelDrawLimit/Sprite2D,
+	$HBoxContainer/LevelEraseLimit/Sprite2D,
+	$HBoxContainer/LevelEraseAll/Sprite2D,
+	$HBoxContainer/LevelSecretFound/Sprite2D]
 
 @export var labelID : int
 

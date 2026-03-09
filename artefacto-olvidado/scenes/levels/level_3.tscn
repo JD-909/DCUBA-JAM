@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cryqpb5bgupno"]
+[gd_scene load_steps=11 format=4 uid="uid://cryqpb5bgupno"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_44gv1"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="2_0ljxa"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://71c6kr6plqh" path="res://assets/BinarioCard.jpg" id="4_ugcn1"]
 [ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="5_ftfob"]
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="5_ugcn1"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="10_2bnyt"]
 
 [node name="Demo_level" instance=ExtResource("1_44gv1")]
 level_ID = 3
@@ -99,6 +100,18 @@ position = Vector2(800, 96)
 
 [node name="LockBlock4" parent="LocksAndKeys" index="7" instance=ExtResource("5_ftfob")]
 position = Vector2(1184, 160)
+
+[node name="BaseLabel2" type="Label" parent="Text" index="1"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 264.0
+offset_right = 789.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.18039216, 0.50980395, 0.18039216, 1)
+theme_override_fonts/font = ExtResource("10_2bnyt")
+theme_override_font_sizes/font_size = 32
+text = "Final de AyOC, ver diapos: 1-9, 11-32, 34-66, 71-123, 121-249,
+251-252, 258-599, 606-909, 1024-2026, 2050-12369420"
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
 [editable path="PermanentDrawnBodies/DrawnCard"]

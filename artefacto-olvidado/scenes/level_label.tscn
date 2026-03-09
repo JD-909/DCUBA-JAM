@@ -26,12 +26,22 @@ alignment = 1
 [node name="LevelComplete" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/LevelComplete"]
+modulate = Color(0.33333334, 0.33333334, 0.33333334, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_g8lj1")
+
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/LevelComplete"]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_g8lj1")
 
 [node name="LevelDrawLimit" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/LevelDrawLimit"]
+modulate = Color(0.33333334, 0.33333334, 0.33333334, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_g8lj1")
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/LevelDrawLimit"]
 scale = Vector2(0.4, 0.4)
@@ -40,6 +50,11 @@ texture = ExtResource("2_g8lj1")
 [node name="LevelEraseLimit" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/LevelEraseLimit"]
+modulate = Color(0.33333334, 0.33333334, 0.33333334, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_g8lj1")
+
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/LevelEraseLimit"]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_g8lj1")
@@ -47,12 +62,22 @@ texture = ExtResource("2_g8lj1")
 [node name="LevelEraseAll" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/LevelEraseAll"]
+modulate = Color(0.33333334, 0.33333334, 0.33333334, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_g8lj1")
+
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/LevelEraseAll"]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_g8lj1")
 
 [node name="LevelSecretFound" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/LevelSecretFound"]
+modulate = Color(0.33333334, 0.33333334, 0.33333334, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_g8lj1")
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/LevelSecretFound"]
 scale = Vector2(0.4, 0.4)

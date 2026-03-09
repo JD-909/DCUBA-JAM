@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=4 uid="uid://dfj0sj1rgh1sv"]
+[gd_scene load_steps=9 format=4 uid="uid://dfj0sj1rgh1sv"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_rxi4e"]
+[ext_resource type="PackedScene" uid="uid://nbarbdry7if6" path="res://scenes/character_door.tscn" id="2_rbfy1"]
+[ext_resource type="Texture2D" uid="uid://bdyapmj6frw6l" path="res://assets/character_roundYellow.png" id="3_6m0so"]
+[ext_resource type="Texture2D" uid="uid://d08foa7uq813q" path="res://assets/item_helmetModern.png" id="3_i7ff1"]
+[ext_resource type="Texture2D" uid="uid://dqcsxuq8y5m8v" path="res://assets/character_roundGreen.png" id="3_y8ac8"]
+[ext_resource type="Texture2D" uid="uid://70j4n5gwopjr" path="res://assets/Negoma.png" id="4_6m0so"]
+[ext_resource type="Texture2D" uid="uid://dvqgw88fk6dqi" path="res://assets/character_roundPurple.png" id="5_l5316"]
+[ext_resource type="Texture2D" uid="uid://b5467xjt08eeu" path="res://assets/character_squareRed.png" id="8_l5316"]
 
 [node name="Demo_level" instance=ExtResource("1_rxi4e")]
 
 [node name="Tiles" parent="TileMap" index="1"]
-tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAsACwAAAAAAAAABAAsACwAAAAAAAAACAAsACwAAAAAAAAADAAsACwAAAAAAAAAEAAsACwAAAAAAAAAFAAsACwAAAAAAAAAGAAsACwAAAAAAAAAHAAsACwAAAAAAAAAIAAsACwAAAAAAAAAJAAsACwAAAAAAAAAKAAsACwAAAAAAAAALAAsACwAAAAAAAAAMAAsACwAAAAAAAAANAAsACwAAAAAAAAAOAAsACwAAAAAAAAAPAAsACwAAAAAAAAAQAAsACwAAAAAAAAARAAsACwAAAAAAAAASAAsACwAAAAAAAAATAAsACwAAAAAAAAAAAAwADAAEAAUAAAAAAA0ADAAEAAYAAAABAAwADAAFAAUAAAABAA0ADAAFAAYAAAACAAwADAAEAAUAAAACAA0ADAAEAAYAAAADAAwADAAFAAUAAAADAA0ADAAFAAYAAAAEAAwADAAEAAUAAAAEAA0ADAAEAAYAAAAFAAwADAAFAAUAAAAFAA0ADAAFAAYAAAAGAAwADAAEAAUAAAAGAA0ADAAEAAYAAAAHAAwADAAFAAUAAAAHAA0ADAAFAAYAAAAIAAwADAAEAAUAAAAIAA0ADAAEAAYAAAAJAAwADAAFAAUAAAAJAA0ADAAFAAYAAAAKAAwADAAEAAUAAAAKAA0ADAAEAAYAAAALAAwADAAFAAUAAAALAA0ADAAFAAYAAAAMAAwADAAEAAUAAAAMAA0ADAAEAAYAAAANAAwADAAFAAUAAAANAA0ADAAFAAYAAAAOAAwADAAEAAUAAAAOAA0ADAAEAAYAAAAPAAwADAAFAAUAAAAPAA0ADAAFAAYAAAAQAAwADAAEAAUAAAAQAA0ADAAEAAYAAAARAAwADAAFAAUAAAARAA0ADAAFAAYAAAASAAwADAAEAAUAAAASAA0ADAAEAAYAAAATAAwADAAFAAUAAAATAA0ADAAFAAYAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAsACwAAAAAAAAABAAsACwAAAAAAAAACAAsACwAAAAAAAAADAAsACwAAAAAAAAAEAAsACwAAAAAAAAAFAAsACwAAAAAAAAAGAAsACwAAAAAAAAAHAAsACwAAAAAAAAAIAAsACwAAAAAAAAAJAAsACwAAAAAAAAAKAAsACwAAAAAAAAALAAsACwAAAAAAAAAMAAsACwAAAAAAAAANAAsACwAAAAAAAAAOAAsACwAAAAAAAAAPAAsACwAAAAAAAAAQAAsACwAAAAAAAAARAAsACwAAAAAAAAASAAsACwAAAAAAAAATAAsACwAAAAAAAAAAAAwADAAEAAUAAAAAAA0ADAAEAAYAAAABAAwADAAFAAUAAAABAA0ADAAFAAYAAAACAAwADAAEAAUAAAACAA0ADAAEAAYAAAADAAwADAAFAAUAAAADAA0ADAAFAAYAAAAEAAwADAAEAAUAAAAEAA0ADAAEAAYAAAAFAAwADAAFAAUAAAAFAA0ADAAFAAYAAAAGAAwADAAEAAUAAAAGAA0ADAAEAAYAAAAHAAwADAAFAAUAAAAHAA0ADAAFAAYAAAAIAAwADAAEAAUAAAAIAA0ADAAEAAYAAAAJAAwADAAFAAUAAAAJAA0ADAAFAAYAAAAKAAwADAAEAAUAAAAKAA0ADAAEAAYAAAALAAwADAAFAAUAAAALAA0ADAAFAAYAAAAMAAwADAAEAAUAAAAMAA0ADAAEAAYAAAANAAwADAAFAAUAAAANAA0ADAAFAAYAAAAOAAwADAAEAAUAAAAOAA0ADAAEAAYAAAAPAAwADAAFAAUAAAAPAA0ADAAFAAYAAAAQAAwADAAEAAUAAAAQAA0ADAAEAAYAAAARAAwADAAFAAUAAAARAA0ADAAFAAYAAAASAAwADAAEAAUAAAASAA0ADAAEAAYAAAATAAwADAAFAAUAAAATAA0ADAAFAAYAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAA=")
 
 [node name="Drawer" parent="." index="2"]
 position = Vector2(88, 672)
@@ -13,4 +20,101 @@ position = Vector2(88, 672)
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
 position = Vector2(32, 672)
 
+[node name="CharacterSelector" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_rbfy1")]
+position = Vector2(384, 608)
+
+[node name="CharacterSelector2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_rbfy1")]
+position = Vector2(896, 608)
+ID = 1
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector2/Sprites/DrawnSprite0" index="0"]
+text = "Volve al final del
+juego, mejor"
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/CharacterSelector2/Sprites" index="1"]
+texture = ExtResource("3_y8ac8")
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector2/Sprites/DrawnSprite1" index="0"]
+text = "Gomina"
+
+[node name="CharacterSelector3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("2_rbfy1")]
+position = Vector2(640, 416)
+ID = 2
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector3/Sprites/DrawnSprite0" index="0"]
+text = "A veces, dibujar menos
+es entender mas"
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/CharacterSelector3/Sprites" index="1"]
+texture = ExtResource("3_6m0so")
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector3/Sprites/DrawnSprite1" index="0"]
+text = "Magoma"
+
+[node name="CharacterSelector4" parent="PermanentDrawnBodies" index="4" instance=ExtResource("2_rbfy1")]
+position = Vector2(1152, 416)
+ID = 3
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector4/Sprites/DrawnSprite0" index="0"]
+text = "La goma se gasta
+si la usas mucho..."
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/CharacterSelector4/Sprites" index="1"]
+texture = ExtResource("5_l5316")
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector4/Sprites/DrawnSprite1" index="0"]
+text = "El Chapo Goman"
+
+[node name="CharacterSelector7" parent="PermanentDrawnBodies" index="5" instance=ExtResource("2_rbfy1")]
+position = Vector2(128, 416)
+ID = 4
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector7/Sprites/DrawnSprite0" index="0"]
+text = "Si te jode,
+borralo"
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/CharacterSelector7/Sprites" index="1"]
+texture = ExtResource("8_l5316")
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector7/Sprites/DrawnSprite1" index="0"]
+offset_top = -144.0
+text = "La Goma Gomez
+(Origenes)"
+
+[node name="CharacterSelector5" parent="PermanentDrawnBodies" index="6" instance=ExtResource("2_rbfy1")]
+position = Vector2(384, 224)
+ID = 5
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector5/Sprites/DrawnSprite0" index="0"]
+text = "Con cuatro cartas
+en mano..."
+
+[node name="Sprite2D" type="Sprite2D" parent="PermanentDrawnBodies/CharacterSelector5/Sprites/DrawnSprite1" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("3_i7ff1")
+flip_h = true
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector5/Sprites/DrawnSprite1" index="1"]
+text = "E-racer"
+
+[node name="CharacterSelector6" parent="PermanentDrawnBodies" index="7" instance=ExtResource("2_rbfy1")]
+position = Vector2(896, 224)
+ID = 6
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector6/Sprites/DrawnSprite0" index="0"]
+text = "Estoy 100% seguro
+de que lo vas a lograr"
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/CharacterSelector6/Sprites" index="1"]
+texture = ExtResource("4_6m0so")
+
+[node name="Label" parent="PermanentDrawnBodies/CharacterSelector6/Sprites/DrawnSprite1" index="0"]
+text = "La Negoma"
+
 [editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/CharacterSelector2"]
+[editable path="PermanentDrawnBodies/CharacterSelector3"]
+[editable path="PermanentDrawnBodies/CharacterSelector4"]
+[editable path="PermanentDrawnBodies/CharacterSelector7"]
+[editable path="PermanentDrawnBodies/CharacterSelector5"]
+[editable path="PermanentDrawnBodies/CharacterSelector6"]

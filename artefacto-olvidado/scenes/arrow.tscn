@@ -19,6 +19,7 @@ script = ExtResource("1_23jat")
 shape = SubResource("SegmentShape2D_7ckq1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("2_q8ifc")
 
 [node name="Area2D" type="Area2D" parent="."]

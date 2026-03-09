@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://e7k65j061cnp"]
+[gd_scene load_steps=10 format=4 uid="uid://e7k65j061cnp"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_kqhav"]
 [ext_resource type="FontFile" uid="uid://b51kbpjg5q074" path="res://assets/Brownist.otf" id="2_2lwpu"]
@@ -6,7 +6,9 @@
 [ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="3_01n0p"]
 [ext_resource type="Texture2D" uid="uid://xktot2yagnot" path="res://assets/Drawing.png" id="4_vg7xk"]
 [ext_resource type="Texture2D" uid="uid://ctw88m2jl6k8m" path="res://assets/Resaltador.png" id="5_m6iyy"]
+[ext_resource type="Texture2D" uid="uid://c7axqeo1227fr" path="res://assets/DoodleSpaceBar.png" id="6_ixxwb"]
 [ext_resource type="Texture2D" uid="uid://by3eqo6luslb6" path="res://assets/FlechaDibu2.png" id="6_k3ocw"]
+[ext_resource type="Texture2D" uid="uid://boliprdbokcs" path="res://assets/FlechaDibu4.png" id="9_bpr0w"]
 
 [node name="Main_menu_level" instance=ExtResource("1_kqhav")]
 
@@ -55,7 +57,7 @@ offset_bottom = 337.0
 theme_override_colors/font_color = Color(0.21906793, 6.565035e-05, 0.80754524, 1)
 theme_override_fonts/font = ExtResource("3_01n0p")
 theme_override_font_sizes/font_size = 32
-text = "No habia fonts con tildes"
+text = "No habia fonts con tildes :("
 
 [node name="Label3" type="Label" parent="Text" index="4"]
 layout_mode = 0
@@ -69,7 +71,31 @@ theme_override_font_sizes/font_size = 60
 text = "Jugar"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Text" index="5"]
+[node name="Label9" type="Label" parent="Text" index="5"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 392.0
+offset_right = 926.0
+offset_bottom = 764.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2lwpu")
+theme_override_font_sizes/font_size = 60
+text = "+ Gomas"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="Text" index="6"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 8.0
+offset_right = 1382.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01n0p")
+theme_override_font_sizes/font_size = 60
+text = "Por JD909"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Text" index="7"]
 layout_mode = 0
 offset_left = 864.0
 offset_top = 344.0
@@ -83,7 +109,7 @@ text = "Apuntar
 arriba"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Text" index="6"]
+[node name="Label5" type="Label" parent="Text" index="8"]
 layout_mode = 0
 offset_left = 872.0
 offset_top = 560.0
@@ -98,7 +124,7 @@ abajo /
 Entrar"
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="Text" index="7"]
+[node name="Label6" type="Label" parent="Text" index="9"]
 layout_mode = 0
 offset_left = 976.0
 offset_top = 560.0
@@ -112,7 +138,7 @@ text = "a la
 Derecha"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="Text" index="8"]
+[node name="Label7" type="Label" parent="Text" index="10"]
 layout_mode = 0
 offset_left = 760.0
 offset_top = 568.0
@@ -133,15 +159,33 @@ texture = ExtResource("5_m6iyy")
 vframes = 3
 frame = 1
 
-[node name="Drawing" type="Sprite2D" parent="Decoraciones" index="1"]
+[node name="Resaltador2" type="Sprite2D" parent="Decoraciones" index="1"]
+modulate = Color(1, 1, 1, 0.8392157)
+position = Vector2(1112, 744)
+texture = ExtResource("5_m6iyy")
+vframes = 3
+frame = 1
+
+[node name="DoodleSpaceBar" type="Sprite2D" parent="Decoraciones" index="2"]
+position = Vector2(992, 728)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ixxwb")
+
+[node name="Drawing" type="Sprite2D" parent="Decoraciones" index="3"]
 position = Vector2(1064, 536)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_vg7xk")
 
-[node name="FlechaDibu2" type="Sprite2D" parent="Decoraciones" index="2"]
+[node name="FlechaDibu2" type="Sprite2D" parent="Decoraciones" index="4"]
 position = Vector2(280, 455.99997)
 rotation = 0.44902176
 texture = ExtResource("6_k3ocw")
+flip_h = true
+
+[node name="FlechaDibu3" type="Sprite2D" parent="Decoraciones" index="5"]
+position = Vector2(600, 544)
+rotation = -1.1379962
+texture = ExtResource("9_bpr0w")
 flip_h = true
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

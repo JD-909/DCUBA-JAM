@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bhiis5xi4dfrb"]
+[gd_scene load_steps=12 format=4 uid="uid://bhiis5xi4dfrb"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_ksju7"]
 [ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="2_6iamk"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="4_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="6_sk5k4"]
 [ext_resource type="Texture2D" uid="uid://cevabceocecil" path="res://assets/TaTeTi.png" id="7_oc4kc"]
+[ext_resource type="Texture2D" uid="uid://dnhmguie5dunt" path="res://assets/DoodleFrog.svg" id="10_qxy0u"]
+[ext_resource type="Texture2D" uid="uid://bcwy4ghvsiep" path="res://assets/DoodleParabol.png" id="11_excbq"]
 
 [node name="Demo_level" instance=ExtResource("1_ksju7")]
 level_ID = 1
@@ -128,9 +130,21 @@ text = "Cuando no hay salida,
 hacemos la salida"
 
 [node name="TaTeTi" type="Sprite2D" parent="Decoraciones" index="0"]
-position = Vector2(216.00012, 159.99997)
+position = Vector2(584, 504)
 rotation = -0.2847665
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_oc4kc")
+
+[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="1"]
+modulate = Color(1, 1, 1, 0.72156864)
+position = Vector2(112, 128)
+rotation = 1.0185034
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_qxy0u")
+
+[node name="DoodleParabol" type="Sprite2D" parent="Decoraciones" index="2"]
+position = Vector2(632, 168)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_excbq")
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://0qk7k6wy52pk"]
+[gd_scene load_steps=14 format=4 uid="uid://0qk7k6wy52pk"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_j2425"]
 [ext_resource type="PackedScene" uid="uid://07x6egnoq8en" path="res://scenes/bow.tscn" id="2_g2h2n"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="5_qsp8v"]
 [ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="7_8qukl"]
 [ext_resource type="Texture2D" uid="uid://dofmv1vke7ua8" path="res://assets/Drawing.sketchpad.png" id="9_3p04p"]
+[ext_resource type="Texture2D" uid="uid://d2mw63uoncpos" path="res://assets/DoodleLeaf.webp" id="12_brxtv"]
+[ext_resource type="Texture2D" uid="uid://dnhmguie5dunt" path="res://assets/DoodleFrog.svg" id="13_tv7cl"]
 
 [node name="Demo_level" instance=ExtResource("1_j2425")]
 level_ID = 2
@@ -136,23 +138,36 @@ text = "PLP parciales:
 [color=BLUE]1erC 2026..."
 
 [node name="CoolS" type="Sprite2D" parent="Decoraciones" index="0"]
-modulate = Color(18.892157, 0, 0, 0.81960785)
+modulate = Color(1, 1, 1, 0.6862745)
 position = Vector2(1168, 688)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_l37oo")
 
 [node name="Drawing_sketchpad" type="Sprite2D" parent="Decoraciones" index="1"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(1, 1, 1, 0.6862745)
 position = Vector2(1104, 104)
 rotation = -0.1983161
 texture = ExtResource("9_3p04p")
 
 [node name="Drawing_sketchpad2" type="Sprite2D" parent="Decoraciones" index="2"]
-modulate = Color(0, 0, 1, 1)
+modulate = Color(1, 1, 1, 0.6862745)
 position = Vector2(1112.0001, 144)
 rotation = -0.07203007
 texture = ExtResource("9_3p04p")
 flip_v = true
+
+[node name="DoodleLeaf" type="Sprite2D" parent="Decoraciones" index="3"]
+modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(472.00003, 96)
+rotation = -0.36562645
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_brxtv")
+
+[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="4"]
+modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(544, 960)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_tv7cl")
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
 [editable path="PermanentDrawnBodies/DrawnCard"]

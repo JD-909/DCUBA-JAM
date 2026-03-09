@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcn0wkj7ld4y0"]
+[gd_scene load_steps=10 format=3 uid="uid://bcn0wkj7ld4y0"]
 
 [ext_resource type="Script" uid="uid://dvpejyxna303r" path="res://menu/completed.gd" id="1_2asqq"]
 [ext_resource type="Texture2D" uid="uid://dpuu6u7eknn7r" path="res://assets/paperGrid.jpeg" id="1_rfvau"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://buex8inst0wx4" path="res://assets/DoodleRedo.png" id="5_u7fi1"]
 [ext_resource type="Texture2D" uid="uid://fw3hi7fctu85" path="res://assets/DoodleHouse.png" id="6_4o0p7"]
 [ext_resource type="Texture2D" uid="uid://dt15oh6uu0lr4" path="res://assets/DoodleLevels.png" id="7_7ig3b"]
+[ext_resource type="Texture2D" uid="uid://brhxji6gwp01l" path="res://assets/DoodleStar.webp" id="9_g7utj"]
 
 [node name="Completado" type="Control"]
 layout_mode = 3
@@ -263,6 +264,17 @@ icon = ExtResource("7_7ig3b")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+
+[node name="DoodleStar" type="Sprite2D" parent="."]
+position = Vector2(280, 216)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_g7utj")
+
+[node name="DoodleStar2" type="Sprite2D" parent="."]
+position = Vector2(1008, 216)
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_g7utj")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Redo" to="." method="_on_redo_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

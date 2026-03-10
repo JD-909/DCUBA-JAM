@@ -3,10 +3,10 @@ extends Node
 const draw_limits : Array[int] = [2, 5, 5, 4]
 const erase_limits : Array[int] = [1, 0, 1, 1]
 const initial_permanents_in : Array[int] = [
+	6,
 	5,
 	4,
-	3,
-	15
+	16
 ]
 
 # Level vars

@@ -50,54 +50,60 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_kcyoc")
 flip_v = true
 
-[node name="FlechaDibu3" type="Sprite2D" parent="Decoraciones" index="2"]
+[node name="FlechaDibu5" type="Sprite2D" parent="Decoraciones" index="2"]
+position = Vector2(144, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("3_kcyoc")
+flip_v = true
+
+[node name="FlechaDibu3" type="Sprite2D" parent="Decoraciones" index="3"]
 position = Vector2(1160, 352)
 scale = Vector2(2, 2)
 texture = ExtResource("3_kcyoc")
 flip_h = true
 flip_v = true
 
-[node name="FlechaDibu4" type="Sprite2D" parent="Decoraciones" index="3"]
+[node name="FlechaDibu4" type="Sprite2D" parent="Decoraciones" index="4"]
 position = Vector2(599.99994, 608)
 rotation = 2.0989382
 texture = ExtResource("4_p80yd")
 
-[node name="FlechaDibu6" type="Sprite2D" parent="Decoraciones" index="4"]
+[node name="FlechaDibu6" type="Sprite2D" parent="Decoraciones" index="5"]
 position = Vector2(648, 416.00003)
 rotation = 2.2442298
 texture = ExtResource("4_p80yd")
 
-[node name="FlechaDibu7" type="Sprite2D" parent="Decoraciones" index="5"]
+[node name="FlechaDibu7" type="Sprite2D" parent="Decoraciones" index="6"]
 position = Vector2(592.00006, 224.00003)
 rotation = 2.1186182
 texture = ExtResource("4_p80yd")
 
-[node name="FlechaDibu8" type="Sprite2D" parent="Decoraciones" index="6"]
+[node name="FlechaDibu8" type="Sprite2D" parent="Decoraciones" index="7"]
 position = Vector2(528.00006, 800)
 rotation = 2.072641
 texture = ExtResource("4_p80yd")
 
-[node name="LevelLabel" parent="Decoraciones" index="7" instance=ExtResource("4_7i5hr")]
+[node name="LevelLabel" parent="Decoraciones" index="8" instance=ExtResource("4_7i5hr")]
 offset_left = 576.0
 offset_top = 776.0
 offset_right = 856.0
 offset_bottom = 856.0
 
-[node name="LevelLabel2" parent="Decoraciones" index="8" instance=ExtResource("4_7i5hr")]
+[node name="LevelLabel2" parent="Decoraciones" index="9" instance=ExtResource("4_7i5hr")]
 offset_left = 648.0
 offset_top = 592.0
 offset_right = 928.0
 offset_bottom = 672.0
 labelID = 1
 
-[node name="LevelLabel3" parent="Decoraciones" index="9" instance=ExtResource("4_7i5hr")]
+[node name="LevelLabel3" parent="Decoraciones" index="10" instance=ExtResource("4_7i5hr")]
 offset_left = 704.0
 offset_top = 392.0
 offset_right = 984.0
 offset_bottom = 472.0
 labelID = 2
 
-[node name="LevelLabel4" parent="Decoraciones" index="10" instance=ExtResource("4_7i5hr")]
+[node name="LevelLabel4" parent="Decoraciones" index="11" instance=ExtResource("4_7i5hr")]
 offset_left = 648.0
 offset_top = 200.0
 offset_right = 928.0

@@ -111,9 +111,9 @@ offset_right = 789.0
 offset_bottom = 305.0
 theme_override_colors/font_color = Color(0.18039216, 0.50980395, 0.18039216, 1)
 theme_override_fonts/font = ExtResource("10_2bnyt")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 35
 text = "Final de AyOC, ver diapos: 1-9, 11-32, 34-66, 71-123, 121-249,
-251-252, 258-599, 606-909, 1024-2026, 2050-12369420"
+251-252, 258-599, 606-909, 1024-2026, 2050-123694"
 
 [node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="0"]
 position = Vector2(56, 31.999985)

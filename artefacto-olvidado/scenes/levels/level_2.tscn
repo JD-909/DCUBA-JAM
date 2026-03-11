@@ -118,7 +118,7 @@ rotation = -0.13698278
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_8qukl")
 theme_override_font_sizes/font_size = 32
-text = "Con la tecla [P] podes
+text = "Con la tecla [X] podes
  reiniciar el nivel"
 
 [node name="BaseLabel3" type="RichTextLabel" parent="Text" index="3"]
@@ -144,13 +144,13 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_l37oo")
 
 [node name="Drawing_sketchpad" type="Sprite2D" parent="Decoraciones" index="1"]
-modulate = Color(1, 1, 1, 0.6862745)
+modulate = Color(0, 0, 0, 1)
 position = Vector2(1104, 104)
 rotation = -0.1983161
 texture = ExtResource("9_3p04p")
 
 [node name="Drawing_sketchpad2" type="Sprite2D" parent="Decoraciones" index="2"]
-modulate = Color(1, 1, 1, 0.6862745)
+modulate = Color(0.34117648, 0.34117648, 0.95686275, 1)
 position = Vector2(1112.0001, 144)
 rotation = -0.07203007
 texture = ExtResource("9_3p04p")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dfj0sj1rgh1sv"]
+[gd_scene load_steps=10 format=4 uid="uid://dfj0sj1rgh1sv"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_rxi4e"]
 [ext_resource type="PackedScene" uid="uid://nbarbdry7if6" path="res://scenes/character_door.tscn" id="2_rbfy1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://70j4n5gwopjr" path="res://assets/Negoma.png" id="4_6m0so"]
 [ext_resource type="Texture2D" uid="uid://dvqgw88fk6dqi" path="res://assets/character_roundPurple.png" id="5_l5316"]
 [ext_resource type="Texture2D" uid="uid://b5467xjt08eeu" path="res://assets/character_squareRed.png" id="8_l5316"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="9_q7kjq"]
 
 [node name="Demo_level" instance=ExtResource("1_rxi4e")]
 
@@ -110,6 +111,19 @@ texture = ExtResource("4_6m0so")
 
 [node name="Label" parent="PermanentDrawnBodies/CharacterSelector6/Sprites/DrawnSprite1" index="0"]
 text = "La Negoma"
+
+[node name="BaseLabel2" type="Label" parent="Text" index="1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 480.0
+offset_right = 222.0
+offset_bottom = 609.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("9_q7kjq")
+theme_override_font_sizes/font_size = 32
+text = "Pulsa [S] cerca de una
+goma desbloqueada para
+ jugar como ella"
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
 [editable path="PermanentDrawnBodies/CharacterSelector2"]

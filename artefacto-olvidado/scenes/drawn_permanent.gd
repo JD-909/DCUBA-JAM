@@ -12,21 +12,21 @@ func _ready() -> void:
 		sprites.append(child)
 
 func be_drawn() -> void:
-	Global.add_permanent()
 	if active_sprite < sprites.size()-1:
 		active_sprite += 1
 		sprites[active_sprite].visible = true
 		sprites[active_sprite].modulate = regular_color
+		Global.add_permanent()
 		when_drawn()
 
 func when_drawn() -> void:
 	$CollisionShape2D.disabled = false
 
 func be_erased() -> void:
-	Global.sub_permanent()
 	if active_sprite > 0:
 		sprites[active_sprite].visible = false
 		active_sprite -= 1
+		Global.sub_permanent()
 		when_erased()
 
 func when_erased() -> void:

@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://c0dto8vdu16ce" path="res://assets/sonido_llave_puerta.wav" id="10_x262c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq12v"]
-size = Vector2(42, 62)
+size = Vector2(42, 58)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxo8o"]
 radius = 16.0
@@ -134,7 +134,7 @@ collision_layer = 5
 script = ExtResource("1_71w65")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_gq12v")
 
 [node name="DrawerSprite" type="Sprite2D" parent="."]

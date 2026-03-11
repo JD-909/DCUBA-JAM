@@ -96,9 +96,9 @@ offset_right = 680.0
 offset_bottom = -634.0
 rotation = -0.0015365705
 text = "¡UN SECRETO!
-Este deberia ser
-el ultimo
-¡Felicidades!"
+Hay una recompensa
+especial para los
+terminen al 100%"
 horizontal_alignment = 1
 
 [node name="ExitDoor2" parent="PermanentDrawnBodies" index="14" instance=ExtResource("6_glw47")]

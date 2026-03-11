@@ -10,17 +10,12 @@ size = Vector2(32, 80)
 [node name="Bow" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource("1_prjx1")
-active_sprite = 1
-metadata/_custom_type_script = "uid://de2yx75pg7o4r"
+metadata/_custom_type_script = "uid://br0fuqay6x6tf"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_atxj4")
 
-[node name="Sprites" type="Node2D" parent="."]
-
-[node name="DrawnSprite0" type="Sprite2D" parent="Sprites"]
-
-[node name="DrawnSprite1" type="Sprite2D" parent="Sprites"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rivji")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-extends PermanentDrawnBody
+extends PenDrawnBody
 
 @onready var arrow_res : Resource = load("res://scenes/arrow.tscn")
 @onready var shoot_sound : AudioStreamPlayer2D = $ShootSound
@@ -6,10 +6,6 @@ extends PermanentDrawnBody
 @onready var timer : Timer = $Timer
 
 @export var direction : Vector2 = Vector2(1,0)
-
-
-func when_erased() -> void:
-	queue_free()
 
 func _on_timer_timeout() -> void:
 	shoot()

@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbus2wlteto01"]
+[gd_scene load_steps=7 format=3 uid="uid://cbus2wlteto01"]
 
 [ext_resource type="Script" uid="uid://bgov3gh5lxpr2" path="res://scenes/moving_platform.gd" id="1_1tdcd"]
 [ext_resource type="Texture2D" uid="uid://cmi1sngtismxf" path="res://assets/tile_bridge.png" id="2_mb26n"]
+[ext_resource type="Script" uid="uid://c3vypu8xeij2x" path="res://scenes/movement_cog.gd" id="3_afg43"]
+[ext_resource type="Texture2D" uid="uid://c5s36canx80vb" path="res://assets/tile_cog.png" id="4_pgg5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afg43"]
 size = Vector2(64, 24)
 
-[node name="MovingPlatform" type="StaticBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_20ojx"]
+radius = 16.0
+
+[node name="MovingPlatform" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_1tdcd")
 
@@ -17,3 +22,30 @@ one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mb26n")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MovementCog" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_afg43")
+active_sprite = 1
+metadata/_custom_type_script = "uid://de2yx75pg7o4r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovementCog"]
+shape = SubResource("CircleShape2D_20ojx")
+
+[node name="Sprites" type="Node2D" parent="MovementCog"]
+
+[node name="TileCog" type="Sprite2D" parent="MovementCog/Sprites"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pgg5x")
+
+[node name="TileCog2" type="Sprite2D" parent="MovementCog/Sprites"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pgg5x")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

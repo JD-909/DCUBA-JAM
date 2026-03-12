@@ -1,0 +1,215 @@
+[gd_scene load_steps=13 format=4 uid="uid://e8yd3sl68ta7"]
+
+[ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_laj7o"]
+[ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="2_fi56y"]
+[ext_resource type="Script" uid="uid://si46xylmasfc" path="res://scenes/end_level_door.gd" id="2_hldbq"]
+[ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="3_hldbq"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="3_mxx4w"]
+[ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="4_fsnos"]
+[ext_resource type="Texture2D" uid="uid://mqldno3le5qu" path="res://assets/ParedCard.jpg" id="4_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://07x6egnoq8en" path="res://scenes/bow.tscn" id="4_vvoq0"]
+[ext_resource type="Texture2D" uid="uid://nnde3ys6p0h3" path="res://assets/BalanceCard.jpg" id="5_dwyms"]
+[ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="6_fsnos"]
+[ext_resource type="PackedScene" uid="uid://m60rx6xk0v66" path="res://scenes/level_exit_door.tscn" id="7_dwyms"]
+[ext_resource type="Texture2D" uid="uid://dnhmguie5dunt" path="res://assets/DoodleFrog.svg" id="12_6xwso"]
+
+[node name="Demo_level" instance=ExtResource("1_laj7o")]
+level_ID = 5
+
+[node name="Tiles" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAsAAAAAAAAAAAASAA0ACwAAAAAAAAADAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAKAAcACwAAAAAAAAAKAAgACwAAAAAAAAAKAAkACwAAAAAAAAAPAAcACwAAAAAAAAAPAAgACwAAAAAAAAAPAAkACwAAAAAAAAAAAAQACwAAAAAAAAAAAAcACwAAAAAAAAABAAQACwAAAAAAAAABAAcACwAAAAAAAAACAAQACwAAAAAAAAACAAcACwAAAAAAAAADAAQACwAAAAAAAAADAAcACwAAAAAAAAADAAoACwAAAAAAAAAEAAQACwAAAAAAAAAEAAcACwAAAAAAAAAEAAoACwAAAAAAAAAFAAQACwAAAAAAAAAFAAcACwAAAAAAAAAFAAoACwAAAAAAAAAGAAQACwAAAAAAAAAGAAcACwAAAAAAAAAGAAoACwAAAAAAAAAHAAQACwAAAAAAAAAHAAcACwAAAAAAAAAHAAoACwAAAAAAAAAIAAoACwAAAAAAAAAJAAgAAAAAAAAAAAAJAAoACwAAAAAAAAAKAAQACwAAAAAAAAAKAAoACwAAAAAAAAALAAQACwAAAAAAAAALAAoACwAAAAAAAAAMAAQACwAAAAAAAAAMAAoACwAAAAAAAAANAAQACwAAAAAAAAANAAoACwAAAAAAAAAOAAQACwAAAAAAAAAOAAoACwAAAAAAAAAPAAQACwAAAAAAAAAPAAoACwAAAAAAAAAQAAQACwAAAAAAAAAQAAcACwAAAAAAAAARAAQACwAAAAAAAAARAAcACwAAAAAAAAASAAQACwAAAAAAAAASAAcACwAAAAAAAAATAAQACwAAAAAAAAATAAcACwAAAAAAAAAJAAUAAAAAAAAAAAANAAMACwAAAAAAAAAFAAMACwAAAAAAAAACAAMACwAAAAAAAAA=")
+
+[node name="Drawer" parent="." index="2"]
+position = Vector2(96, 416)
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(1056, 416)
+script = ExtResource("2_hldbq")
+take_me_to = &"res://menu/completed.tscn"
+active_sprite = 0
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+visible = false
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="1" instance=ExtResource("3_mxx4w")]
+position = Vector2(1208, 616)
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+z_index = 3
+z_as_relative = false
+texture = ExtResource("4_tqnj0")
+
+[node name="DrawnSprite2" type="Sprite2D" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+z_index = 2
+z_as_relative = false
+position = Vector2(-280, 0)
+rotation = -0.43633232
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("5_dwyms")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="1"]
+offset_left = -520.0
+offset_top = -1400.0
+offset_right = 840.0
+offset_bottom = -794.0
+text = "¡UN SECRETO!
+Las cartas que no
+pude implementar"
+
+[node name="Bow2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("4_vvoq0")]
+position = Vector2(32, 864)
+is_pen_drawn = true
+
+[node name="Bow3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("4_vvoq0")]
+position = Vector2(736, 544)
+rotation = -1.5707964
+direction = Vector2(0, -1)
+is_pen_drawn = true
+
+[node name="Bow4" parent="PermanentDrawnBodies" index="4" instance=ExtResource("4_vvoq0")]
+position = Vector2(800, 544)
+rotation = -1.5707964
+direction = Vector2(0, -1)
+is_pen_drawn = true
+
+[node name="Bow5" parent="PermanentDrawnBodies" index="5" instance=ExtResource("4_vvoq0")]
+position = Vector2(864, 544)
+rotation = -1.5707964
+direction = Vector2(0, -1)
+is_pen_drawn = true
+
+[node name="Bow6" parent="PermanentDrawnBodies" index="6" instance=ExtResource("4_vvoq0")]
+position = Vector2(928, 544)
+rotation = -1.5707964
+direction = Vector2(0, -1)
+is_pen_drawn = true
+
+[node name="LevelExitDoor" parent="PermanentDrawnBodies" index="7" instance=ExtResource("7_dwyms")]
+position = Vector2(32, 416)
+take_me_to = &"res://scenes/levels/level_select_level.tscn"
+
+[node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("2_fi56y")]
+position = Vector2(736, 352)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="SingleSpike16" parent="Spikes" index="1" instance=ExtResource("2_fi56y")]
+position = Vector2(800, 224)
+is_pen_drawn = true
+
+[node name="SingleSpike19" parent="Spikes" index="2" instance=ExtResource("2_fi56y")]
+position = Vector2(160, 32)
+rotation = 3.1415927
+
+[node name="SingleSpike17" parent="Spikes" index="3" instance=ExtResource("2_fi56y")]
+position = Vector2(160, 160)
+is_pen_drawn = true
+
+[node name="SingleSpike2" parent="Spikes" index="4" instance=ExtResource("2_fi56y")]
+position = Vector2(864, 352)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="SingleSpike7" parent="Spikes" index="5" instance=ExtResource("2_fi56y")]
+position = Vector2(928, 352)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="SingleSpike3" parent="Spikes" index="6" instance=ExtResource("2_fi56y")]
+position = Vector2(800, 352)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="SingleSpike4" parent="Spikes" index="7" instance=ExtResource("3_hldbq")]
+position = Vector2(736, 608)
+is_pen_drawn = true
+
+[node name="SingleSpike13" parent="Spikes" index="8" instance=ExtResource("3_hldbq")]
+position = Vector2(736, 224)
+
+[node name="SingleSpike20" parent="Spikes" index="9" instance=ExtResource("3_hldbq")]
+position = Vector2(352, 32)
+rotation = 3.1415927
+
+[node name="SingleSpike18" parent="Spikes" index="10" instance=ExtResource("3_hldbq")]
+position = Vector2(352, 160)
+is_pen_drawn = true
+
+[node name="SingleSpike14" parent="Spikes" index="11" instance=ExtResource("3_hldbq")]
+position = Vector2(928, 224)
+
+[node name="SingleSpike15" parent="Spikes" index="12" instance=ExtResource("3_hldbq")]
+position = Vector2(864, 160)
+
+[node name="SingleSpike9" parent="Spikes" index="13" instance=ExtResource("3_hldbq")]
+position = Vector2(224, 736)
+rotation = 3.1415927
+
+[node name="SingleSpike10" parent="Spikes" index="14" instance=ExtResource("3_hldbq")]
+position = Vector2(480, 736)
+rotation = 3.1415927
+
+[node name="SingleSpike11" parent="Spikes" index="15" instance=ExtResource("3_hldbq")]
+position = Vector2(736, 736)
+rotation = 3.1415927
+
+[node name="SingleSpike12" parent="Spikes" index="16" instance=ExtResource("3_hldbq")]
+position = Vector2(992, 736)
+rotation = 3.1415927
+
+[node name="SingleSpike5" parent="Spikes" index="17" instance=ExtResource("3_hldbq")]
+position = Vector2(800, 608)
+is_pen_drawn = true
+
+[node name="SingleSpike6" parent="Spikes" index="18" instance=ExtResource("3_hldbq")]
+position = Vector2(864, 608)
+is_pen_drawn = true
+
+[node name="SingleSpike8" parent="Spikes" index="19" instance=ExtResource("3_hldbq")]
+position = Vector2(928, 608)
+is_pen_drawn = true
+
+[node name="LockBlock" parent="LocksAndKeys" index="0" instance=ExtResource("4_fsnos")]
+position = Vector2(736, 480)
+
+[node name="LockBlock2" parent="LocksAndKeys" index="1" instance=ExtResource("4_fsnos")]
+position = Vector2(864, 480)
+
+[node name="LockBlock4" parent="LocksAndKeys" index="2" instance=ExtResource("4_fsnos")]
+position = Vector2(928, 480)
+
+[node name="LockBlock3" parent="LocksAndKeys" index="3" instance=ExtResource("4_fsnos")]
+position = Vector2(800, 480)
+
+[node name="LockBlock5" parent="LocksAndKeys" index="4" instance=ExtResource("4_fsnos")]
+position = Vector2(1248, 864)
+
+[node name="LockBlock6" parent="LocksAndKeys" index="5" instance=ExtResource("4_fsnos")]
+position = Vector2(1248, 736)
+
+[node name="LockBlock7" parent="LocksAndKeys" index="6" instance=ExtResource("4_fsnos")]
+position = Vector2(1248, 224)
+
+[node name="LockBlock8" parent="LocksAndKeys" index="7" instance=ExtResource("4_fsnos")]
+position = Vector2(32, 224)
+
+[node name="KeyItem" parent="LocksAndKeys" index="8" instance=ExtResource("6_fsnos")]
+position = Vector2(192, 384)
+
+[node name="KeyItem2" parent="LocksAndKeys" index="9" instance=ExtResource("6_fsnos")]
+position = Vector2(256, 384)
+
+[node name="KeyItem3" parent="LocksAndKeys" index="10" instance=ExtResource("6_fsnos")]
+position = Vector2(320, 384)
+
+[node name="KeyItem4" parent="LocksAndKeys" index="11" instance=ExtResource("6_fsnos")]
+position = Vector2(384, 384)
+
+[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="0"]
+modulate = Color(1, 1, 1, 0.8039216)
+position = Vector2(904, -144)
+rotation = 3.1415927
+texture = ExtResource("12_6xwso")
+
+[editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

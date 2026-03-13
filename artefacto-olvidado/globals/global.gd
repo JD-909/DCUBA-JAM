@@ -1,6 +1,6 @@
 extends Node
 
-const draw_limits : Array[int] = [2, 5, 5, 4, 0]
+const draw_limits : Array[int] = [2, 5, 5, 4, 1]
 const erase_limits : Array[int] = [1, 0, 1, 1, 0]
 const initial_permanents_in : Array[int] = [
 	6,
@@ -22,7 +22,8 @@ var levels_by_ID : Array[StringName] = [
 	"res://scenes/levels/level_1.tscn",
 	"res://scenes/levels/level_2.tscn",
 	"res://scenes/levels/level_3.tscn",
-	"res://scenes/levels/level_4.tscn"]
+	"res://scenes/levels/level_4.tscn",
+	"res://scenes/levels/level_5.tscn"]
 
 # Other vars
 var drawings : int = 0

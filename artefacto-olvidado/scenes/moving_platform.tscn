@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_afg43")
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.73333335, 0.73333335, 1)
 texture = ExtResource("2_mb26n")
 
 [node name="Timer" type="Timer" parent="."]
@@ -49,3 +50,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_pgg5x")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="appear" from="MovementCog" to="." method="_on_movement_cog_appear"]
+[connection signal="disappear" from="MovementCog" to="." method="_on_movement_cog_disappear"]

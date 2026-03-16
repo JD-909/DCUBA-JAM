@@ -3,6 +3,7 @@ extends Control
 @onready var checking_level = Global.last_level_visited
 
 func _ready() -> void:
+	
 	# Text handling
 	$VBoxContainer/Label.text += str(checking_level)
 	$VBoxContainer/HBoxContainer2/DrawLimitStar/Sprite2D/Label.text += str(Global.drawings) +"/"+ str(Global.draw_limits[checking_level -1])

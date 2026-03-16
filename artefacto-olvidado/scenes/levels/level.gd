@@ -6,6 +6,7 @@ extends Node2D
 func _ready() -> void:
 	$AudioStreamPlayer2D.play()
 	Global.visit(level_ID)
+	print(level_ID)
 
 func restart_level() -> void:
 	# Reload the level

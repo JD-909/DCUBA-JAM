@@ -7,7 +7,8 @@ enum Axis_Direction {Horizontal, Vertical}
 @export var Axis : Axis_Direction = Axis_Direction.Horizontal
 @export var tilesToTravel : int = 1
 
-@onready var timer : Timer =$Timer
+@onready var timer : Timer = $Timer
+@onready var cog : PermanentDrawnBody = $"MovementCog"
 
 var movementVector : Vector2
 var initialMovementVector : Vector2
@@ -30,8 +31,14 @@ func _ready() -> void:
 			movementVector = initialMovementVector
 			FinalPosition = InitialPosition + Vector2(0, tilesToTravel*64)
 	
-	print(InitialPosition)
-	print(FinalPosition)
+	if FinalPosition < InitialPosition:
+		var placeholder = InitialPosition
+		InitialPosition = FinalPosition
+		FinalPosition = placeholder
+		dir = -1
+	
+	if cog.active_sprite == 0:
+		stop_movement()
 
 func _process(_delta: float) -> void:
 	
@@ -58,3 +65,12 @@ func stop_movement() -> void:
 
 func resume_movement() -> void:
 	movementVector = initialMovementVector
+
+
+func _on_movement_cog_appear() -> void:
+	resume_movement()
+	timer.paused = false
+
+func _on_movement_cog_disappear() -> void:
+	stop_movement()
+	timer.paused = true

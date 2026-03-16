@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=4 uid="uid://wi11kbn14nyf"]
+
+[ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_y2agi"]
+[ext_resource type="PackedScene" uid="uid://cbus2wlteto01" path="res://scenes/moving_platform.tscn" id="2_g44gb"]
+[ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_741xk"]
+[ext_resource type="Texture2D" uid="uid://eqcuv2h2obe0" path="res://assets/DoodleCogs.png" id="3_g44gb"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="5_5wshb"]
+[ext_resource type="Texture2D" uid="uid://ctrm8rao3glne" path="res://assets/resolventeSticker.png" id="6_7x7cx"]
+[ext_resource type="FontFile" uid="uid://dkdjhues3g2co" path="res://assets/Casual Sunday.otf" id="7_7x7cx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov54t"]
+size = Vector2(400, 128)
+
+[node name="Demo_level" instance=ExtResource("1_y2agi")]
+level_ID = 6
+
+[node name="Tiles" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAADAA0ACwAAAAAAAAATAAMACwAAAAAAAAASAAMACwAAAAAAAAARAAMACwAAAAAAAAA=")
+
+[node name="DoodleCogs" type="Sprite2D" parent="Decoraciones" index="0"]
+modulate = Color(1, 1, 1, 0.7647059)
+position = Vector2(824, 472)
+texture = ExtResource("3_g44gb")
+
+[node name="Drawer" parent="." index="3"]
+position = Vector2(96, 864)
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(1184, 160)
+
+[node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1"]
+position = Vector2(32, 864)
+
+[node name="DrawnBlock" parent="PermanentDrawnBodies" index="2" instance=ExtResource("3_741xk")]
+position = Vector2(608, 160)
+
+[node name="DrawnBlock2" parent="PermanentDrawnBodies" index="3" instance=ExtResource("3_741xk")]
+position = Vector2(608, 96)
+
+[node name="DrawnBlock3" parent="PermanentDrawnBodies" index="4" instance=ExtResource("3_741xk")]
+position = Vector2(608, 32)
+
+[node name="MovingPlatform" parent="PermanentDrawnBodies" index="5" instance=ExtResource("2_g44gb")]
+position = Vector2(288, 800)
+tilesToTravel = 13
+
+[node name="MovementCog" parent="PermanentDrawnBodies/MovingPlatform" index="3"]
+active_sprite = 0
+
+[node name="TileCog2" parent="PermanentDrawnBodies/MovingPlatform/MovementCog/Sprites" index="1"]
+visible = false
+
+[node name="MovingPlatform2" parent="PermanentDrawnBodies" index="6" instance=ExtResource("2_g44gb")]
+position = Vector2(1184, 800)
+Axis = 1
+tilesToTravel = -5
+
+[node name="MovingPlatform5" parent="PermanentDrawnBodies" index="7" instance=ExtResource("2_g44gb")]
+position = Vector2(224, 480)
+Axis = 1
+tilesToTravel = -4
+
+[node name="MovingPlatform3" parent="PermanentDrawnBodies" index="8" instance=ExtResource("2_g44gb")]
+position = Vector2(288, 480)
+tilesToTravel = 6
+
+[node name="MovingPlatform6" parent="PermanentDrawnBodies" index="9" instance=ExtResource("2_g44gb")]
+position = Vector2(288, 224)
+tilesToTravel = 12
+
+[node name="MovementCog" parent="PermanentDrawnBodies/MovingPlatform6" index="3"]
+active_sprite = 0
+
+[node name="TileCog2" parent="PermanentDrawnBodies/MovingPlatform6/MovementCog/Sprites" index="1"]
+visible = false
+
+[node name="MovingPlatform4" parent="PermanentDrawnBodies" index="10" instance=ExtResource("2_g44gb")]
+position = Vector2(736, 480)
+tilesToTravel = 6
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="11" instance=ExtResource("5_5wshb")]
+position = Vector2(216, 592)
+
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/DrawnCard" index="0"]
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PermanentDrawnBodies/DrawnCard" index="1"]
+shape = SubResource("RectangleShape2D_ov54t")
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+scale = Vector2(1, 1)
+texture = ExtResource("6_7x7cx")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+offset_left = 208.0
+offset_top = -56.0
+offset_right = 1568.0
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 32
+text = "¡UN SECRETO!
+No se olviden nunca de la 
+formula de Bhaskara"
+
+[node name="BaseLabel2" type="Label" parent="Text" index="1"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 832.0
+offset_right = 735.0
+offset_bottom = 873.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_7x7cx")
+theme_override_font_sizes/font_size = 32
+text = "Con un engranage, estas plataformas pueden moverse"
+
+[node name="BaseLabel3" type="Label" parent="Text" index="2"]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 832.0
+offset_right = 936.0
+offset_bottom = 873.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_7x7cx")
+theme_override_font_sizes/font_size = 32
+text = "Sin ellas no se pueden mover..."
+
+[editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/MovingPlatform"]
+[editable path="PermanentDrawnBodies/MovingPlatform6"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

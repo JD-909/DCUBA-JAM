@@ -15,12 +15,48 @@
 [node name="Tiles" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAcACwAAAAAAAAABAAcACwAAAAAAAAACAAgACwAAAAAAAAADAAgACwAAAAAAAAAEAAkACwAAAAAAAAAFAAkACwAAAAAAAAAGAAoACwAAAAAAAAAHAAoACwAAAAAAAAAIAAsACwAAAAAAAAAJAAsACwAAAAAAAAAKAAwACwAAAAAAAAALAAwACwAAAAAAAAAMAA0ACwAAAAAAAAANAA0ACwAAAAAAAAAAAAgADAABAAoAAAAAAAkADAADAAQAAAAAAAoADAAEAAcAAAABAAgADAAFAAUAAAABAAkADAAFAAYAAAABAAoADAAFAAcAAAAAAAsADAADAAAAAAAAAAwADAAEAAYAAAAAAA0ADAAEAAcAAAABAAsADAACAAcAAAABAAwADAAFAAYAAAABAA0ADAAFAAcAAAAEAAwADAAEAAUAAAAEAAsADAAEAAcAAAAEAAoADAAEAAYAAAADAAoADAAFAAYAAAADAAkADAADAAQAAAACAAkADAAEAAUAAAACAAoADAAEAAYAAAACAAsADAAEAAcAAAACAAwADAAEAAUAAAACAA0ADAADAAAAAAADAA0ADAAFAAYAAAADAAwADAACAAcAAAADAAsADAAFAAcAAAAEAA0ADAAEAAYAAAAFAA0ADAADAAQAAAAFAAwADAAFAAUAAAAFAAsADAAFAAcAAAAFAAoADAADAAAAAAAGAAsADAAEAAcAAAAGAAwADAADAAcAAAAGAA0ADAAEAAYAAAAHAA0ADAAFAAYAAAAHAAwADAADAAAAAAAHAAsADAAFAAcAAAAIAAwADAADAAcAAAAIAA0ADAAEAAYAAAAJAA0ADAAFAAYAAAAJAAwADAABAAoAAAAKAA0ADAAEAAYAAAALAA0ADAADAAQAAAA=")
 
-[node name="Drawer" parent="." index="2"]
+[node name="Resaltador" type="Sprite2D" parent="Decoraciones" index="0"]
+modulate = Color(1, 1, 1, 0.8392157)
+position = Vector2(1096, 512)
+texture = ExtResource("5_m6iyy")
+vframes = 3
+frame = 1
+
+[node name="Resaltador2" type="Sprite2D" parent="Decoraciones" index="1"]
+modulate = Color(1, 1, 1, 0.8392157)
+position = Vector2(1112, 744)
+texture = ExtResource("5_m6iyy")
+vframes = 3
+frame = 1
+
+[node name="DoodleSpaceBar" type="Sprite2D" parent="Decoraciones" index="2"]
+position = Vector2(992, 728)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ixxwb")
+
+[node name="Drawing" type="Sprite2D" parent="Decoraciones" index="3"]
+position = Vector2(1064, 536)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_vg7xk")
+
+[node name="FlechaDibu2" type="Sprite2D" parent="Decoraciones" index="4"]
+position = Vector2(280, 455.99997)
+rotation = 0.44902176
+texture = ExtResource("6_k3ocw")
+flip_h = true
+
+[node name="FlechaDibu3" type="Sprite2D" parent="Decoraciones" index="5"]
+position = Vector2(600, 544)
+rotation = -1.1379962
+texture = ExtResource("9_bpr0w")
+flip_h = true
+
+[node name="Drawer" parent="." index="3"]
 position = Vector2(32, 416)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
 position = Vector2(160, 480)
-take_me_to = &"res://scenes/levels/level_select_level.tscn"
+take_me_to = &"res://scenes/levels/world_select_level.tscn"
 
 [node name="ExitDoor2" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_37bg4")]
 position = Vector2(544, 672)
@@ -151,41 +187,5 @@ theme_override_font_sizes/font_size = 32
 text = "A la
 izquierda"
 horizontal_alignment = 1
-
-[node name="Resaltador" type="Sprite2D" parent="Decoraciones" index="0"]
-modulate = Color(1, 1, 1, 0.8392157)
-position = Vector2(1096, 512)
-texture = ExtResource("5_m6iyy")
-vframes = 3
-frame = 1
-
-[node name="Resaltador2" type="Sprite2D" parent="Decoraciones" index="1"]
-modulate = Color(1, 1, 1, 0.8392157)
-position = Vector2(1112, 744)
-texture = ExtResource("5_m6iyy")
-vframes = 3
-frame = 1
-
-[node name="DoodleSpaceBar" type="Sprite2D" parent="Decoraciones" index="2"]
-position = Vector2(992, 728)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_ixxwb")
-
-[node name="Drawing" type="Sprite2D" parent="Decoraciones" index="3"]
-position = Vector2(1064, 536)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_vg7xk")
-
-[node name="FlechaDibu2" type="Sprite2D" parent="Decoraciones" index="4"]
-position = Vector2(280, 455.99997)
-rotation = 0.44902176
-texture = ExtResource("6_k3ocw")
-flip_h = true
-
-[node name="FlechaDibu3" type="Sprite2D" parent="Decoraciones" index="5"]
-position = Vector2(600, 544)
-rotation = -1.1379962
-texture = ExtResource("9_bpr0w")
-flip_h = true
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://brh4gvgnphi6j"]
+
+[ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_76yh8"]
+[ext_resource type="Script" uid="uid://si46xylmasfc" path="res://scenes/end_level_door.gd" id="2_kmr8v"]
+[ext_resource type="PackedScene" uid="uid://m60rx6xk0v66" path="res://scenes/level_exit_door.tscn" id="2_l2nsd"]
+
+[node name="Demo_level" instance=ExtResource("1_76yh8")]
+
+[node name="Tiles" parent="TileMap" index="1"]
+modulate = Color(1, 0.7176471, 0.7176471, 1)
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+script = ExtResource("2_kmr8v")
+take_me_to = &"res://menu/completed.tscn"
+active_sprite = 0
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+visible = false
+
+[node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_l2nsd")]
+position = Vector2(96, 864)
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

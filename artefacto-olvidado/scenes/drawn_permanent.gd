@@ -10,6 +10,10 @@ func _ready() -> void:
 	
 	for child in $Sprites.get_children():
 		sprites.append(child)
+	when_ready()
+
+func when_ready() -> void:
+	pass
 
 func be_drawn() -> void:
 	if active_sprite < sprites.size()-1:

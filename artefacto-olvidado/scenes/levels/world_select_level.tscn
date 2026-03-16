@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://evqp4gygcmth"]
+
+[ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_ic2xe"]
+[ext_resource type="PackedScene" uid="uid://c1ualvue8g7f4" path="res://scenes/exit_door.tscn" id="2_62xsr"]
+
+[node name="Demo_level" instance=ExtResource("1_ic2xe")]
+
+[node name="Drawer" parent="." index="3"]
+position = Vector2(96, 864)
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(32, 864)
+
+[node name="WorldDoor1" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_62xsr")]
+position = Vector2(416, 864)
+take_me_to = &"res://scenes/levels/level_select_level.tscn"
+
+[node name="WorldDoor2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_62xsr")]
+position = Vector2(864, 864)
+take_me_to = &"res://scenes/levels/level_select_level2.tscn"
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

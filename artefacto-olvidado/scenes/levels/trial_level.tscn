@@ -6,8 +6,8 @@
 [node name="Trial_level" instance=ExtResource("1_so5ub")]
 
 [node name="MovingPlatform" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_sxtg0")]
-position = Vector2(160, 800)
-tilesToTravel = 2
+position = Vector2(416, 872)
+tilesToTravel = -2
 
 [node name="MovingPlatform2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_sxtg0")]
 position = Vector2(352, 608)

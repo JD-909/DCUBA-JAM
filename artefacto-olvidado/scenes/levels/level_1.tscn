@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bcwy4ghvsiep" path="res://assets/DoodleParabol.png" id="11_excbq"]
 
 [node name="Demo_level" instance=ExtResource("1_ksju7")]
-level_ID = 1
+level_ID = Vector2(1, 0)
 
 [node name="TileMap" parent="." index="1"]
 metadata/_edit_lock_ = true
@@ -21,7 +21,25 @@ metadata/_edit_lock_ = true
 [node name="Tiles" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAAAAoACwAAAAAAAAABAAoACwAAAAAAAAACAAoACwAAAAAAAAADAAoACwAAAAAAAAAEAAoACwAAAAAAAAAFAAoACwAAAAAAAAAGAAoACwAAAAAAAAAHAAoACwAAAAAAAAAIAAoACwAAAAAAAAAJAAoACwAAAAAAAAAKAAoACwAAAAAAAAALAAoACwAAAAAAAAAMAAoACwAAAAAAAAANAAoACwAAAAAAAAAPAAoACwAAAAAAAAAQAAoACwAAAAAAAAATAAwAAAAAAAAAAAASAAwAAAAAAAAAAAASAAoAAAAAAAAAAAARAAoAAAAAAAAAAAAOAAoACwAAAAAAAAAKAA0ACwAAAAAAAAAKAAsACwAAAAAAAAAFAAUAAAAAAAAAAAAGAAUACwAAAAAAAAAHAAUACwAAAAAAAAAIAAUACwAAAAAAAAAJAAUACwAAAAAAAAAKAAUACwAAAAAAAAALAAUACwAAAAAAAAAMAAUACwAAAAAAAAANAAUACwAAAAAAAAAOAAUACwAAAAAAAAAPAAUACwAAAAAAAAAQAAUACwAAAAAAAAARAAUACwAAAAAAAAASAAUACwAAAAAAAAATAAUACwAAAAAAAAA=")
 
-[node name="Drawer" parent="." index="2"]
+[node name="TaTeTi" type="Sprite2D" parent="Decoraciones" index="0"]
+position = Vector2(584, 504)
+rotation = -0.2847665
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_oc4kc")
+
+[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="1"]
+modulate = Color(1, 1, 1, 0.72156864)
+position = Vector2(112, 128)
+rotation = 1.0185034
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_qxy0u")
+
+[node name="DoodleParabol" type="Sprite2D" parent="Decoraciones" index="2"]
+position = Vector2(632, 168)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_excbq")
+
+[node name="Drawer" parent="." index="3"]
 position = Vector2(96, 864)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
@@ -128,23 +146,5 @@ theme_override_fonts/font = ExtResource("2_6iamk")
 theme_override_font_sizes/font_size = 32
 text = "Cuando no hay salida,
 hacemos la salida"
-
-[node name="TaTeTi" type="Sprite2D" parent="Decoraciones" index="0"]
-position = Vector2(584, 504)
-rotation = -0.2847665
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_oc4kc")
-
-[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="1"]
-modulate = Color(1, 1, 1, 0.72156864)
-position = Vector2(112, 128)
-rotation = 1.0185034
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_qxy0u")
-
-[node name="DoodleParabol" type="Sprite2D" parent="Decoraciones" index="2"]
-position = Vector2(632, 168)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("11_excbq")
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

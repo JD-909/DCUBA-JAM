@@ -1,31 +1,53 @@
 extends Node
 
-const draw_limits : Array[int] = [2, 5, 5, 4, 1, 2]
-const erase_limits : Array[int] = [1, 0, 1, 1, 0, 1]
-const initial_permanents_in : Array[int] = [
-	6,
-	5,
-	4,
-	16,
-	10,
-	8
-]
+const draw_limits : Array[Array] = [
+	[],
+	[2, 5, 5, 4, 1], 
+	[2]
+	]
+const erase_limits : Array[Array] = [
+	[],
+	[1, 0, 1, 1, 0], 
+	[1]
+	]
+const initial_permanents_in : Array[Array] = [
+	[],
+	[6, 5, 4, 16, 10],
+	[8]
+	]
 
 # Level vars
-var last_level_visited : int 
-var level_done : Array[bool] = [false,false,false,false,false,false]
-var level_done_draw_limit : Array[bool] = [false,false,false,false,false,false]
-var level_done_erase_limit : Array[bool] = [false,false,false,false,false,false]
-var level_done_erase_all : Array[bool] = [false,false,false,false,false,false]
-var level_done_secret : Array[bool] = [false,false,false,false,false,false]
-var levels_by_ID : Array[StringName] = [
-	"res://scenes/levels/main_menu_level.tscn",
-	"res://scenes/levels/level_1.tscn",
-	"res://scenes/levels/level_2.tscn",
-	"res://scenes/levels/level_3.tscn",
-	"res://scenes/levels/level_4.tscn",
-	"res://scenes/levels/level_5.tscn",
-	"res://scenes/levels/level_6.tscn"]
+var last_level_visited : Vector2 
+var level_done : Array[Array] = [
+	[],
+	[false,false,false,false,false],
+	[false]
+	]
+var level_done_draw_limit : Array[Array] = [
+	[],
+	[false,false,false,false,false],
+	[false]
+	]
+var level_done_erase_limit : Array[Array] = [
+	[],
+	[false,false,false,false,false],
+	[false]
+	]
+var level_done_erase_all : Array[Array] = [
+	[],
+	[false,false,false,false,false],
+	[false]
+	]
+var level_done_secret : Array[Array] = [
+	[],
+	[false,false,false,false,false],
+	[false]
+	]
+var levels_by_ID : Array[Array] = [
+	["res://scenes/levels/main_menu_level.tscn"],
+	["res://scenes/levels/level_1.tscn", "res://scenes/levels/level_2.tscn", "res://scenes/levels/level_3.tscn", "res://scenes/levels/level_4.tscn", "res://scenes/levels/level_5.tscn"],
+	["res://scenes/levels/level_6.tscn"]
+	]
 
 # Other vars
 var drawings : int = 0
@@ -36,12 +58,13 @@ var secret_found : bool = false
 # Character
 var current_character : int = 0
 
-func visit(level_ID : int) -> void:
+func visit(level_ID : Vector2) -> void:
 	last_level_visited = level_ID
 	reset_drawings_and_erasures()
 	secret_found = false
-	if level_ID > 0:
-		current_permanents_amount = initial_permanents_in[level_ID-1]
+	if level_ID[0] > 0:
+		# La acntidad de permanentes se busca en el array
+		current_permanents_amount = initial_permanents_in[int(level_ID[0])][int(level_ID[1])]
 	print("visited : " + str(level_ID))
 	print(level_done)
 	print(level_done_draw_limit)
@@ -50,28 +73,27 @@ func visit(level_ID : int) -> void:
 	print(level_done_secret)
 
 
-func complete(level_ID : int) -> void:
-	if level_ID > 0:
-		var level = level_ID-1
+func complete(level_ID : Vector2) -> void:
+	if level_ID[0] > 0:
 		
 		# Completed star
-		level_done[level] = true
+		level_done[int(level_ID[0])][int(level_ID[1])] = true
 		
 		# Draw limit star
-		if drawings <= draw_limits[level]:
-			level_done_draw_limit[level] = true
+		if drawings <= draw_limits[int(level_ID[0])][int(level_ID[1])]:
+			level_done_draw_limit[int(level_ID[0])][int(level_ID[1])] = true
 		
 		# Erase limit star
-		if erasures <= erase_limits[level]:
-			level_done_erase_limit[level] = true
+		if erasures <= erase_limits[int(level_ID[0])][int(level_ID[1])]:
+			level_done_erase_limit[int(level_ID[0])][int(level_ID[1])] = true
 		
 		# Erase all star (<=1 because of the door)
 		if current_permanents_amount <= 1:
-			level_done_erase_all[level] = true
+			level_done_erase_all[int(level_ID[0])][int(level_ID[1])] = true
 		
 		# Secret star
 		if secret_found:
-			level_done_secret[level] = true
+			level_done_secret[int(level_ID[0])][int(level_ID[1])] = true
 
 # Draw and erase limit handling
 func add_drawing() -> void:
@@ -98,7 +120,7 @@ func find_secret() -> void:
 # Check unlocked characters
 func check_completion(ID : int) -> bool:
 	
-	var array_check : Array[bool]= []
+	var array_check : Array[Array]= []
 	
 	match ID:
 		1:
@@ -117,8 +139,9 @@ func check_completion(ID : int) -> bool:
 			else: return false
 	
 	for elem in array_check:
-		if not elem:
-			return false
+		for item in elem:
+			if not item:
+				return false
 	
 	return true
 

@@ -1,7 +1,7 @@
 class_name Level
 extends Node2D
 
-@export var level_ID : int = 0
+@export var level_ID : Vector2 = Vector2(0,0)
 
 func _ready() -> void:
 	$AudioStreamPlayer2D.play()

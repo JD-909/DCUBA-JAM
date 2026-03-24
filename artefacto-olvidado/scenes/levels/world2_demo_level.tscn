@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://m60rx6xk0v66" path="res://scenes/level_exit_door.tscn" id="2_l2nsd"]
 
 [node name="Demo_level" instance=ExtResource("1_76yh8")]
+level_ID = Vector2(2, 0)
 
 [node name="Tiles" parent="TileMap" index="1"]
 modulate = Color(1, 0.7176471, 0.7176471, 1)

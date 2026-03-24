@@ -15,12 +15,44 @@
 [ext_resource type="Texture2D" uid="uid://dnhmguie5dunt" path="res://assets/DoodleFrog.svg" id="13_tv7cl"]
 
 [node name="Demo_level" instance=ExtResource("1_j2425")]
-level_ID = 2
+level_ID = Vector2(1, 1)
 
 [node name="Tiles" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAsACwAAAAAAAAABAAsACwAAAAAAAAACAAsACwAAAAAAAAADAAsACwAAAAAAAAAEAAsACwAAAAAAAAAFAAsACwAAAAAAAAAGAAsACwAAAAAAAAAHAAsACwAAAAAAAAAIAAsACwAAAAAAAAAJAAsACwAAAAAAAAAKAAsACwAAAAAAAAALAAsACwAAAAAAAAAMAAsACwAAAAAAAAANAAsACwAAAAAAAAAOAAsACwAAAAAAAAAPAAsACwAAAAAAAAAQAAsACwAAAAAAAAARAAcACwAAAAAAAAASAAcACwAAAAAAAAATAAcACwAAAAAAAAAHAAcACwAAAAAAAAAIAAMACwAAAAAAAAAIAAYAAAAAAAAAAAAIAAcACwAAAAAAAAAJAAMACwAAAAAAAAAJAAYACwAAAAAAAAAJAAcACwAAAAAAAAAKAAMACwAAAAAAAAAKAAYACwAAAAAAAAAKAAcACwAAAAAAAAALAAMACwAAAAAAAAALAAcACwAAAAAAAAAMAAMACwAAAAAAAAAMAAYACwAAAAAAAAAMAAcACwAAAAAAAAANAAMACwAAAAAAAAANAAYACwAAAAAAAAANAAcACwAAAAAAAAAEAAcACwAAAAAAAAAFAAMACwAAAAAAAAAFAAYAAAAAAAAAAAAFAAcACwAAAAAAAAAGAAMACwAAAAAAAAAGAAYACwAAAAAAAAAGAAcACwAAAAAAAAAHAAMACwAAAAAAAAAHAAYACwAAAAAAAAAQAAcACwAAAAAAAAAPAAcACwAAAAAAAAAOAAcACwAAAAAAAAALAAYAAAAAAAAAAAAOAAMACwAAAAAAAAAOAAQACwAAAAAAAAAOAAUACwAAAAAAAAAOAAYACwAAAAAAAAAOAAEACwAAAAAAAAAOAAAACwAAAAAAAAAEAAYACwAAAAAAAAADAAcACwAAAAAAAAAAAAcACwAAAAAAAAACAAcACwAAAAAAAAAEAAMACwAAAAAAAAADAAMACwAAAAAAAAACAAMACwAAAAAAAAAAAAMACwAAAAAAAAA=")
 
-[node name="Drawer" parent="." index="2"]
+[node name="CoolS" type="Sprite2D" parent="Decoraciones" index="0"]
+modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(1168, 688)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_l37oo")
+
+[node name="Drawing_sketchpad" type="Sprite2D" parent="Decoraciones" index="1"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1104, 104)
+rotation = -0.1983161
+texture = ExtResource("9_3p04p")
+
+[node name="Drawing_sketchpad2" type="Sprite2D" parent="Decoraciones" index="2"]
+modulate = Color(0.34117648, 0.34117648, 0.95686275, 1)
+position = Vector2(1112.0001, 144)
+rotation = -0.07203007
+texture = ExtResource("9_3p04p")
+flip_v = true
+
+[node name="DoodleLeaf" type="Sprite2D" parent="Decoraciones" index="3"]
+modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(472.00003, 96)
+rotation = -0.36562645
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_brxtv")
+
+[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="4"]
+modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(544, 960)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_tv7cl")
+
+[node name="Drawer" parent="." index="3"]
 position = Vector2(96, 672)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
@@ -136,38 +168,6 @@ text = "PLP parciales:
 1erC 2025: 20/4, 14/6
 [color=BLACK]2doC 2025: 24/9, 11/11[/color]
 [color=BLUE]1erC 2026..."
-
-[node name="CoolS" type="Sprite2D" parent="Decoraciones" index="0"]
-modulate = Color(1, 1, 1, 0.6862745)
-position = Vector2(1168, 688)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_l37oo")
-
-[node name="Drawing_sketchpad" type="Sprite2D" parent="Decoraciones" index="1"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(1104, 104)
-rotation = -0.1983161
-texture = ExtResource("9_3p04p")
-
-[node name="Drawing_sketchpad2" type="Sprite2D" parent="Decoraciones" index="2"]
-modulate = Color(0.34117648, 0.34117648, 0.95686275, 1)
-position = Vector2(1112.0001, 144)
-rotation = -0.07203007
-texture = ExtResource("9_3p04p")
-flip_v = true
-
-[node name="DoodleLeaf" type="Sprite2D" parent="Decoraciones" index="3"]
-modulate = Color(1, 1, 1, 0.6862745)
-position = Vector2(472.00003, 96)
-rotation = -0.36562645
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("12_brxtv")
-
-[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="4"]
-modulate = Color(1, 1, 1, 0.6862745)
-position = Vector2(544, 960)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_tv7cl")
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
 [editable path="PermanentDrawnBodies/DrawnCard"]

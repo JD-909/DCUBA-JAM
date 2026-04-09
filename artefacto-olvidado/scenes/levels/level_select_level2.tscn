@@ -13,6 +13,11 @@ position = Vector2(96, 864)
 
 [node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
 position = Vector2(96, 864)
+take_me_to = &"res://scenes/levels/world_select_level.tscn"
+active_sprite = 1
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/ExitDoor/Sprites" index="1"]
+visible = true
 
 [node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1"]
 position = Vector2(608, 864)

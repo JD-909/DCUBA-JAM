@@ -19,6 +19,8 @@ var speed = 100
 
 func _ready() -> void:
 	
+	$Sprite2D.modulate = Global.get_color()
+	
 	InitialPosition = global_position
 	
 	match Axis:

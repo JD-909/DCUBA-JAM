@@ -6,7 +6,7 @@ extends DrawnBody
 func _ready() -> void:
 	if is_pen_drawn:
 		is_permanent = true
-		$Sprite2D.modulate = Global.color_by_world[Global.last_level_visited[0]]
+		$Sprite2D.modulate = Global.get_color()
 		$CollisionPolygon2D.disabled = true
 	else:
 		is_permanent = false

@@ -158,3 +158,6 @@ func check_completion(ID : int) -> bool:
 # Change character
 func change_character(ID : int) -> void:
 	current_character = ID
+
+func get_color() -> Color:
+	return Global.color_by_world[Global.last_level_visited[0]]

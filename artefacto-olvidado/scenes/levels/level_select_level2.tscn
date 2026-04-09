@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://4a6r1c3yte3x"]
+[gd_scene load_steps=3 format=4 uid="uid://4a6r1c3yte3x"]
 
 [ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_ivwrx"]
+[ext_resource type="PackedScene" uid="uid://m60rx6xk0v66" path="res://scenes/level_exit_door.tscn" id="2_llc60"]
 
 [node name="Demo_level" instance=ExtResource("1_ivwrx")]
 
@@ -16,5 +17,9 @@ position = Vector2(96, 864)
 [node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1"]
 position = Vector2(608, 864)
 take_me_to = &"res://scenes/levels/level_6.tscn"
+
+[node name="LevelExitDoor2" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_llc60")]
+position = Vector2(672, 672)
+take_me_to = &"res://scenes/levels/level_7.tscn"
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

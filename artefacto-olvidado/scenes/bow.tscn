@@ -24,5 +24,6 @@ autostart = true
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rivji")
 volume_db = -5.0
+bus = &"Bow_Arrow"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -4,6 +4,3 @@
 
 [node name="BowPen" instance=ExtResource("1_ufk1y")]
 collision_layer = 0
-
-[node name="DrawnSprite1" parent="Sprites" index="1"]
-modulate = Color(0.7176471, 0.7176471, 1, 1)

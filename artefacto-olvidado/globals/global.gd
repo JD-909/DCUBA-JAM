@@ -1,52 +1,62 @@
 extends Node
 
+# Nota para el futuro (hoy 24/3/2026) Ver de hacer skins que solo verifiquen
+# las estrellas de UN mundo aparte del que verifica de todos los mundos
+
 const draw_limits : Array[Array] = [
 	[],
 	[2, 5, 5, 4, 1], 
-	[2]
+	[2,1]
 	]
 const erase_limits : Array[Array] = [
 	[],
 	[1, 0, 1, 1, 0], 
-	[1]
+	[1,4]
 	]
 const initial_permanents_in : Array[Array] = [
 	[],
 	[6, 5, 4, 16, 10],
-	[8]
+	[8, 27]
 	]
+
+# Color by world
+const color_by_world : Array[Color] = [
+	Color8(183,183,255),
+	Color8(183,183,255),
+	Color8(255,187,187)
+]
 
 # Level vars
 var last_level_visited : Vector2 
 var level_done : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false]
+	[false,false]
 	]
 var level_done_draw_limit : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false]
+	[false,false]
 	]
 var level_done_erase_limit : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false]
+	[false,false]
 	]
 var level_done_erase_all : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false]
+	[false,false]
 	]
 var level_done_secret : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false]
+	[false,false]
 	]
 var levels_by_ID : Array[Array] = [
 	["res://scenes/levels/main_menu_level.tscn"],
 	["res://scenes/levels/level_1.tscn", "res://scenes/levels/level_2.tscn", "res://scenes/levels/level_3.tscn", "res://scenes/levels/level_4.tscn", "res://scenes/levels/level_5.tscn"],
-	["res://scenes/levels/level_6.tscn"]
+	["res://scenes/levels/level_6.tscn", "res://scenes/levels/level_7.tscn"]
 	]
 
 # Other vars

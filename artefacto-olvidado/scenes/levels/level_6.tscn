@@ -29,6 +29,7 @@ position = Vector2(1184, 160)
 
 [node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1"]
 position = Vector2(32, 864)
+take_me_to = &"res://scenes/levels/level_select_level2.tscn"
 
 [node name="DrawnBlock" parent="PermanentDrawnBodies" index="2" instance=ExtResource("3_741xk")]
 position = Vector2(608, 160)
@@ -98,7 +99,7 @@ offset_bottom = 347.0
 theme_override_font_sizes/font_size = 32
 text = "¡UN SECRETO!
 No se olviden nunca de la 
-formula de Bhaskara"
+formula de BHASKARA"
 
 [node name="BaseLabel2" type="Label" parent="Text" index="1"]
 layout_mode = 0

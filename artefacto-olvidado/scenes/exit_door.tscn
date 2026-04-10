@@ -19,6 +19,7 @@ metadata/_custom_type_script = "uid://rqgetrwpws36"
 
 [node name="ExitDoorSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6m21m")
+bus = &"Sounds"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ti4c3")

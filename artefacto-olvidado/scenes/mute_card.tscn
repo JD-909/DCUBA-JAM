@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ra33vmtii8a"]
+
+[ext_resource type="Script" uid="uid://dxm14xk8wq1q5" path="res://scenes/mute_card.gd" id="1_vkxel"]
+[ext_resource type="Texture2D" uid="uid://r0ag2873c7er" path="res://assets/audioIcon.png" id="2_3f55j"]
+[ext_resource type="Texture2D" uid="uid://obc1wgjnuflk" path="res://assets/blackBarIcon.png" id="3_vkxel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov54t"]
+size = Vector2(128, 128)
+
+[node name="MuteCard" type="StaticBody2D"]
+scale = Vector2(0.6, 0.6)
+collision_layer = 2
+script = ExtResource("1_vkxel")
+metadata/_custom_type_script = "uid://de2yx75pg7o4r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ov54t")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="DrawnSprite0" type="Sprite2D" parent="Sprites"]
+position = Vector2(2.3841858e-06, 2.3841858e-06)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_3f55j")
+
+[node name="DrawnSprite1" type="Sprite2D" parent="Sprites"]
+visible = false
+rotation = 0.7853982
+texture = ExtResource("3_vkxel")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://e7k65j061cnp"]
+[gd_scene load_steps=11 format=4 uid="uid://e7k65j061cnp"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_kqhav"]
 [ext_resource type="FontFile" uid="uid://b51kbpjg5q074" path="res://assets/Brownist.otf" id="2_2lwpu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ctw88m2jl6k8m" path="res://assets/Resaltador.png" id="5_m6iyy"]
 [ext_resource type="Texture2D" uid="uid://c7axqeo1227fr" path="res://assets/DoodleSpaceBar.png" id="6_ixxwb"]
 [ext_resource type="Texture2D" uid="uid://by3eqo6luslb6" path="res://assets/FlechaDibu2.png" id="6_k3ocw"]
+[ext_resource type="PackedScene" uid="uid://b2ra33vmtii8a" path="res://scenes/mute_card.tscn" id="8_bpr0w"]
 [ext_resource type="Texture2D" uid="uid://boliprdbokcs" path="res://assets/FlechaDibu4.png" id="9_bpr0w"]
 
 [node name="Main_menu_level" instance=ExtResource("1_kqhav")]
@@ -61,6 +62,9 @@ take_me_to = &"res://scenes/levels/world_select_level.tscn"
 [node name="ExitDoor2" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_37bg4")]
 position = Vector2(544, 672)
 take_me_to = &"res://scenes/levels/char_select_level.tscn"
+
+[node name="MuteCard" parent="PermanentDrawnBodies" index="2" instance=ExtResource("8_bpr0w")]
+position = Vector2(64, 64)
 
 [node name="Resaltador2" type="Sprite2D" parent="Text" index="1"]
 modulate = Color(1, 1, 1, 0.8392157)
@@ -124,14 +128,26 @@ layout_mode = 0
 offset_left = 824.0
 offset_top = 8.0
 offset_right = 1382.0
-offset_bottom = 380.0
+offset_bottom = 83.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_01n0p")
 theme_override_font_sizes/font_size = 60
 text = "Por JD909"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Text" index="7"]
+[node name="Label10" type="Label" parent="Text" index="7"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 72.0
+offset_right = 1382.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01n0p")
+theme_override_font_sizes/font_size = 40
+text = "Assets by KENNEY"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Text" index="8"]
 layout_mode = 0
 offset_left = 864.0
 offset_top = 344.0
@@ -145,7 +161,7 @@ text = "Apuntar
 arriba"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Text" index="8"]
+[node name="Label5" type="Label" parent="Text" index="9"]
 layout_mode = 0
 offset_left = 872.0
 offset_top = 560.0
@@ -160,7 +176,7 @@ abajo /
 Entrar"
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="Text" index="9"]
+[node name="Label6" type="Label" parent="Text" index="10"]
 layout_mode = 0
 offset_left = 976.0
 offset_top = 560.0
@@ -174,7 +190,7 @@ text = "a la
 Derecha"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="Text" index="10"]
+[node name="Label7" type="Label" parent="Text" index="11"]
 layout_mode = 0
 offset_left = 760.0
 offset_top = 568.0

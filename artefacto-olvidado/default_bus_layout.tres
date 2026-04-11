@@ -5,7 +5,6 @@ resource_name = "Limiter"
 ceiling_db = -5.0
 
 [resource]
-bus/0/send = &"New Bus"
 bus/1/name = &"Sounds"
 bus/1/solo = false
 bus/1/mute = false

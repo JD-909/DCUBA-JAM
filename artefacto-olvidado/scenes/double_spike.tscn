@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://yq8s3l73ogj0" path="res://scenes/spike.gd" id="1_ejheo"]
 [ext_resource type="Texture2D" uid="uid://5isv4yiov0tc" path="res://assets/spritesheet_default.png" id="2_bkbjm"]
 
-[node name="SingleSpike" type="StaticBody2D"]
+[node name="DoubleSpike" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource("1_ejheo")
 metadata/_custom_type_script = "uid://cmmcux7byaa2m"

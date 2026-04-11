@@ -1,279 +1,209 @@
-[gd_scene load_steps=6 format=4 uid="uid://bq5jvga8lyr8f"]
+[gd_scene load_steps=8 format=4 uid="uid://nyh4cptv4o4o"]
 
 [ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_ntash"]
 [ext_resource type="PackedScene" uid="uid://cbus2wlteto01" path="res://scenes/moving_platform.tscn" id="2_07ctq"]
-[ext_resource type="PackedScene" uid="uid://c162c75hu8ion" path="res://scenes/bow_pen.tscn" id="3_bl61q"]
+[ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_u1w5x"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="4_d06uk"]
 [ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="5_hq5i0"]
+[ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="6_posk4"]
+[ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="7_sjq8i"]
 
 [node name="Demo_level" instance=ExtResource("1_ntash")]
 level_ID = Vector2(2, 1)
 
 [node name="Tiles" parent="TileMap" index="1"]
-tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAUACwAAAAAAAAABAAUACwAAAAAAAAACAAUACwAAAAAAAAADAAUACwAAAAAAAAAEAAUACwAAAAAAAAAFAAUACwAAAAAAAAAGAAUACwAAAAAAAAAHAAUACwAAAAAAAAAIAAUACwAAAAAAAAAJAAUACwAAAAAAAAAKAAUACwAAAAAAAAALAAUACwAAAAAAAAAMAAUACwAAAAAAAAANAAUACwAAAAAAAAAOAAUACwAAAAAAAAAPAAUACwAAAAAAAAAQAAUACwAAAAAAAAADAAoACwAAAAAAAAAEAAoACwAAAAAAAAAFAAoACwAAAAAAAAAGAAoACwAAAAAAAAAHAAoACwAAAAAAAAAIAAoACwAAAAAAAAAJAAoACwAAAAAAAAAKAAoACwAAAAAAAAALAAoACwAAAAAAAAAMAAoACwAAAAAAAAANAAoACwAAAAAAAAAOAAoACwAAAAAAAAAPAAoACwAAAAAAAAAQAAoACwAAAAAAAAARAAoACwAAAAAAAAASAAoACwAAAAAAAAATAAoACwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAMACwAAAAAAAAABAAMACwAAAAAAAAACAAMACwAAAAAAAAADAAMACwAAAAAAAAAEAAMACwAAAAAAAAAFAAMACwAAAAAAAAAGAAMACwAAAAAAAAAHAAMACwAAAAAAAAATAAMACwAAAAAAAAASAAMACwAAAAAAAAARAAMACwAAAAAAAAAQAAMACwAAAAAAAAAPAAMACwAAAAAAAAAOAAMACwAAAAAAAAANAAMACwAAAAAAAAAMAAMACwAAAAAAAAAIAAMACwAAAAAAAAALAAMACwAAAAAAAAAIAAcACwAAAAAAAAAIAAYACwAAAAAAAAAIAAUACwAAAAAAAAAIAAQACwAAAAAAAAAEAAQACwAAAAAAAAAEAAUACwAAAAAAAAAEAAYACwAAAAAAAAAEAAcACwAAAAAAAAALAAQACwAAAAAAAAALAAUACwAAAAAAAAALAAYACwAAAAAAAAALAAcACwAAAAAAAAAPAAQACwAAAAAAAAAPAAUACwAAAAAAAAAPAAYACwAAAAAAAAAPAAcACwAAAAAAAAAAAAsACwAAAAAAAAABAAsACwAAAAAAAAACAAsACwAAAAAAAAADAAsACwAAAAAAAAAEAAsACwAAAAAAAAAFAAsACwAAAAAAAAAGAAsACwAAAAAAAAAHAAsACwAAAAAAAAAIAAsACwAAAAAAAAALAAsACwAAAAAAAAAMAAsACwAAAAAAAAANAAsACwAAAAAAAAAOAAsACwAAAAAAAAAPAAsACwAAAAAAAAAQAAsACwAAAAAAAAARAAsACwAAAAAAAAASAAsACwAAAAAAAAATAAsACwAAAAAAAAAAAAcACwAAAAAAAAATAAcACwAAAAAAAAAIAAwACwAAAAAAAAALAAwACwAAAAAAAAAPAAwACwAAAAAAAAAEAAwACwAAAAAAAAA=")
 
 [node name="Drawer" parent="." index="3"]
-position = Vector2(32, 288)
+position = Vector2(160, 160)
 
 [node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1"]
-position = Vector2(96, 288)
-take_me_to = &"res://scenes/levels/level_select_level2.tscn"
+position = Vector2(96, 160)
 
 [node name="MovingPlatform" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_07ctq")]
-position = Vector2(224, 872)
-Axis = 1
-tilesToTravel = -10
+position = Vector2(1248, 608)
+tilesToTravel = -4
 
-[node name="BowPen" parent="PermanentDrawnBodies" index="3" instance=ExtResource("3_bl61q")]
-position = Vector2(224, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
-is_pen_drawn = true
+[node name="MovingPlatform3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("2_07ctq")]
+position = Vector2(608, 608)
+tilesToTravel = -4
 
 [node name="MovingPlatform2" parent="PermanentDrawnBodies" index="4" instance=ExtResource("2_07ctq")]
-position = Vector2(288, 224)
-Axis = 1
-tilesToTravel = 10
+position = Vector2(32, 608)
+tilesToTravel = 4
 
-[node name="BowPen2" parent="PermanentDrawnBodies" index="5" instance=ExtResource("3_bl61q")]
-position = Vector2(288, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="MovingPlatform4" parent="PermanentDrawnBodies" index="5" instance=ExtResource("2_07ctq")]
+position = Vector2(672, 608)
+tilesToTravel = 4
+
+[node name="DrawnBlock" parent="PermanentDrawnBodies" index="6" instance=ExtResource("3_u1w5x")]
+position = Vector2(96, 480)
+
+[node name="DrawnBlock2" parent="PermanentDrawnBodies" index="7" instance=ExtResource("3_u1w5x")]
+position = Vector2(160, 480)
+
+[node name="DrawnBlock3" parent="PermanentDrawnBodies" index="8" instance=ExtResource("3_u1w5x")]
+position = Vector2(224, 480)
+
+[node name="DrawnBlock4" parent="PermanentDrawnBodies" index="9" instance=ExtResource("3_u1w5x")]
+position = Vector2(352, 480)
+
+[node name="DrawnBlock5" parent="PermanentDrawnBodies" index="10" instance=ExtResource("3_u1w5x")]
+position = Vector2(416, 480)
+
+[node name="DrawnBlock6" parent="PermanentDrawnBodies" index="11" instance=ExtResource("3_u1w5x")]
+position = Vector2(480, 480)
+
+[node name="DrawnBlock7" parent="PermanentDrawnBodies" index="12" instance=ExtResource("3_u1w5x")]
+position = Vector2(800, 480)
+
+[node name="DrawnBlock8" parent="PermanentDrawnBodies" index="13" instance=ExtResource("3_u1w5x")]
+position = Vector2(864, 480)
+
+[node name="DrawnBlock9" parent="PermanentDrawnBodies" index="14" instance=ExtResource("3_u1w5x")]
+position = Vector2(928, 480)
+
+[node name="DrawnBlock10" parent="PermanentDrawnBodies" index="15" instance=ExtResource("3_u1w5x")]
+position = Vector2(1056, 480)
+
+[node name="DrawnBlock11" parent="PermanentDrawnBodies" index="16" instance=ExtResource("3_u1w5x")]
+position = Vector2(1120, 480)
+
+[node name="DrawnBlock12" parent="PermanentDrawnBodies" index="17" instance=ExtResource("3_u1w5x")]
+position = Vector2(1184, 480)
+
+[node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("4_d06uk")]
+position = Vector2(32, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform3" parent="PermanentDrawnBodies" index="6" instance=ExtResource("2_07ctq")]
-position = Vector2(352, 872)
-Axis = 1
-tilesToTravel = -10
-
-[node name="BowPen3" parent="PermanentDrawnBodies" index="7" instance=ExtResource("3_bl61q")]
-position = Vector2(352, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike2" parent="Spikes" index="1" instance=ExtResource("4_d06uk")]
+position = Vector2(96, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform4" parent="PermanentDrawnBodies" index="8" instance=ExtResource("2_07ctq")]
-position = Vector2(416, 224)
-Axis = 1
-tilesToTravel = 10
-
-[node name="BowPen4" parent="PermanentDrawnBodies" index="9" instance=ExtResource("3_bl61q")]
-position = Vector2(416, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike3" parent="Spikes" index="2" instance=ExtResource("4_d06uk")]
+position = Vector2(160, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform5" parent="PermanentDrawnBodies" index="10" instance=ExtResource("2_07ctq")]
-position = Vector2(480, 872)
-Axis = 1
-tilesToTravel = -10
-
-[node name="BowPen5" parent="PermanentDrawnBodies" index="11" instance=ExtResource("3_bl61q")]
-position = Vector2(480, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike4" parent="Spikes" index="3" instance=ExtResource("4_d06uk")]
+position = Vector2(224, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform6" parent="PermanentDrawnBodies" index="12" instance=ExtResource("2_07ctq")]
-position = Vector2(544, 224)
-Axis = 1
-tilesToTravel = 10
-
-[node name="BowPen6" parent="PermanentDrawnBodies" index="13" instance=ExtResource("3_bl61q")]
-position = Vector2(544, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike5" parent="Spikes" index="4" instance=ExtResource("4_d06uk")]
+position = Vector2(288, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform7" parent="PermanentDrawnBodies" index="14" instance=ExtResource("2_07ctq")]
-position = Vector2(608, 872)
-Axis = 1
-tilesToTravel = -10
-
-[node name="BowPen7" parent="PermanentDrawnBodies" index="15" instance=ExtResource("3_bl61q")]
-position = Vector2(608, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike6" parent="Spikes" index="5" instance=ExtResource("4_d06uk")]
+position = Vector2(352, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform8" parent="PermanentDrawnBodies" index="16" instance=ExtResource("2_07ctq")]
-position = Vector2(672, 224)
-Axis = 1
-tilesToTravel = 10
-
-[node name="BowPen8" parent="PermanentDrawnBodies" index="17" instance=ExtResource("3_bl61q")]
-position = Vector2(672, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike7" parent="Spikes" index="6" instance=ExtResource("4_d06uk")]
+position = Vector2(416, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform9" parent="PermanentDrawnBodies" index="18" instance=ExtResource("2_07ctq")]
-position = Vector2(736, 872)
-Axis = 1
-tilesToTravel = -10
-
-[node name="BowPen9" parent="PermanentDrawnBodies" index="19" instance=ExtResource("3_bl61q")]
-position = Vector2(736, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike8" parent="Spikes" index="7" instance=ExtResource("4_d06uk")]
+position = Vector2(480, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform10" parent="PermanentDrawnBodies" index="20" instance=ExtResource("2_07ctq")]
-position = Vector2(800, 224)
-Axis = 1
-tilesToTravel = 10
-
-[node name="BowPen10" parent="PermanentDrawnBodies" index="21" instance=ExtResource("3_bl61q")]
-position = Vector2(800, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike9" parent="Spikes" index="8" instance=ExtResource("4_d06uk")]
+position = Vector2(800, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform11" parent="PermanentDrawnBodies" index="22" instance=ExtResource("2_07ctq")]
-position = Vector2(864, 872)
-Axis = 1
-tilesToTravel = -10
-
-[node name="BowPen11" parent="PermanentDrawnBodies" index="23" instance=ExtResource("3_bl61q")]
-position = Vector2(864, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike10" parent="Spikes" index="9" instance=ExtResource("4_d06uk")]
+position = Vector2(864, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform12" parent="PermanentDrawnBodies" index="24" instance=ExtResource("2_07ctq")]
-position = Vector2(928, 224)
-Axis = 1
-tilesToTravel = 10
-
-[node name="BowPen12" parent="PermanentDrawnBodies" index="25" instance=ExtResource("3_bl61q")]
-position = Vector2(928, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike11" parent="Spikes" index="10" instance=ExtResource("4_d06uk")]
+position = Vector2(928, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform14" parent="PermanentDrawnBodies" index="26" instance=ExtResource("2_07ctq")]
-position = Vector2(1056, 224)
-Axis = 1
-tilesToTravel = 10
-
-[node name="BowPen14" parent="PermanentDrawnBodies" index="27" instance=ExtResource("3_bl61q")]
-position = Vector2(1056, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike12" parent="Spikes" index="11" instance=ExtResource("4_d06uk")]
+position = Vector2(992, 672)
 is_pen_drawn = true
 
-[node name="MovingPlatform13" parent="PermanentDrawnBodies" index="28" instance=ExtResource("2_07ctq")]
-position = Vector2(992, 872)
-Axis = 1
-tilesToTravel = -10
-
-[node name="BowPen13" parent="PermanentDrawnBodies" index="29" instance=ExtResource("3_bl61q")]
-position = Vector2(992, 32)
-rotation = 1.5707964
-direction = Vector2(0, 1)
+[node name="SingleSpike13" parent="Spikes" index="12" instance=ExtResource("4_d06uk")]
+position = Vector2(1056, 672)
 is_pen_drawn = true
 
-[node name="SingleSpike" parent="PermanentDrawnBodies" index="30" instance=ExtResource("4_d06uk")]
-position = Vector2(224, 608)
+[node name="SingleSpike14" parent="Spikes" index="13" instance=ExtResource("4_d06uk")]
+position = Vector2(1120, 672)
 is_pen_drawn = true
 
-[node name="SingleSpike15" parent="PermanentDrawnBodies" index="31" instance=ExtResource("4_d06uk")]
-position = Vector2(224, 416)
+[node name="SingleSpike15" parent="Spikes" index="14" instance=ExtResource("4_d06uk")]
+position = Vector2(1184, 672)
+is_pen_drawn = true
+
+[node name="SingleSpike16" parent="Spikes" index="15" instance=ExtResource("4_d06uk")]
+position = Vector2(1248, 672)
+is_pen_drawn = true
+
+[node name="SingleSpike17" parent="Spikes" index="16" instance=ExtResource("5_hq5i0")]
+position = Vector2(544, 672)
+is_pen_drawn = true
+
+[node name="SingleSpike18" parent="Spikes" index="17" instance=ExtResource("5_hq5i0")]
+position = Vector2(736, 672)
+is_pen_drawn = true
+
+[node name="SingleSpike19" parent="Spikes" index="18" instance=ExtResource("5_hq5i0")]
+position = Vector2(1056, 288)
 rotation = 3.1415927
 is_pen_drawn = true
 
-[node name="SingleSpike2" parent="PermanentDrawnBodies" index="32" instance=ExtResource("4_d06uk")]
-position = Vector2(1056, 608)
-is_pen_drawn = true
+[node name="SingleSpike20" parent="Spikes" index="19" instance=ExtResource("5_hq5i0")]
+position = Vector2(1120, 288)
+rotation = 3.1415927
 
-[node name="SingleSpike3" parent="PermanentDrawnBodies" index="33" instance=ExtResource("5_hq5i0")]
-position = Vector2(352, 416)
+[node name="SingleSpike21" parent="Spikes" index="20" instance=ExtResource("5_hq5i0")]
+position = Vector2(1184, 288)
 rotation = 3.1415927
 is_pen_drawn = true
 
-[node name="SingleSpike4" parent="PermanentDrawnBodies" index="34" instance=ExtResource("5_hq5i0")]
-position = Vector2(352, 608)
-is_pen_drawn = true
-
-[node name="SingleSpike5" parent="PermanentDrawnBodies" index="35" instance=ExtResource("5_hq5i0")]
-position = Vector2(480, 416)
+[node name="SingleSpike22" parent="Spikes" index="21" instance=ExtResource("5_hq5i0")]
+position = Vector2(96, 288)
 rotation = 3.1415927
 is_pen_drawn = true
 
-[node name="SingleSpike6" parent="PermanentDrawnBodies" index="36" instance=ExtResource("5_hq5i0")]
-position = Vector2(480, 608)
-is_pen_drawn = true
+[node name="SingleSpike23" parent="Spikes" index="22" instance=ExtResource("5_hq5i0")]
+position = Vector2(160, 288)
+rotation = 3.1415927
 
-[node name="SingleSpike7" parent="PermanentDrawnBodies" index="37" instance=ExtResource("5_hq5i0")]
-position = Vector2(608, 416)
+[node name="SingleSpike24" parent="Spikes" index="23" instance=ExtResource("5_hq5i0")]
+position = Vector2(224, 288)
 rotation = 3.1415927
 is_pen_drawn = true
 
-[node name="SingleSpike8" parent="PermanentDrawnBodies" index="38" instance=ExtResource("5_hq5i0")]
-position = Vector2(608, 608)
-is_pen_drawn = true
-
-[node name="SingleSpike9" parent="PermanentDrawnBodies" index="39" instance=ExtResource("5_hq5i0")]
-position = Vector2(736, 416)
+[node name="SingleSpike25" parent="Spikes" index="24" instance=ExtResource("4_d06uk")]
+position = Vector2(1248, 288)
 rotation = 3.1415927
 is_pen_drawn = true
 
-[node name="SingleSpike10" parent="PermanentDrawnBodies" index="40" instance=ExtResource("5_hq5i0")]
-position = Vector2(736, 608)
-is_pen_drawn = true
-
-[node name="SingleSpike11" parent="PermanentDrawnBodies" index="41" instance=ExtResource("5_hq5i0")]
-position = Vector2(864, 416)
+[node name="SingleSpike26" parent="Spikes" index="25" instance=ExtResource("4_d06uk")]
+position = Vector2(32, 288)
 rotation = 3.1415927
 is_pen_drawn = true
 
-[node name="SingleSpike12" parent="PermanentDrawnBodies" index="42" instance=ExtResource("5_hq5i0")]
-position = Vector2(864, 608)
-is_pen_drawn = true
-
-[node name="SingleSpike13" parent="PermanentDrawnBodies" index="43" instance=ExtResource("5_hq5i0")]
-position = Vector2(992, 416)
-rotation = 3.1415927
-is_pen_drawn = true
-
-[node name="SingleSpike14" parent="PermanentDrawnBodies" index="44" instance=ExtResource("5_hq5i0")]
-position = Vector2(992, 608)
-is_pen_drawn = true
-
-[node name="SingleSpike16" parent="PermanentDrawnBodies" index="45" instance=ExtResource("5_hq5i0")]
-position = Vector2(352, 864)
-
-[node name="SingleSpike17" parent="PermanentDrawnBodies" index="46" instance=ExtResource("5_hq5i0")]
-position = Vector2(480, 864)
-
-[node name="SingleSpike18" parent="PermanentDrawnBodies" index="47" instance=ExtResource("5_hq5i0")]
-position = Vector2(608, 864)
-
-[node name="SingleSpike19" parent="PermanentDrawnBodies" index="48" instance=ExtResource("5_hq5i0")]
+[node name="LockBlock" parent="LocksAndKeys" index="0" instance=ExtResource("6_posk4")]
 position = Vector2(736, 864)
 
-[node name="SingleSpike20" parent="PermanentDrawnBodies" index="49" instance=ExtResource("5_hq5i0")]
-position = Vector2(864, 864)
-
-[node name="SingleSpike21" parent="PermanentDrawnBodies" index="50" instance=ExtResource("5_hq5i0")]
+[node name="LockBlock2" parent="LocksAndKeys" index="1" instance=ExtResource("6_posk4")]
 position = Vector2(992, 864)
 
-[node name="SingleSpike22" parent="PermanentDrawnBodies" index="51" instance=ExtResource("5_hq5i0")]
-position = Vector2(288, 864)
-
-[node name="SingleSpike23" parent="PermanentDrawnBodies" index="52" instance=ExtResource("5_hq5i0")]
-position = Vector2(416, 864)
-
-[node name="SingleSpike24" parent="PermanentDrawnBodies" index="53" instance=ExtResource("5_hq5i0")]
+[node name="LockBlock3" parent="LocksAndKeys" index="2" instance=ExtResource("6_posk4")]
 position = Vector2(544, 864)
 
-[node name="SingleSpike25" parent="PermanentDrawnBodies" index="54" instance=ExtResource("5_hq5i0")]
-position = Vector2(672, 864)
+[node name="LockBlock4" parent="LocksAndKeys" index="3" instance=ExtResource("6_posk4")]
+position = Vector2(288, 864)
 
-[node name="SingleSpike26" parent="PermanentDrawnBodies" index="55" instance=ExtResource("5_hq5i0")]
-position = Vector2(800, 864)
+[node name="KeyItem" parent="LocksAndKeys" index="4" instance=ExtResource("7_sjq8i")]
+position = Vector2(160, 352)
 
-[node name="SingleSpike27" parent="PermanentDrawnBodies" index="56" instance=ExtResource("5_hq5i0")]
-position = Vector2(928, 864)
+[node name="KeyItem2" parent="LocksAndKeys" index="5" instance=ExtResource("7_sjq8i")]
+position = Vector2(416, 352)
+
+[node name="KeyItem3" parent="LocksAndKeys" index="6" instance=ExtResource("7_sjq8i")]
+position = Vector2(864, 352)
+
+[node name="KeyItem4" parent="LocksAndKeys" index="7" instance=ExtResource("7_sjq8i")]
+position = Vector2(1120, 352)
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

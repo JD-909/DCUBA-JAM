@@ -20,5 +20,6 @@ visible = false
 
 [node name="LevelExitDoor" parent="PermanentDrawnBodies" index="1" instance=ExtResource("2_l2nsd")]
 position = Vector2(96, 864)
+take_me_to = &"res://scenes/levels/level_select_level2.tscn"
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

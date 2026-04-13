@@ -33,10 +33,10 @@ take_me_to = &"res://scenes/levels/level_8.tscn"
 
 [node name="LevelExitDoor4" parent="PermanentDrawnBodies" index="4" instance=ExtResource("2_llc60")]
 position = Vector2(544, 288)
-take_me_to = &"res://scenes/levels/level_7.tscn"
+take_me_to = &"res://scenes/levels/level_9.tscn"
 
 [node name="LevelExitDoor5" parent="PermanentDrawnBodies" index="5" instance=ExtResource("2_llc60")]
 position = Vector2(480, 96)
-take_me_to = &"res://scenes/levels/level_8.tscn"
+take_me_to = &"res://scenes/levels/level_10.tscn"
 
 [editable path="PermanentDrawnBodies/ExitDoor"]

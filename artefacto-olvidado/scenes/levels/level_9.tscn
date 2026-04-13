@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=4 uid="uid://cmp2bgg8lfihy"]
+
+[ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_t7yg2"]
+[ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="2_62qgl"]
+[ext_resource type="PackedScene" uid="uid://cbus2wlteto01" path="res://scenes/moving_platform.tscn" id="2_sd2du"]
+[ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="3_csf6e"]
+[ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_ltlq2"]
+[ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="4_csf6e"]
+[ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="5_6nuwh"]
+
+[node name="Demo_level" instance=ExtResource("1_t7yg2")]
+level_ID = Vector2(2, 3)
+
+[node name="Tiles" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAASAAoACwAAAAAAAAASAAkACwAAAAAAAAAKAAEACwAAAAAAAAAJAAEACwAAAAAAAAALAAEACwAAAAAAAAAMAAEACwAAAAAAAAANAAEACwAAAAAAAAAOAAEACwAAAAAAAAAPAAEACwAAAAAAAAAQAAEACwAAAAAAAAARAAEACwAAAAAAAAASAAEACwAAAAAAAAASAAIACwAAAAAAAAASAAMACwAAAAAAAAASAAQACwAAAAAAAAASAAUACwAAAAAAAAASAAYACwAAAAAAAAASAAcACwAAAAAAAAASAAgACwAAAAAAAAAQAAQACwAAAAAAAAAPAAIACwAAAAAAAAAPAAQACwAAAAAAAAARAAQACwAAAAAAAAAQAAcACwAAAAAAAAAPAAcACwAAAAAAAAAOAAcACwAAAAAAAAANAAcACwAAAAAAAAAMAAcACwAAAAAAAAAMAAYACwAAAAAAAAAMAAUACwAAAAAAAAAMAAQACwAAAAAAAAAMAAMACwAAAAAAAAAMAAIACwAAAAAAAAARAAoACwAAAAAAAAAQAAoACwAAAAAAAAAPAAoACwAAAAAAAAAOAAoACwAAAAAAAAANAAoACwAAAAAAAAAMAAoACwAAAAAAAAALAAoACwAAAAAAAAAKAAoACwAAAAAAAAAJAAoACwAAAAAAAAAJAAgACwAAAAAAAAAJAAcACwAAAAAAAAAJAAYACwAAAAAAAAAJAAUACwAAAAAAAAAJAAQACwAAAAAAAAAJAAMACwAAAAAAAAAJAAIACwAAAAAAAAAAAAwAAAAAAAAAAAACAAsACwAAAAAAAAAEAAMACwAAAAAAAAAEAAgACwAAAAAAAAA=")
+
+[node name="ExitDoor" parent="PermanentDrawnBodies" index="0"]
+position = Vector2(1120, 224)
+
+[node name="MovingPlatform" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_sd2du")]
+position = Vector2(480, 736)
+Axis = 1
+tilesToTravel = -8
+
+[node name="MovingPlatform2" parent="PermanentDrawnBodies" index="3" instance=ExtResource("2_sd2du")]
+position = Vector2(224, 736)
+tilesToTravel = 2
+
+[node name="MovingPlatform3" parent="PermanentDrawnBodies" index="4" instance=ExtResource("2_sd2du")]
+position = Vector2(32, 608)
+
+[node name="DrawnBlock" parent="PermanentDrawnBodies" index="5" instance=ExtResource("3_ltlq2")]
+position = Vector2(96, 288)
+
+[node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("2_62qgl")]
+position = Vector2(1248, 864)
+is_pen_drawn = true
+
+[node name="SingleSpike2" parent="Spikes" index="1" instance=ExtResource("2_62qgl")]
+position = Vector2(160, 672)
+is_pen_drawn = true
+
+[node name="SingleSpike3" parent="Spikes" index="2" instance=ExtResource("2_62qgl")]
+position = Vector2(288, 160)
+is_pen_drawn = true
+
+[node name="SingleSpike4" parent="Spikes" index="3" instance=ExtResource("2_62qgl")]
+position = Vector2(288, 288)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="SingleSpike5" parent="Spikes" index="4" instance=ExtResource("2_62qgl")]
+position = Vector2(352, 224)
+rotation = 1.5707964
+is_pen_drawn = true
+
+[node name="SingleSpike6" parent="Spikes" index="5" instance=ExtResource("2_62qgl")]
+position = Vector2(224, 224)
+rotation = -1.5707964
+is_pen_drawn = true
+
+[node name="SingleSpike7" parent="Spikes" index="6" instance=ExtResource("2_62qgl")]
+position = Vector2(288, 480)
+is_pen_drawn = true
+
+[node name="SingleSpike8" parent="Spikes" index="7" instance=ExtResource("2_62qgl")]
+position = Vector2(288, 608)
+rotation = 3.1415927
+is_pen_drawn = true
+
+[node name="SingleSpike9" parent="Spikes" index="8" instance=ExtResource("2_62qgl")]
+position = Vector2(352, 544)
+rotation = 1.5707964
+is_pen_drawn = true
+
+[node name="SingleSpike10" parent="Spikes" index="9" instance=ExtResource("2_62qgl")]
+position = Vector2(224, 544)
+rotation = -1.5707964
+is_pen_drawn = true
+
+[node name="SingleSpike11" parent="Spikes" index="10" instance=ExtResource("2_62qgl")]
+position = Vector2(32, 352)
+rotation = 1.5707964
+is_pen_drawn = true
+
+[node name="DoubleSpike" parent="Spikes" index="11" instance=ExtResource("5_6nuwh")]
+position = Vector2(96, 736)
+rotation = -1.5707964
+is_pen_drawn = true
+
+[node name="LockBlock" parent="LocksAndKeys" index="0" instance=ExtResource("3_csf6e")]
+position = Vector2(608, 608)
+
+[node name="LockBlock2" parent="LocksAndKeys" index="1" instance=ExtResource("3_csf6e")]
+position = Vector2(1120, 480)
+
+[node name="LockBlock3" parent="LocksAndKeys" index="2" instance=ExtResource("3_csf6e")]
+position = Vector2(992, 224)
+
+[node name="KeyItem" parent="LocksAndKeys" index="3" instance=ExtResource("4_csf6e")]
+position = Vector2(1248, 32)
+
+[node name="KeyItem2" parent="LocksAndKeys" index="4" instance=ExtResource("4_csf6e")]
+position = Vector2(96, 224)
+
+[node name="KeyItem3" parent="LocksAndKeys" index="5" instance=ExtResource("4_csf6e")]
+position = Vector2(32, 544)
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

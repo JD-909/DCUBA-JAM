@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr1nvr6ivyw0b"]
+
+[ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_2k7im"]
+
+[node name="Demo_level" instance=ExtResource("1_2k7im")]
+
+[editable path="PermanentDrawnBodies/ExitDoor"]

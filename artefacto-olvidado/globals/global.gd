@@ -72,7 +72,7 @@ func visit(level_ID : Vector2) -> void:
 	last_level_visited = level_ID
 	reset_drawings_and_erasures()
 	secret_found = false
-	if level_ID[0] > 0:
+	if (level_ID[0] > 0) and (level_ID[1] < 5):
 		# La acntidad de permanentes se busca en el array
 		current_permanents_amount = initial_permanents_in[int(level_ID[0])][int(level_ID[1])]
 	print("visited : " + str(level_ID))
@@ -84,7 +84,7 @@ func visit(level_ID : Vector2) -> void:
 
 
 func complete(level_ID : Vector2) -> void:
-	if level_ID[0] > 0:
+	if (level_ID[0] > 0) and (level_ID[1] < 5):
 		
 		# Completed star
 		level_done[int(level_ID[0])][int(level_ID[1])] = true

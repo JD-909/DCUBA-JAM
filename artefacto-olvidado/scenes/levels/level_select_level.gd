@@ -8,7 +8,14 @@ extends Level
 	$PermanentDrawnBodies/DoorLevel2.position,
 	$PermanentDrawnBodies/DoorLevel3.position,
 	$PermanentDrawnBodies/DoorLevel4.position,
-	$PermanentDrawnBodies/DoorLevel5.position]
+	$PermanentDrawnBodies/DoorLevel5.position,
+	$PermanentDrawnBodies/ExitDoor.position],
+	[$PermanentDrawnBodies/DoorLevel1.position,
+	$PermanentDrawnBodies/DoorLevel2.position,
+	$PermanentDrawnBodies/DoorLevel3.position,
+	$PermanentDrawnBodies/DoorLevel4.position,
+	$PermanentDrawnBodies/DoorLevel5.position,
+	$PermanentDrawnBodies/ExitDoor.position]
 ]
 
 func _ready() -> void:

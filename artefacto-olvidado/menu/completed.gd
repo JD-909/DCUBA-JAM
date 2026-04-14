@@ -1,6 +1,10 @@
 extends Control
 
 @onready var checking_level = Global.last_level_visited
+@onready var level_select_array = [
+	"res://scenes/levels/level_select_level.tscn",
+	"res://scenes/levels/level_select_level2.tscn"
+]
 
 func _ready() -> void:
 	
@@ -29,4 +33,4 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_levels_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level_select_level.tscn")
+	get_tree().change_scene_to_file(level_select_array[Global.last_level_visited[0]-1])

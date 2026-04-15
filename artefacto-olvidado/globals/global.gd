@@ -6,17 +6,17 @@ extends Node
 const draw_limits : Array[Array] = [
 	[],
 	[2, 5, 5, 4, 1], 
-	[2, 1, 1, 3]
+	[2, 1, 2, 3, 1]
 	]
 const erase_limits : Array[Array] = [
 	[],
 	[1, 0, 1, 1, 0], 
-	[1, 2, 4, 0]
+	[1, 2, 0, 0, 4]
 	]
 const initial_permanents_in : Array[Array] = [
 	[],
 	[6, 5, 4, 16, 10],
-	[8, 19, 27, 5]
+	[8, 19, 8, 5, 27]
 	]
 
 # Color by world
@@ -31,32 +31,32 @@ var last_level_visited : Vector2
 var level_done : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false,false,false,false]
+	[false,false,false,false,false]
 	]
 var level_done_draw_limit : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false,false,false,false]
+	[false,false,false,false,false]
 	]
 var level_done_erase_limit : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false,false,false,false]
+	[false,false,false,false,false]
 	]
 var level_done_erase_all : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false,false,false,false]
+	[false,false,false,false,false]
 	]
 var level_done_secret : Array[Array] = [
 	[],
 	[false,false,false,false,false],
-	[false,false,false,false]
+	[false,false,false,false,false]
 	]
 var levels_by_ID : Array[Array] = [
 	["res://scenes/levels/main_menu_level.tscn"],
 	["res://scenes/levels/level_1.tscn", "res://scenes/levels/level_2.tscn", "res://scenes/levels/level_3.tscn", "res://scenes/levels/level_4.tscn", "res://scenes/levels/level_5.tscn"],
-	["res://scenes/levels/level_6.tscn", "res://scenes/levels/level_7.tscn", "res://scenes/levels/level_8.tscn", "res://scenes/levels/level_9.tscn"]
+	["res://scenes/levels/level_6.tscn", "res://scenes/levels/level_7.tscn", "res://scenes/levels/level_8.tscn", "res://scenes/levels/level_9.tscn", "res://scenes/levels/level_10.tscn"]
 	]
 
 # Other vars

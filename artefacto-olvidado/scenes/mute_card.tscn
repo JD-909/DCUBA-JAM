@@ -25,5 +25,5 @@ texture = ExtResource("2_3f55j")
 
 [node name="DrawnSprite1" type="Sprite2D" parent="Sprites"]
 visible = false
-rotation = 0.7853982
+rotation = -0.7853982
 texture = ExtResource("3_vkxel")

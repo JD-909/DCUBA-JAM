@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://e7k65j061cnp"]
+[gd_scene load_steps=14 format=4 uid="uid://e7k65j061cnp"]
 
 [ext_resource type="PackedScene" uid="uid://ckaat16obq4p4" path="res://scenes/levels/demo_level.tscn" id="1_kqhav"]
 [ext_resource type="FontFile" uid="uid://b51kbpjg5q074" path="res://assets/Brownist.otf" id="2_2lwpu"]
@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://c7axqeo1227fr" path="res://assets/DoodleSpaceBar.png" id="6_ixxwb"]
 [ext_resource type="Texture2D" uid="uid://by3eqo6luslb6" path="res://assets/FlechaDibu2.png" id="6_k3ocw"]
 [ext_resource type="PackedScene" uid="uid://b2ra33vmtii8a" path="res://scenes/mute_card.tscn" id="8_bpr0w"]
+[ext_resource type="Texture2D" uid="uid://bi84pj3km3dcp" path="res://assets/musicIcon.png" id="9_1g0ew"]
 [ext_resource type="Texture2D" uid="uid://boliprdbokcs" path="res://assets/FlechaDibu4.png" id="9_bpr0w"]
+[ext_resource type="Texture2D" uid="uid://b4s4pm33fckfh" path="res://assets/item_bow.png" id="9_ieigp"]
+[ext_resource type="Texture2D" uid="uid://cymnfnkki3guh" path="res://assets/item_arrow.png" id="10_anngg"]
 
 [node name="Main_menu_level" instance=ExtResource("1_kqhav")]
 
@@ -64,7 +67,26 @@ position = Vector2(544, 672)
 take_me_to = &"res://scenes/levels/char_select_level.tscn"
 
 [node name="MuteCard" parent="PermanentDrawnBodies" index="2" instance=ExtResource("8_bpr0w")]
+position = Vector2(160, 64)
+bus_mute = 1
+
+[node name="MuteCard3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("8_bpr0w")]
+position = Vector2(264, 64)
+
+[node name="DrawnSprite0" parent="PermanentDrawnBodies/MuteCard3/Sprites" index="0"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_1g0ew")
+
+[node name="MuteCard2" parent="PermanentDrawnBodies" index="4" instance=ExtResource("8_bpr0w")]
 position = Vector2(64, 64)
+bus_mute = 2
+
+[node name="DrawnSprite0" parent="PermanentDrawnBodies/MuteCard2/Sprites" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("9_ieigp")
+
+[node name="Sprite2D" type="Sprite2D" parent="PermanentDrawnBodies/MuteCard2/Sprites/DrawnSprite0" index="0"]
+texture = ExtResource("10_anngg")
 
 [node name="Resaltador2" type="Sprite2D" parent="Text" index="1"]
 modulate = Color(1, 1, 1, 0.8392157)
@@ -205,3 +227,5 @@ izquierda"
 horizontal_alignment = 1
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/MuteCard3"]
+[editable path="PermanentDrawnBodies/MuteCard2"]

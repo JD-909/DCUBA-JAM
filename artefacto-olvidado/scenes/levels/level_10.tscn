@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://bq5jvga8lyr8f"]
+[gd_scene load_steps=8 format=4 uid="uid://bq5jvga8lyr8f"]
 
 [ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_2k7im"]
 [ext_resource type="PackedScene" uid="uid://cbus2wlteto01" path="res://scenes/moving_platform.tscn" id="2_sqmjf"]
 [ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="3_gnb3t"]
 [ext_resource type="PackedScene" uid="uid://c162c75hu8ion" path="res://scenes/bow_pen.tscn" id="3_gw5sx"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="4_hh2oi"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="4_qblg5"]
+[ext_resource type="Texture2D" uid="uid://bhame8rydsmua" path="res://assets/Numero-imaginario-removebg-preview.png" id="5_7e7ni"]
 
 [node name="Demo_level" instance=ExtResource("1_2k7im")]
 level_ID = Vector2(2, 4)
@@ -172,6 +174,30 @@ rotation = 1.5707964
 direction = Vector2(0, 1)
 is_pen_drawn = true
 
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="30" instance=ExtResource("4_qblg5")]
+position = Vector2(1184, 64)
+rotation = 1.5707964
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+rotation = -1.5707964
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_7e7ni")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+offset_left = -137.14291
+offset_top = 91.428566
+offset_right = 1222.857
+offset_bottom = 697.4286
+rotation = 0.0
+theme_override_font_sizes/font_size = 70
+text = "¡UN
+SECRETO!
+¿Un numero
+imaginario?
+¿Es posible?
+¿Tiene
+sentido?"
+
 [node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("4_hh2oi")]
 position = Vector2(224, 608)
 is_pen_drawn = true
@@ -276,3 +302,4 @@ position = Vector2(800, 864)
 position = Vector2(928, 864)
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

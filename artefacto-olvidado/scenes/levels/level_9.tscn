@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cmp2bgg8lfihy"]
+[gd_scene load_steps=11 format=4 uid="uid://cmp2bgg8lfihy"]
 
 [ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_t7yg2"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="2_62qgl"]
@@ -6,7 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="3_csf6e"]
 [ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_ltlq2"]
 [ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="4_csf6e"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="4_m2cpo"]
 [ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="5_6nuwh"]
+[ext_resource type="Texture2D" uid="uid://b4d2i6xvw54u" path="res://assets/Trigonometria-removebg-preview.png" id="5_m2cpo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xampj"]
+size = Vector2(240, 192)
 
 [node name="Demo_level" instance=ExtResource("1_t7yg2")]
 level_ID = Vector2(2, 3)
@@ -31,6 +36,31 @@ position = Vector2(32, 608)
 
 [node name="DrawnBlock" parent="PermanentDrawnBodies" index="5" instance=ExtResource("3_ltlq2")]
 position = Vector2(96, 288)
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="6" instance=ExtResource("4_m2cpo")]
+position = Vector2(1088, 800)
+
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/DrawnCard" index="0"]
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PermanentDrawnBodies/DrawnCard" index="1"]
+shape = SubResource("RectangleShape2D_xampj")
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_m2cpo")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+offset_left = -1008.0
+offset_top = -192.0
+offset_right = 352.0
+offset_bottom = 217.0
+rotation = 0.0
+theme_override_font_sizes/font_size = 80
+text = "¡UN SECRETO! ¡¡¡AMO LA 
+TRIGONOMETRIA
+LOCO!!! Ahi se ve que Sen(X)
+es -Sen(Pi+X). Tambien con Cos"
 
 [node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("2_62qgl")]
 position = Vector2(1248, 864)
@@ -107,3 +137,4 @@ position = Vector2(96, 224)
 position = Vector2(32, 544)
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

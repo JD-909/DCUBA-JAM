@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://nyh4cptv4o4o"]
+[gd_scene load_steps=11 format=4 uid="uid://nyh4cptv4o4o"]
 
 [ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_ntash"]
 [ext_resource type="PackedScene" uid="uid://cbus2wlteto01" path="res://scenes/moving_platform.tscn" id="2_07ctq"]
 [ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_u1w5x"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="4_d06uk"]
+[ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="4_sjq8i"]
 [ext_resource type="PackedScene" uid="uid://b5pk21h4rqgcq" path="res://scenes/double_spike.tscn" id="5_hq5i0"]
+[ext_resource type="Texture2D" uid="uid://bcj5yurnvb4ob" path="res://assets/Pitagoras.jpg" id="5_q0wsq"]
 [ext_resource type="PackedScene" uid="uid://b3aw3w118mip2" path="res://scenes/lock_block.tscn" id="6_posk4"]
 [ext_resource type="PackedScene" uid="uid://dwkig5dmqoagx" path="res://scenes/key_item.tscn" id="7_sjq8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
+size = Vector2(256, 128)
 
 [node name="Demo_level" instance=ExtResource("1_ntash")]
 level_ID = Vector2(2, 1)
@@ -71,6 +76,31 @@ position = Vector2(1120, 480)
 
 [node name="DrawnBlock12" parent="PermanentDrawnBodies" index="17" instance=ExtResource("3_u1w5x")]
 position = Vector2(1184, 480)
+
+[node name="DrawnCard" parent="PermanentDrawnBodies" index="18" instance=ExtResource("4_sjq8i")]
+position = Vector2(128, 840)
+
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/DrawnCard" index="0"]
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PermanentDrawnBodies/DrawnCard" index="1"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="DrawnSprite1" parent="PermanentDrawnBodies/DrawnCard/Sprites" index="1"]
+position = Vector2(7.6293945e-06, -8.000005)
+scale = Vector2(0.31999996, 0.32)
+texture = ExtResource("5_q0wsq")
+
+[node name="Label" parent="PermanentDrawnBodies/DrawnCard/Sprites/DrawnSprite1" index="0"]
+offset_left = 400.00006
+offset_top = -175.00003
+offset_right = 2258.0
+offset_bottom = 430.99997
+rotation = 0.0
+theme_override_font_sizes/font_size = 154
+text = "     ¡SECRETO!                     Teorema de       1000 años antes
+Babilonia y Egipto usaban...              Pitagoras...         que Pitagoras"
 
 [node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("4_d06uk")]
 position = Vector2(32, 672)
@@ -207,3 +237,4 @@ position = Vector2(864, 352)
 position = Vector2(1120, 352)
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
+[editable path="PermanentDrawnBodies/DrawnCard"]

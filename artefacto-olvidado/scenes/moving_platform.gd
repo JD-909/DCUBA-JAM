@@ -21,6 +21,10 @@ func _ready() -> void:
 	
 	$Sprite2D.modulate = Global.get_color()
 	
+	# Guarda para lvl select 2
+	if Global.last_level_visited[0] == 0:
+		$Sprite2D.modulate = Color8(255,187,187)
+	
 	InitialPosition = global_position
 	
 	match Axis:

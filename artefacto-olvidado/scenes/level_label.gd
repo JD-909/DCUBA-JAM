@@ -11,7 +11,7 @@ extends VBoxContainer
 @export var labelID : Vector2
 
 func _ready() -> void:
-	label.text += str(int(labelID[1]) +1)
+	label.text += str( (int(labelID[0])-1)*5 + int(labelID[1]) +1)
 	
 	star_array[0].visible = Global.level_done[labelID[0]][labelID[1]]
 	star_array[1].visible = Global.level_done_draw_limit[labelID[0]][labelID[1]]

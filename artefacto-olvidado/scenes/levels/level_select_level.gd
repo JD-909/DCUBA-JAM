@@ -1,7 +1,5 @@
 extends Level
 
-@export var world : int 
-
 @onready var player_position_array : Array[Array] = [
 	[$PermanentDrawnBodies/ExitDoor.position],
 	[$PermanentDrawnBodies/DoorLevel1.position,

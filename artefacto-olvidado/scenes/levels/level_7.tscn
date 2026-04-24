@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://nyh4cptv4o4o"]
+[gd_scene load_steps=12 format=4 uid="uid://nyh4cptv4o4o"]
 
 [ext_resource type="PackedScene" uid="uid://brh4gvgnphi6j" path="res://scenes/levels/world2_demo_level.tscn" id="1_ntash"]
 [ext_resource type="PackedScene" uid="uid://cbus2wlteto01" path="res://scenes/moving_platform.tscn" id="2_07ctq"]
+[ext_resource type="Texture2D" uid="uid://dnhmguie5dunt" path="res://assets/DoodleFrog.svg" id="2_q0wsq"]
 [ext_resource type="PackedScene" uid="uid://8mrbal76jhyv" path="res://scenes/drawn_block.tscn" id="3_u1w5x"]
 [ext_resource type="PackedScene" uid="uid://bktie30482n0a" path="res://scenes/single_spike.tscn" id="4_d06uk"]
 [ext_resource type="PackedScene" uid="uid://dgob6vq665bex" path="res://scenes/drawn_card.tscn" id="4_sjq8i"]
@@ -19,6 +20,14 @@ level_ID = Vector2(2, 1)
 [node name="Tiles" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAD//w4ACwAAAAAAAAAAAA4ACwAAAAAAAAABAA4ACwAAAAAAAAACAA4ACwAAAAAAAAADAA4ACwAAAAAAAAAEAA4ACwAAAAAAAAAFAA4ACwAAAAAAAAAGAA4ACwAAAAAAAAAHAA4ACwAAAAAAAAAIAA4ACwAAAAAAAAAJAA4ACwAAAAAAAAAKAA4ACwAAAAAAAAALAA4ACwAAAAAAAAAMAA4ACwAAAAAAAAANAA4ACwAAAAAAAAAOAA4ACwAAAAAAAAAPAA4ACwAAAAAAAAAQAA4ACwAAAAAAAAARAA4ACwAAAAAAAAASAA4ACwAAAAAAAAATAA4ACwAAAAAAAAAUAA4ACwAAAAAAAAAUAA0ACwAAAAAAAAAUAAwACwAAAAAAAAAUAAsACwAAAAAAAAAUAAoACwAAAAAAAAAUAAkACwAAAAAAAAAUAAgACwAAAAAAAAAUAAcACwAAAAAAAAAUAAYACwAAAAAAAAAUAAUACwAAAAAAAAAUAAQACwAAAAAAAAAUAAMACwAAAAAAAAAUAAIACwAAAAAAAAAUAAEACwAAAAAAAAAUAAAACwAAAAAAAAAUAP//CwAAAAAAAAATAP//CwAAAAAAAAASAP//CwAAAAAAAAARAP//CwAAAAAAAAAQAP//CwAAAAAAAAAPAP//CwAAAAAAAAAOAP//CwAAAAAAAAANAP//CwAAAAAAAAAMAP//CwAAAAAAAAALAP//CwAAAAAAAAAKAP//CwAAAAAAAAAJAP//CwAAAAAAAAAIAP//CwAAAAAAAAAHAP//CwAAAAAAAAAGAP//CwAAAAAAAAAFAP//CwAAAAAAAAAEAP//CwAAAAAAAAADAP//CwAAAAAAAAACAP//CwAAAAAAAAABAP//CwAAAAAAAAAAAP//CwAAAAAAAAD/////CwAAAAAAAAD//wAACwAAAAAAAAD//wEACwAAAAAAAAD//wIACwAAAAAAAAD//wMACwAAAAAAAAD//wQACwAAAAAAAAD//wUACwAAAAAAAAD//wYACwAAAAAAAAD//wcACwAAAAAAAAD//wgACwAAAAAAAAD//wkACwAAAAAAAAD//woACwAAAAAAAAD//wsACwAAAAAAAAD//wwACwAAAAAAAAD//w0ACwAAAAAAAAAAAAMACwAAAAAAAAABAAMACwAAAAAAAAACAAMACwAAAAAAAAADAAMACwAAAAAAAAAEAAMACwAAAAAAAAAFAAMACwAAAAAAAAAGAAMACwAAAAAAAAAHAAMACwAAAAAAAAATAAMACwAAAAAAAAASAAMACwAAAAAAAAARAAMACwAAAAAAAAAQAAMACwAAAAAAAAAPAAMACwAAAAAAAAAOAAMACwAAAAAAAAANAAMACwAAAAAAAAAMAAMACwAAAAAAAAAIAAMACwAAAAAAAAALAAMACwAAAAAAAAAIAAcACwAAAAAAAAAIAAYACwAAAAAAAAAIAAUACwAAAAAAAAAIAAQACwAAAAAAAAAEAAQACwAAAAAAAAAEAAUACwAAAAAAAAAEAAYACwAAAAAAAAAEAAcACwAAAAAAAAALAAQACwAAAAAAAAALAAUACwAAAAAAAAALAAYACwAAAAAAAAALAAcACwAAAAAAAAAPAAQACwAAAAAAAAAPAAUACwAAAAAAAAAPAAYACwAAAAAAAAAPAAcACwAAAAAAAAAAAAsACwAAAAAAAAABAAsACwAAAAAAAAACAAsACwAAAAAAAAADAAsACwAAAAAAAAAEAAsACwAAAAAAAAAFAAsACwAAAAAAAAAGAAsACwAAAAAAAAAHAAsACwAAAAAAAAAIAAsACwAAAAAAAAALAAsACwAAAAAAAAAMAAsACwAAAAAAAAANAAsACwAAAAAAAAAOAAsACwAAAAAAAAAPAAsACwAAAAAAAAAQAAsACwAAAAAAAAARAAsACwAAAAAAAAASAAsACwAAAAAAAAATAAsACwAAAAAAAAAAAAcACwAAAAAAAAATAAcACwAAAAAAAAAIAAwACwAAAAAAAAALAAwACwAAAAAAAAAPAAwACwAAAAAAAAAEAAwACwAAAAAAAAA=")
 
+[node name="DoodleFrog" type="Sprite2D" parent="Decoraciones" index="0"]
+modulate = Color(1, 1, 1, 0.7647059)
+position = Vector2(1016, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_q0wsq")
+flip_h = true
+flip_v = true
+
 [node name="Drawer" parent="." index="3"]
 position = Vector2(160, 160)
 
@@ -27,18 +36,22 @@ position = Vector2(96, 160)
 
 [node name="MovingPlatform" parent="PermanentDrawnBodies" index="2" instance=ExtResource("2_07ctq")]
 position = Vector2(1248, 608)
+Axis = null
 tilesToTravel = -4
 
 [node name="MovingPlatform3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("2_07ctq")]
 position = Vector2(608, 608)
+Axis = null
 tilesToTravel = -4
 
 [node name="MovingPlatform2" parent="PermanentDrawnBodies" index="4" instance=ExtResource("2_07ctq")]
 position = Vector2(32, 608)
+Axis = null
 tilesToTravel = 4
 
 [node name="MovingPlatform4" parent="PermanentDrawnBodies" index="5" instance=ExtResource("2_07ctq")]
 position = Vector2(672, 608)
+Axis = null
 tilesToTravel = 4
 
 [node name="DrawnBlock" parent="PermanentDrawnBodies" index="6" instance=ExtResource("3_u1w5x")]

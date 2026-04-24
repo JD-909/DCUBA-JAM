@@ -59,8 +59,7 @@ rotation = 0.0
 theme_override_font_sizes/font_size = 80
 text = "¡UN SECRETO! ¡¡¡AMO LA 
 TRIGONOMETRIA
-LOCO!!! Ahi se ve que Sen(X)
-es -Sen(Pi+X). Tambien con Cos"
+LOCO!!! "
 
 [node name="SingleSpike" parent="Spikes" index="0" instance=ExtResource("2_62qgl")]
 position = Vector2(1248, 864)

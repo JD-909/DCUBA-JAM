@@ -10,7 +10,6 @@
 
 [node name="Level_select_level" instance=ExtResource("1_pb7sa")]
 script = ExtResource("2_he3gq")
-world = 0
 level_ID = Vector2(1, 5)
 
 [node name="Tiles" parent="TileMap" index="1"]

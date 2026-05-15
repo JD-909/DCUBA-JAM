@@ -70,14 +70,7 @@ take_me_to = &"res://scenes/levels/char_select_level.tscn"
 position = Vector2(160, 64)
 bus_mute = 1
 
-[node name="MuteCard3" parent="PermanentDrawnBodies" index="3" instance=ExtResource("8_bpr0w")]
-position = Vector2(264, 64)
-
-[node name="DrawnSprite0" parent="PermanentDrawnBodies/MuteCard3/Sprites" index="0"]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("9_1g0ew")
-
-[node name="MuteCard2" parent="PermanentDrawnBodies" index="4" instance=ExtResource("8_bpr0w")]
+[node name="MuteCard2" parent="PermanentDrawnBodies" index="3" instance=ExtResource("8_bpr0w")]
 position = Vector2(64, 64)
 bus_mute = 2
 
@@ -87,6 +80,17 @@ texture = ExtResource("9_ieigp")
 
 [node name="Sprite2D" type="Sprite2D" parent="PermanentDrawnBodies/MuteCard2/Sprites/DrawnSprite0" index="0"]
 texture = ExtResource("10_anngg")
+
+[node name="MuteCard3" parent="PermanentDrawnBodies" index="4" instance=ExtResource("8_bpr0w")]
+visible = false
+position = Vector2(264, 64)
+
+[node name="CollisionShape2D" parent="PermanentDrawnBodies/MuteCard3" index="0"]
+disabled = true
+
+[node name="DrawnSprite0" parent="PermanentDrawnBodies/MuteCard3/Sprites" index="0"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_1g0ew")
 
 [node name="Resaltador2" type="Sprite2D" parent="Text" index="1"]
 modulate = Color(1, 1, 1, 0.8392157)
@@ -227,5 +231,5 @@ izquierda"
 horizontal_alignment = 1
 
 [editable path="PermanentDrawnBodies/ExitDoor"]
-[editable path="PermanentDrawnBodies/MuteCard3"]
 [editable path="PermanentDrawnBodies/MuteCard2"]
+[editable path="PermanentDrawnBodies/MuteCard3"]
